@@ -280,8 +280,8 @@ class MainAPIS {
   static const String apiPostLikes = "api/posts"; // GET /api/posts/{post_id}/likes
   
   // Member API
-  static const String apiMemberRegister = "api/members/register"; // POST /api/members/register
-  static const String apiMemberLogin = "api/members/login"; // POST /api/members/login
+  static const String apiMemberRegister = "api/register"; // POST /api/register
+  static const String apiMemberLogin = "api/login"; // POST /api/login
   static const String apiMemberMe = "api/me"; // GET /api/me
   static const String apiMemberUpdate = "api/profile"; // POST /api/profile
   static const String apiMemberList = "api/members"; // GET /api/members
