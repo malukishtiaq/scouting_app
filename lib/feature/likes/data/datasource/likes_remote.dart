@@ -9,6 +9,7 @@ class LikesRemoteSource extends ILikesRemoteSource {
       converter: (json) => LikeResponseModel.fromJson(json),
       method: HttpMethod.POST,
       url: '${MainAPIS.apiToggleLike}/${param.postId}',
+      body: param.toMap(), // Pass like: true/false
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
       withAuthentication: true, // Like toggle requires authentication
       enableLogging: true,
