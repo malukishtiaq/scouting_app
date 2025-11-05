@@ -1,10 +1,5 @@
 part of 'iscouting_posts_remote.dart';
 
-import 'package:injectable/injectable.dart';
-import '../../../../core/constants/enums/http_method.dart';
-import '../../../../core/net/create_model_interceptor/primative_create_model_interceptor.dart';
-import '../../../../mainapis.dart';
-
 @Injectable(as: IScoutingPostsRemoteSource)
 class ScoutingPostsRemoteSource extends IScoutingPostsRemoteSource {
   @override

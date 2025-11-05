@@ -59,15 +59,6 @@ import '../feature/comments/domain/usecase/get_post_comments_usecase.dart'
     as _i109;
 import '../feature/comments/domain/usecase/get_user_comments_usecase.dart'
     as _i597;
-import '../feature/explore/data/datasource/iexplore_remote.dart' as _i484;
-import '../feature/explore/data/repository/explore_repository.dart' as _i991;
-import '../feature/explore/domain/repository/iexplore_repository.dart' as _i529;
-import '../feature/explore/domain/usecase/get_nearby_players_usecase.dart'
-    as _i652;
-import '../feature/explore/domain/usecase/get_recommended_players_usecase.dart'
-    as _i1073;
-import '../feature/explore/domain/usecase/search_players_usecase.dart' as _i68;
-import '../feature/explore/presentation/cubit/explore_cubit.dart' as _i215;
 import '../feature/likes/data/datasource/ilikes_remote.dart' as _i591;
 import '../feature/likes/domain/repository/ilikes_repository.dart' as _i1020;
 import '../feature/likes/domain/repository/likes_repository.dart' as _i548;
@@ -133,7 +124,6 @@ extension GetItInjectableX on _i174.GetIt {
     final loggerModule = _$LoggerModule();
     gh.factory<_i699.NoopBackgroundApi>(() => _i699.NoopBackgroundApi());
     gh.factory<_i591.DbProvider>(() => _i591.DbProvider());
-    gh.factory<_i215.ExploreCubit>(() => _i215.ExploreCubit());
     gh.singleton<_i821.GenericBackgroundService>(
         () => _i821.GenericBackgroundService());
     gh.singleton<_i81.IsolateBackgroundService>(
@@ -153,12 +143,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1004.HttpClient>(() => _i1004.HttpClient());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.factory<_i737.IReelsRemoteSource>(() => _i914.ReelsRemoteSource());
-    gh.singleton<_i524.IScoutingPostsRepository>(() =>
-        _i142.ScoutingPostsRepository(gh<_i462.IScoutingPostsRemoteSource>()));
+    gh.factory<_i753.ICommentsRemoteSource>(() => _i753.CommentsRemoteSource());
     gh.factory<_i494.IAccountRemoteSource>(() => _i494.AccountRemoteSource());
-    gh.factory<_i484.IExploreRemoteSource>(() => _i484.ExploreRemoteSource());
-    gh.singleton<_i141.ICommentsRepository>(
-        () => _i1000.CommentsRepository(gh<_i753.ICommentsRemoteSource>()));
+    gh.factory<_i462.IScoutingPostsRemoteSource>(
+        () => _i462.ScoutingPostsRemoteSource());
     gh.singleton<_i740.ISocketService>(() => _i593.SocketService(
           gh<_i974.Logger>(),
           gh<_i570.NotificationService>(),
@@ -166,18 +154,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i228.IUserProfileRemoteSource>(
         () => _i228.UserProfileRemoteSource());
     gh.factory<_i177.IPostsRemoteSource>(() => _i524.PostsRemoteSource());
+    gh.factory<_i591.ILikesRemoteSource>(() => _i591.LikesRemoteSource());
     gh.singleton<_i798.GenericCacheService>(
         () => _i798.GenericCacheService(gh<_i591.DbProvider>()));
-    gh.factory<_i529.IExploreRepository>(
-        () => _i991.ExploreRepository(gh<_i484.IExploreRemoteSource>()));
     gh.singleton<_i377.AuthService>(
         () => _i377.AuthService(gh<_i740.ISocketService>()));
     gh.factory<_i864.IReelsRepository>(
         () => _i989.ReelsRepository(gh<_i737.IReelsRemoteSource>()));
     gh.factory<_i17.IUserProfileRepository>(() =>
         _i517.UserProfileRepository(gh<_i228.IUserProfileRemoteSource>()));
-    gh.singleton<_i1020.ILikesRepository>(
-        () => _i548.LikesRepository(gh<_i591.ILikesRemoteSource>()));
     gh.singleton<_i788.BackgroundTasksRegistrar>(
         () => _i788.BackgroundTasksRegistrar(gh<_i699.NoopBackgroundApi>()));
     gh.factory<_i53.IPostsRepository>(
@@ -213,6 +198,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i855.UpdateAvatarUseCase(gh<_i17.IUserProfileRepository>()));
     gh.singleton<_i13.UpdateCoverUseCase>(
         () => _i13.UpdateCoverUseCase(gh<_i17.IUserProfileRepository>()));
+    gh.singleton<_i141.ICommentsRepository>(
+        () => _i1000.CommentsRepository(gh<_i753.ICommentsRemoteSource>()));
     gh.singleton<_i234.CreateCommentUsecase>(
         () => _i234.CreateCommentUsecase(gh<_i141.ICommentsRepository>()));
     gh.singleton<_i109.GetPostCommentsUsecase>(
@@ -258,16 +245,8 @@ extension GetItInjectableX on _i174.GetIt {
           updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
           authService: gh<_i377.AuthService>(),
         ));
-    gh.singleton<_i622.GetPostsUsecase>(
-        () => _i622.GetPostsUsecase(gh<_i524.IScoutingPostsRepository>()));
-    gh.singleton<_i338.GetPostByIdUsecase>(
-        () => _i338.GetPostByIdUsecase(gh<_i524.IScoutingPostsRepository>()));
-    gh.factory<_i652.GetNearbyPlayersUseCase>(
-        () => _i652.GetNearbyPlayersUseCase(gh<_i529.IExploreRepository>()));
-    gh.factory<_i1073.GetRecommendedPlayersUseCase>(() =>
-        _i1073.GetRecommendedPlayersUseCase(gh<_i529.IExploreRepository>()));
-    gh.factory<_i68.SearchPlayersUseCase>(
-        () => _i68.SearchPlayersUseCase(gh<_i529.IExploreRepository>()));
+    gh.singleton<_i524.IScoutingPostsRepository>(() =>
+        _i142.ScoutingPostsRepository(gh<_i462.IScoutingPostsRemoteSource>()));
     gh.factory<_i12.SplashCubit>(
         () => _i12.SplashCubit(gh<_i377.AuthService>()));
     gh.factory<_i805.GetPostsUsecase>(
@@ -278,6 +257,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i966.GetMoreReelsUsecase(gh<_i864.IReelsRepository>()));
     gh.singleton<_i850.GetReelsUsecase>(
         () => _i850.GetReelsUsecase(gh<_i864.IReelsRepository>()));
+    gh.singleton<_i1020.ILikesRepository>(
+        () => _i548.LikesRepository(gh<_i591.ILikesRemoteSource>()));
     gh.factory<_i1042.UserProfileCubit>(() => _i1042.UserProfileCubit(
           getUserProfileUseCase: gh<_i714.GetUserProfileUseCase>(),
           getUserProfileByUsernameUseCase:
@@ -304,6 +285,10 @@ extension GetItInjectableX on _i174.GetIt {
           getReelsUsecase: gh<_i850.GetReelsUsecase>(),
           getMoreReelsUsecase: gh<_i966.GetMoreReelsUsecase>(),
         ));
+    gh.singleton<_i622.GetPostsUsecase>(
+        () => _i622.GetPostsUsecase(gh<_i524.IScoutingPostsRepository>()));
+    gh.singleton<_i338.GetPostByIdUsecase>(
+        () => _i338.GetPostByIdUsecase(gh<_i524.IScoutingPostsRepository>()));
     gh.factory<_i319.PostsCubit>(() => _i319.PostsCubit(
           getPostsUsecase: gh<_i805.GetPostsUsecase>(),
           getPostByIdUsecase: gh<_i316.GetPostByIdUsecase>(),
