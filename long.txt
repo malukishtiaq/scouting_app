@@ -1,99 +1,90 @@
-Restarted application in 4,895ms.
-I/flutter (25592): 🚀 Starting configureInjection...
-I/flutter (25592): ✅ Injectable dependencies initialized
-I/flutter (25592): 🔧 AccountService: Initialized for Scouting API
-I/flutter (25592): 📍 API URL: https://scouting.terveys.io/api/
-I/flutter (25592): 🌐 Website URL: https://scouting.terveys.io
-I/flutter (25592): 🔗 Main: Initializing DeepLinkHandler...
-I/flutter (25592): 🔗 DeepLinkHandler: Initializing...
-I/flutter (25592): ✅ Critical assets preloaded successfully
-I/flutter (25592): 🔗 MainApp: initState() called
-I/flutter (25592): 🔗 MainApp: Setting navigation key...
-I/flutter (25592): 🔗 MainApp: DeepLinkHandler already initialized in main.dart
-I/flutter (25592): 🔔 [INIT] Starting notification services initialization...
-I/flutter (25592): 🔔 [NOTIFICATION] Initializing notification service...
-I/flutter (25592): 📶 Network quality changed: good (~5.0Mbps)
-I/flutter (25592): ✅ Media optimization services initialized with reactive adaptation
-I/System.out(25592): 🔗 MainActivity: getInitialLink() = null
-I/flutter (25592): 🔗 DeepLinkHandler: Initial link: null
-I/flutter (25592): 🔗 DeepLinkHandler: Initialization complete
-I/flutter (25592): 🔗 Main: DeepLinkHandler initialized successfully
-I/flutter (25592): 🧪 Testing referral link: https://baadbaan.host/register?ref=testuser123
-I/flutter (25592): 🔗 Deep link received: https://baadbaan.host/register?ref=testuser123
-I/flutter (25592): 🔗 Parsed URI - Host: baadbaan.host, Path: /register, Query: {ref: testuser123}
-I/flutter (25592): ✅ Referral code detected: testuser123
-I/flutter (25592): 🔗 Main: Deep link test completed
-I/flutter (25592): ✅ [NOTIFICATION] Service initialized successfully
-I/flutter (25592): 🔔 [INIT] Notification service initialized
-I/flutter (25592): ✅ Background chat service initialized
-I/flutter (25592): 🔔 [INIT] Background service initialized
-I/flutter (25592): ✅ [INIT] All notification services initialized successfully
-W/OnBackInvokedCallback(25592): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback(25592): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-I/ScrollIdentify(25592): on fling
-I/ScrollIdentify(25592): on fling
-W/MIUIScout ANR(25592): AnrScout only want msg within 20s, so stop here
-D/MIUIScout ANR(25592): get period history msg: (Current message:null)
-D/MIUIScout ANR(25592): get period history msg:In recent 20s, total historyMsgCount=31
-W/MIUIScout ANR(25592): Print Message Id: 0 MessageInfo: { when=-7s235ms what=3 target=android.view.GestureDetector$GestureHandler }
-W/MIUIScout ANR(25592): Print Message Id: 1 MessageInfo: { when=-7s136ms callback=io.flutter.plugins.webviewflutter.AndroidWebkitLibraryPigeonInstanceManager$$ExternalSyntheticLambda0 target=android.os.Handler }
-W/MIUIScout ANR(25592): (Print messages: 2, polling=false, quitting=false)
-I/wonder.combined(25592): Thread[6,tid=25598,WaitingInMainSignalCatcherLoop,Thread*=0xb400006fbbc3a000,peer=0x13fc0220,"Signal Catcher"]: reacting to signal 3
-I/wonder.combined(25592):
-I/wonder.combined(25592): Wrote stack traces to tombstoned
-F/crash_dump64(25925): crash_dump.cpp:515] failed to attach to thread 541: Permission denied
-I/flutter (25592): Flutter Error: type 'RegisterScreenParam' is not a subtype of type 'Map<String, dynamic>?' in type cast
-I/flutter (25592): Stack trace: #0      NavigationRoute.generateRoute (package:scouting_app/core/navigation/route_generator.dart:58:41)
-I/flutter (25592): #1      _WidgetsAppState._onGenerateRoute (package:flutter/src/widgets/app.dart:1562:37)
-I/flutter (25592): #2      NavigatorState._routeNamed (package:flutter/src/widgets/navigator.dart:4643:47)
-I/flutter (25592): #3      NavigatorState.pushNamed (package:flutter/src/widgets/navigator.dart:4711:21)
-I/flutter (25592): #4      Navigator.pushNamed (package:flutter/src/widgets/navigator.dart:1905:34)
-I/flutter (25592): #5      Nav.to (package:scouting_app/core/navigation/nav.dart:17:22)
-I/flutter (25592): #6      _LoginScreenContentState._handleCreateAccount (package:scouting_app/feature/account/presentation/screen/login/login_screen_content.dart:111:9)
-I/flutter (25592): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:345:24)
-I/flutter (25592): #8      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
-I/flutter (25592): #9      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
-I/flutter (25592): #10     BaseTapGestureRecognizer.handlePrimaryPointer (package:flutter/
-I/flutter (25592): 💾 Memory pressure: critical (639.0MB / 124.8%)
-I/flutter (25592): 💾 Memory pressure critical - adapting...
-I/flutter (25592): 🧹 Cleared cache due to memory pressure
-W/MIUIInput(25592): AnrScout input event latency is 21389, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-W/MIUIInput(25592): AnrScout input event latency is 21210, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-W/MIUIInput(25592): AnrScout input event latency is 20213, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-W/MIUIInput(25592): AnrScout input event latency is 20049, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-W/MIUIInput(25592): AnrScout input event latency is 19452, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-W/MIUIInput(25592): AnrScout input event latency is 19272, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-W/MIUIInput(25592): AnrScout input event latency is 16348, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
-I/Choreographer(25592): Skipped 1392 frames!  The application may be doing too much work on its main thread.
-W/Looper  (25592): PerfMonitor doFrame : time=1ms vsyncFrame=0 latency=23215ms procState=-1 historyMsgCount=1
-I/libPerfCtl(25592): fbcNotifySbeRescue ret=-1
-I/flutter (25592): Flutter Error: type 'RegisterScreenParam' is not a subtype of type 'Map<String, dynamic>?' in type cast
-I/flutter (25592): Stack trace: #0      NavigationRoute.generateRoute (package:scouting_app/core/navigation/route_generator.dart:58:41)
-I/flutter (25592): #1      _WidgetsAppState._onGenerateRoute (package:flutter/src/widgets/app.dart:1562:37)
-I/flutter (25592): #2      NavigatorState._routeNamed (package:flutter/src/widgets/navigator.dart:4643:47)
-I/flutter (25592): #3      NavigatorState.pushNamed (package:flutter/src/widgets/navigator.dart:4711:21)
-I/flutter (25592): #4      Navigator.pushNamed (package:flutter/src/widgets/navigator.dart:1905:34)
-I/flutter (25592): #5      Nav.to (package:scouting_app/core/navigation/nav.dart:17:22)
-I/flutter (25592): #6      _LoginScreenContentState._handleCreateAccount (package:scouting_app/feature/account/presentation/screen/login/login_screen_content.dart:111:9)
-I/flutter (25592): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:345:24)
-I/flutter (25592): #8      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
-I/flutter (25592): #9      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
-I/flutter (25592): #10     BaseTapGestureRecognizer.handlePrimaryPointer (package:flutter/
-I/flutter (25592): Flutter Error: type 'RegisterScreenParam' is not a subtype of type 'Map<String, dynamic>?' in type cast
-I/flutter (25592): Stack trace: #0      NavigationRoute.generateRoute (package:scouting_app/core/navigation/route_generator.dart:58:41)
-I/flutter (25592): #1      _WidgetsAppState._onGenerateRoute (package:flutter/src/widgets/app.dart:1562:37)
-I/flutter (25592): #2      NavigatorState._routeNamed (package:flutter/src/widgets/navigator.dart:4643:47)
-I/flutter (25592): #3      NavigatorState.pushNamed (package:flutter/src/widgets/navigator.dart:4711:21)
-I/flutter (25592): #4      Navigator.pushNamed (package:flutter/src/widgets/navigator.dart:1905:34)
-I/flutter (25592): #5      Nav.to (package:scouting_app/core/navigation/nav.dart:17:22)
-I/flutter (25592): #6      _LoginScreenContentState._handleCreateAccount (package:scouting_app/feature/account/presentation/screen/login/login_screen_content.dart:111:9)
-I/flutter (25592): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:345:24)
-I/flutter (25592): #8      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
-I/flutter (25592): #9      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
-I/flutter (25592): #10     BaseTapGestureRecognizer.handlePrimaryPointer (package:flutter/
-D/DecorView[](25592): onWindowFocusChanged hasWindowFocus true
-I/HandWritingStubImpl(25592): refreshLastKeyboardType: 1
-I/HandWritingStubImpl(25592): getCurrentKeyboardType: 1
-Reloaded 1 of 3050 libraries in 1,871ms (compile: 105 ms, reload: 846 ms, reassemble: 631 ms).
-Reloaded 1 of 3050 libraries in 1,868ms (compile: 120 ms, reload: 824 ms, reassemble: 549 ms).
-Reloaded 1 of 3050 libraries in 1,906ms (compile: 210 ms, reload: 816 ms, reassemble: 528 ms).
+Launching lib\main.dart on 23106RN0DA in debug mode...
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+D/FlutterJNI(16763): Beginning load of flutter...
+D/FlutterJNI(16763): flutter (null) was loaded normally!
+I/flutter (16763): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+D/FlutterGeolocator(16763): Attaching Geolocator to activity
+D/FlutterGeolocator(16763): Creating service.
+D/FlutterGeolocator(16763): Binding to location service.
+D/FlutterGeolocator(16763): Geolocator foreground service connected
+D/FlutterGeolocator(16763): Initializing Geolocator services
+D/FlutterGeolocator(16763): Flutter engine connected. Connected engine count 1
+I/wonder.combined(16763): Compiler allocated 5099KB to compile void android.view.ViewRootImpl.performTraversals()
+Connecting to VM Service at ws://127.0.0.1:61683/NH0zZ89hHUQ=/ws
+Connected to the VM Service.
+D/ProfileInstaller(16763): Installing profile for com.wowonder.combined
+I/flutter (16763): 🚀 Starting configureInjection...
+I/flutter (16763): ✅ Injectable dependencies initialized
+I/flutter (16763): 🔧 AccountService: Initialized for Scouting API
+I/flutter (16763): 📍 API URL: https://scouting.terveys.io/api/
+I/flutter (16763): 🌐 Website URL: https://scouting.terveys.io
+I/flutter (16763): 🔗 Main: Initializing DeepLinkHandler...
+I/flutter (16763): 🔗 DeepLinkHandler: Initializing...
+I/flutter (16763): ✅ Critical assets preloaded successfully
+W/Looper  (16763): PerfMonitor doFrame : time=0ms vsyncFrame=0 latency=422ms procState=-1 historyMsgCount=1
+I/flutter (16763): 🔗 MainApp: initState() called
+I/flutter (16763): 🔗 MainApp: Setting navigation key...
+I/flutter (16763): 🔗 MainApp: DeepLinkHandler already initialized in main.dart
+I/flutter (16763): 🔔 [INIT] Starting notification services initialization...
+I/flutter (16763): 🔔 [NOTIFICATION] Initializing notification service...
+W/libc    (16763): Access denied finding property "persist.vendor.debug.gpud.enable"
+E/wonder.combined(16763): DF open fail: No such file or directory
+W/wonder.combined(16763): remote service is not exist
+W/libc    (16763): Access denied finding property "ro.vendor.display.iris_x7.support"
+I/gralloc4(16763): @set_metadata: update dataspace from GM (0x08010000 -> 0x00000000)
+W/libc    (16763): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(16763): [SurfaceView[com.wowonder.combined/com.wowonder.combined.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=720x1506 mFrameNumber=1 applyTransaction=true mTimestamp=100694787479537(auto) mPendingTransactions.size=0 graphicBufferId=71996536782858 transform=0
+I/wonder.combined(16763): Background concurrent copying GC freed 85914(6902KB) AllocSpace objects, 85(3392KB) LOS objects, 49% free, 5770KB/11MB, paused 154us,50us total 118.663ms
+I/gralloc4(16763): @set_metadata: update dataspace from GM (0x08010000 -> 0x00000000)
+W/FramePredict(16763): "FramePredict won 't run in other process: com.wowonder.combined"
+I/flutter (16763): 📶 Network quality changed: offline (~0.0Mbps)
+I/flutter (16763): ✅ Media optimization services initialized with reactive adaptation
+I/System.out(16763): 🔗 MainActivity: getInitialLink() = null
+I/flutter (16763): 🔗 DeepLinkHandler: Initial link: null
+I/flutter (16763): 🔗 DeepLinkHandler: Initialization complete
+I/flutter (16763): 🔗 Main: DeepLinkHandler initialized successfully
+I/flutter (16763): 🧪 Testing referral link: https://baadbaan.host/register?ref=testuser123
+I/flutter (16763): 🔗 Deep link received: https://baadbaan.host/register?ref=testuser123
+I/flutter (16763): 🔗 Parsed URI - Host: baadbaan.host, Path: /register, Query: {ref: testuser123}
+I/flutter (16763): ✅ Referral code detected: testuser123
+I/flutter (16763): 🔗 Main: Deep link test completed
+I/Choreographer(16763): Skipped 125 frames!  The application may be doing too much work on its main thread.
+D/VRI[MainActivity](16763): vri.Setup new sync id=0 syncSeqId=0
+D/        (16763): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl(16763): setSchedFifo pid:16763, mode:3
+W/libc    (16763): Access denied finding property "ro.vendor.display.iris_x7.support"
+E/libEGL  (16763): pre_cache appList: ,,
+D/BLASTBufferQueue(16763): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=720x1600 mFrameNumber=1 applyTransaction=true mTimestamp=100695365531614(auto) mPendingTransactions.size=0 graphicBufferId=71996536782863 transform=0
+W/Parcel  (16763): Expecting binder but got null!
+W/Looper  (16763): PerfMonitor doFrame : time=338ms vsyncFrame=0 latency=2090ms procState=-1 historyMsgCount=5
+I/OpenGLRenderer(16763): Davey! duration=2421ms; Flags=1, FrameTimelineVsyncId=2907409, IntendedVsync=100692945370475, Vsync=100695029683850, InputEventId=0, HandleInputStart=100695035339921, AnimationStart=100695035344229, PerformTraversalsStart=100695035345383, DrawStart=100695036298075, FrameDeadline=100692962370475, FrameInterval=100695035098306, FrameStartTime=16674507, SyncQueued=100695049241152, SyncStart=100695049522614, IssueDrawCommandsStart=100695053175306, SwapBuffers=100695361169383, FrameCompleted=100695367585383, DequeueBufferDuration=1105230, QueueBufferDuration=1483000, GpuCompleted=100695367100537, SwapBuffersCompleted=100695367585383, DisplayPresentTime=472593316385, CommandSubmissionCompleted=100695361169383,
+D/VRI[MainActivity](16763): vri.reportDrawFinished syncSeqId=0 android.view.ViewRootImpl.lambda$createSyncIfNeeded$4$android-view-ViewRootImpl:3984 android.view.ViewRootImpl$$ExternalSyntheticLambda1.run:6 android.os.Handler.handleCallback:942 android.os.Handler.dispatchMessage:99 android.os.Looper.loopOnce:211
+I/flutter (16763): ✅ [NOTIFICATION] Service initialized successfully
+I/flutter (16763): 🔔 [INIT] Notification service initialized
+I/gralloc4(16763): @set_metadata: update dataspace from GM (0x08010000 -> 0x00000000)
+I/flutter (16763): ✅ Background chat service initialized
+I/flutter (16763): 🔔 [INIT] Background service initialized
+I/flutter (16763): ✅ [INIT] All notification services initialized successfully
+D/DecorView[](16763): onWindowFocusChanged hasWindowFocus true
+I/HandWritingStubImpl(16763): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(16763): getCurrentKeyboardType: 1
+D/DecorView[](16763): getWindowModeFromSystem  windowmode is 1
+D/DecorView[](16763): updateDecorCaptionStatus windowMode is 1
+W/libc    (16763): Access denied finding property "ro.vendor.display.iris_x7.support"
+I/gralloc4(16763): @set_metadata: update dataspace from GM (0x08010000 -> 0x00000000)
+I/HandWritingStubImpl(16763): getCurrentKeyboardType: 1
+I/gralloc4(16763): @set_metadata: update dataspace from GM (0x08010000 -> 0x00000000)
+W/OnBackInvokedCallback(16763): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(16763): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+W/MirrorManager(16763): this model don't Support
+I/ScrollIdentify(16763): on fling
+I/flutter (16763): 💾 Memory pressure: critical (564.5MB / 110.3%)
+I/flutter (16763): 💾 Memory pressure critical - adapting...
+I/flutter (16763): 🧹 Cleared cache due to memory pressure
+I/ScrollIdentify(16763): on fling
+I/ScrollIdentify(16763): on fling
+I/flutter (16763): 🔍 PostsRemoteSource: Fetching posts from: https://scouting.terveys.io/api/posts?page=1
+W/OnBackInvokedCallback(16763): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(16763): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (16763): 🔍 PostsRemoteSource: Error: ClientException with SocketException: Failed host lookup: 'scouting.terveys.io' (OS Error: No address associated with hostname, errno = 7), uri=https://scouting.terveys.io/api/posts?page=1
+I/ScrollIdentify(16763): on fling

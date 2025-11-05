@@ -170,7 +170,8 @@ class DeepLinkHandler {
 
   /// Test referral link generation and processing
   static void testReferralLink() {
-    final testUrl = 'https://baadbaan.host/register?ref=testuser123';
+    // Use the actual website URL from constants instead of hardcoded URL
+    final testUrl = '${WebsiteConstants.websiteUrl}/register?ref=testuser123';
     print('🧪 Testing referral link: $testUrl');
     _processDeepLink(testUrl);
   }

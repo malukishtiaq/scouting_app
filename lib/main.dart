@@ -73,13 +73,7 @@ void main() async {
   // Don't await - let it initialize in background
   DeepLinkHandler.initialize().then((_) {
     print('🔗 Main: DeepLinkHandler initialized successfully');
-    // Test deep link handler after initialization
-    try {
-      DeepLinkHandler.testReferralLink();
-      print('🔗 Main: Deep link test completed');
-    } catch (e) {
-      print('🔗 Main: Deep link test failed: $e');
-    }
+    // Removed automatic test - only test manually when needed
   }).catchError((e) {
     print('🔗 Main: Error initializing DeepLinkHandler: $e');
   });

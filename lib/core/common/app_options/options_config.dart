@@ -17,7 +17,7 @@ const _appOptions = {
   "orientation": OrientationOptions.PORTRAIT,
   "error_view_option": ErrorWidgetOptions.IMAGE,
   "change_lang_restart": true,
-  "enable_dio_printing": false,
+  "enable_dio_printing": true,
   "enable_error_catcher": true,
   "force_location_permission": false,
   "enable_notification": true,
