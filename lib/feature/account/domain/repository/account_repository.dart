@@ -159,4 +159,53 @@ class AccountRepository extends IAccountRepository {
       remoteResult: await remoteDataSource.logout(param),
     );
   }
+
+  // ========== MEMBER APIs (Scouting API) ==========
+
+  @override
+  Future<Result<AppErrors, AuthResponseEntity>> memberRegister(
+      RegisterParam param) async {
+    return execute(
+      remoteResult: await remoteDataSource.memberRegister(param),
+    );
+  }
+
+  @override
+  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(
+      LoginParam param) async {
+    return execute(
+      remoteResult: await remoteDataSource.memberLogin(param),
+    );
+  }
+
+  @override
+  Future<Result<AppErrors, MemberProfileEntity>> getMe(GetMeParam param) async {
+    return execute(
+      remoteResult: await remoteDataSource.getMe(param),
+    );
+  }
+
+  @override
+  Future<Result<AppErrors, UpdateProfileResponseEntity>> updateProfile(
+      UpdateProfileParam param) async {
+    return execute(
+      remoteResult: await remoteDataSource.updateProfile(param),
+    );
+  }
+
+  @override
+  Future<Result<AppErrors, MembersListEntity>> listMembers(
+      ListMembersParam param) async {
+    return execute(
+      remoteResult: await remoteDataSource.listMembers(param),
+    );
+  }
+
+  @override
+  Future<Result<AppErrors, MemberProfileEntity>> showMember(
+      ShowMemberParam param) async {
+    return execute(
+      remoteResult: await remoteDataSource.showMember(param),
+    );
+  }
 }

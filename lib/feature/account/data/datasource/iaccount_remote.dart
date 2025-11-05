@@ -20,6 +20,11 @@ import '../request/param/love_loop/send_code_two_factor_param.dart';
 import '../request/param/love_loop/two_factor_param.dart';
 import '../request/param/resend_code_param.dart';
 import '../request/param/social_login_param.dart';
+import '../request/param/get_me_param.dart';
+import '../request/param/update_profile_param.dart';
+import '../request/param/list_members_param.dart';
+import '../request/param/show_member_param.dart';
+import '../request/model/member_response_model.dart';
 import '../../domain/usecase/verify_account_usecase.dart';
 
 part 'account_remote.dart';
@@ -47,4 +52,16 @@ abstract class IAccountRemoteSource extends RemoteDataSource {
   Future<Either<AppErrors, AuthResponseModel>> socialLogin(
       SocialLoginParam param);
   Future<Either<AppErrors, EmptyResponse>> logout(LogoutParam param);
+
+  // Member APIs (Scouting API)
+  Future<Either<AppErrors, AuthResponseModel>> memberRegister(
+      RegisterParam param);
+  Future<Either<AppErrors, AuthResponseModel>> memberLogin(LoginParam param);
+  Future<Either<AppErrors, MemberProfileModel>> getMe(GetMeParam param);
+  Future<Either<AppErrors, UpdateProfileResponseModel>> updateProfile(
+      UpdateProfileParam param);
+  Future<Either<AppErrors, MembersListModel>> listMembers(
+      ListMembersParam param);
+  Future<Either<AppErrors, MemberProfileModel>> showMember(
+      ShowMemberParam param);
 }

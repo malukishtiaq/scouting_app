@@ -41,6 +41,15 @@ import '../feature/account/domain/usecase/resgister_usecase.dart' as _i831;
 import '../feature/account/domain/usecase/social_login_usecase.dart' as _i983;
 import '../feature/account/domain/usecase/two_factor_usecase.dart' as _i108;
 import '../feature/account/domain/usecase/verify_account_usecase.dart' as _i894;
+import '../feature/explore/data/datasource/iexplore_remote.dart' as _i484;
+import '../feature/explore/data/repository/explore_repository.dart' as _i991;
+import '../feature/explore/domain/repository/iexplore_repository.dart' as _i529;
+import '../feature/explore/domain/usecase/get_nearby_players_usecase.dart'
+    as _i652;
+import '../feature/explore/domain/usecase/get_recommended_players_usecase.dart'
+    as _i1073;
+import '../feature/explore/domain/usecase/search_players_usecase.dart' as _i68;
+import '../feature/explore/presentation/cubit/explore_cubit.dart' as _i215;
 import '../feature/posts/data/datasources/iposts_remote_datasource.dart'
     as _i177;
 import '../feature/posts/data/datasources/posts_remote_datasource.dart'
@@ -90,6 +99,7 @@ extension GetItInjectableX on _i174.GetIt {
     final loggerModule = _$LoggerModule();
     gh.factory<_i699.NoopBackgroundApi>(() => _i699.NoopBackgroundApi());
     gh.factory<_i591.DbProvider>(() => _i591.DbProvider());
+    gh.factory<_i215.ExploreCubit>(() => _i215.ExploreCubit());
     gh.singleton<_i821.GenericBackgroundService>(
         () => _i821.GenericBackgroundService());
     gh.singleton<_i81.IsolateBackgroundService>(
@@ -110,6 +120,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.factory<_i737.IReelsRemoteSource>(() => _i914.ReelsRemoteSource());
     gh.factory<_i494.IAccountRemoteSource>(() => _i494.AccountRemoteSource());
+    gh.factory<_i484.IExploreRemoteSource>(() => _i484.ExploreRemoteSource());
     gh.singleton<_i740.ISocketService>(() => _i593.SocketService(
           gh<_i974.Logger>(),
           gh<_i570.NotificationService>(),
@@ -119,6 +130,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i177.IPostsRemoteSource>(() => _i524.PostsRemoteSource());
     gh.singleton<_i798.GenericCacheService>(
         () => _i798.GenericCacheService(gh<_i591.DbProvider>()));
+    gh.factory<_i529.IExploreRepository>(
+        () => _i991.ExploreRepository(gh<_i484.IExploreRemoteSource>()));
     gh.singleton<_i377.AuthService>(
         () => _i377.AuthService(gh<_i740.ISocketService>()));
     gh.factory<_i864.IReelsRepository>(
@@ -187,6 +200,12 @@ extension GetItInjectableX on _i174.GetIt {
           updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
           authService: gh<_i377.AuthService>(),
         ));
+    gh.factory<_i652.GetNearbyPlayersUseCase>(
+        () => _i652.GetNearbyPlayersUseCase(gh<_i529.IExploreRepository>()));
+    gh.factory<_i1073.GetRecommendedPlayersUseCase>(() =>
+        _i1073.GetRecommendedPlayersUseCase(gh<_i529.IExploreRepository>()));
+    gh.factory<_i68.SearchPlayersUseCase>(
+        () => _i68.SearchPlayersUseCase(gh<_i529.IExploreRepository>()));
     gh.factory<_i12.SplashCubit>(
         () => _i12.SplashCubit(gh<_i377.AuthService>()));
     gh.factory<_i805.GetPostsUsecase>(

@@ -173,4 +173,92 @@ class AccountRemoteSource extends IAccountRemoteSource {
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
     );
   }
+
+  // ========== MEMBER APIs (Scouting API) ==========
+
+  @override
+  Future<Either<AppErrors, AuthResponseModel>> memberRegister(
+      RegisterParam param) async {
+    return await request(
+      converter: (json) => AuthResponseModel.fromJson(json),
+      method: HttpMethod.POST,
+      url: MainAPIS.apiMemberRegister,
+      body: param.toMap(),
+      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+      withAuthentication: false, // Register doesn't need auth token
+      responseValidator: AuthResponseValidator(),
+      enableLogging: true,
+    );
+  }
+
+  @override
+  Future<Either<AppErrors, AuthResponseModel>> memberLogin(
+      LoginParam param) async {
+    return await request(
+      converter: (json) => AuthResponseModel.fromJson(json),
+      method: HttpMethod.POST,
+      url: MainAPIS.apiMemberLogin,
+      body: param.toMap(),
+      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+      withAuthentication: false, // Login doesn't need auth token
+      responseValidator: AuthResponseValidator(),
+      enableLogging: true,
+    );
+  }
+
+  @override
+  Future<Either<AppErrors, MemberProfileModel>> getMe(GetMeParam param) async {
+    return await request(
+      converter: (json) => MemberProfileModel.fromJson(json),
+      method: HttpMethod.GET,
+      url: MainAPIS.apiMemberMe,
+      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+      withAuthentication: true, // Requires authentication
+      enableLogging: false,
+      params: param, // Pass params for caching
+    );
+  }
+
+  @override
+  Future<Either<AppErrors, UpdateProfileResponseModel>> updateProfile(
+      UpdateProfileParam param) async {
+    return await request(
+      converter: (json) => UpdateProfileResponseModel.fromJson(json),
+      method: HttpMethod.POST,
+      url: MainAPIS.apiMemberUpdate,
+      body: param.toMap(),
+      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+      withAuthentication: true, // Requires authentication
+      enableLogging: true,
+      params: param, // Pass params for cache invalidation
+    );
+  }
+
+  @override
+  Future<Either<AppErrors, MembersListModel>> listMembers(
+      ListMembersParam param) async {
+    return await request(
+      converter: (json) => MembersListModel.fromJson(json),
+      method: HttpMethod.GET,
+      url: MainAPIS.apiMemberList,
+      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+      withAuthentication: true, // Requires authentication
+      enableLogging: false,
+      params: param, // Pass params for caching
+    );
+  }
+
+  @override
+  Future<Either<AppErrors, MemberProfileModel>> showMember(
+      ShowMemberParam param) async {
+    return await request(
+      converter: (json) => MemberProfileModel.fromJson(json),
+      method: HttpMethod.GET,
+      url: '${MainAPIS.apiMemberShow}/${param.userId}',
+      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+      withAuthentication: true, // Requires authentication
+      enableLogging: false,
+      params: param, // Pass params for caching
+    );
+  }
 }

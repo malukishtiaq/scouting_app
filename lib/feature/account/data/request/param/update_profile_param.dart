@@ -1,55 +1,42 @@
-import 'package:scouting_app/core/common/extensions/string_extensions.dart';
-import 'package:scouting_app/core/params/base_params.dart';
+import '../../../../../core/params/base_params.dart';
 
+/// Parameter for updating user profile
 class UpdateProfileParam extends BaseParams {
-  final int id;
-  final String? socialFacebookId;
-  final String? socialFacebookToken;
-  final String? socialLinkedInId;
-  final String? socialLinkedInToken;
-  final String? socialGmailId;
-  final String? socialAppleId;
-  final String? countryCode;
-  final String? country;
-  final String? phoneNo;
-  final String? firstName;
-  final String? lastName;
-  final String? email;
+  final String? name;
+  final int? age;
+  final double? weight;
+  final double? height;
+  final String? primaryPosition;
+  final String? preferredFoot;
 
   UpdateProfileParam({
-    required this.id,
-    this.socialFacebookId,
-    this.socialFacebookToken,
-    this.socialLinkedInId,
-    this.socialLinkedInToken,
-    this.socialGmailId,
-    this.socialAppleId,
-    this.countryCode,
-    this.country,
-    this.phoneNo,
-    this.firstName,
-    this.lastName,
-    this.email,
+    this.name,
+    this.age,
+    this.weight,
+    this.height,
+    this.primaryPosition,
+    this.preferredFoot,
+    super.cancelToken,
   });
 
   @override
-  Map<String, dynamic> toMap() => {
-        'Id': id,
-        if (socialFacebookId.isNotEmptyNorNull)
-          'SocialFacebookId': socialFacebookId,
-        if (socialFacebookToken.isNotEmptyNorNull)
-          'SocialFacebookToken': socialFacebookToken,
-        if (socialLinkedInId.isNotEmptyNorNull)
-          'SocialLinkedInId': socialLinkedInId,
-        if (socialLinkedInToken.isNotEmptyNorNull)
-          'SocialLinkedInToken': socialLinkedInToken,
-        if (socialGmailId.isNotEmptyNorNull) 'SocialGmailId': socialGmailId,
-        if (socialAppleId.isNotEmptyNorNull) 'SocialAppleId': socialAppleId,
-        if (countryCode.isNotEmptyNorNull) 'CountryCode': countryCode,
-        if (country.isNotEmptyNorNull) 'Country': country,
-        if (phoneNo.isNotEmptyNorNull) 'PhoneNo': phoneNo,
-        if (firstName.isNotEmptyNorNull) 'FirstName': firstName,
-        if (lastName.isNotEmptyNorNull) 'LastName': lastName,
-        if (email.isNotEmptyNorNull) 'Email': email,
-      };
+  Map<String, dynamic> toMap() {
+    return {
+      if (name != null) 'name': name,
+      if (age != null) 'age': age,
+      if (weight != null) 'weight': weight,
+      if (height != null) 'height': height,
+      if (primaryPosition != null) 'primary_position': primaryPosition,
+      if (preferredFoot != null) 'preferred_foot': preferredFoot,
+    };
+  }
+
+  @override
+  bool get isMutation => true; // Updating profile is a mutation
+
+  @override
+  List<String>? get invalidateCaches => ['profile']; // Invalidate profile cache
+
+  @override
+  String? get featureName => 'profile'; // Use profile cache feature
 }

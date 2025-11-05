@@ -264,4 +264,30 @@ class MainAPIS {
 
   /// Default currency symbols to fetch
   static const String currencySymbols = "EUR,GBP,JPY,AUD,CAD,CHF,CNY,INR";
+
+  // ==========================================
+  // NEW SCOUTING API ENDPOINTS
+  // ==========================================
+  
+  // Comments API
+  static const String apiCreateComment = "api/comments"; // POST /api/comments/{post_id}
+  static const String apiUserComments = "api/posts/comments"; // GET /api/posts/comments
+  static const String apiPostComments = "api/posts"; // GET /api/posts/{post_id}/comments
+  
+  // Likes API
+  static const String apiToggleLike = "api/likes"; // POST /api/likes/{post_id}
+  static const String apiUserLikes = "api/posts/likes"; // GET /api/posts/likes
+  static const String apiPostLikes = "api/posts"; // GET /api/posts/{post_id}/likes
+  
+  // Member API
+  static const String apiMemberRegister = "api/members/register"; // POST /api/members/register
+  static const String apiMemberLogin = "api/members/login"; // POST /api/members/login
+  static const String apiMemberMe = "api/members/me"; // GET /api/members/me
+  static const String apiMemberUpdate = "api/members/update"; // POST /api/members/update
+  static const String apiMemberList = "api/members"; // GET /api/members
+  static const String apiMemberShow = "api/members"; // GET /api/members/{user_id}
+  
+  // Posts API
+  static const String apiPostsList = "api/posts"; // GET /api/posts
+  static const String apiPostsShow = "api/posts"; // GET /api/posts/{post_id}
 }

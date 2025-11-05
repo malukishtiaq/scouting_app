@@ -16,7 +16,12 @@ import '../../data/request/param/resend_code_param.dart';
 import '../../data/request/param/login_param.dart';
 import '../../data/request/param/love_loop/delete_account_param.dart';
 import '../../data/request/param/social_login_param.dart';
+import '../../data/request/param/get_me_param.dart';
+import '../../data/request/param/update_profile_param.dart';
+import '../../data/request/param/list_members_param.dart';
+import '../../data/request/param/show_member_param.dart';
 import '../../domain/usecase/verify_account_usecase.dart';
+import '../entity/member_response_entity.dart';
 import '../../../../core/background/isolate_background_service.dart';
 import '../../../../di/service_locator.dart';
 import '../../../../core/background/tasks_registrar.dart';
@@ -58,4 +63,16 @@ abstract class IAccountRepository extends Repository {
       SocialLoginParam param);
 
   Future<Result<AppErrors, EmptyResponse>> logout(LogoutParam param);
+  
+  // Member APIs (Scouting API)
+  Future<Result<AppErrors, AuthResponseEntity>> memberRegister(
+      RegisterParam param);
+  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(LoginParam param);
+  Future<Result<AppErrors, MemberProfileEntity>> getMe(GetMeParam param);
+  Future<Result<AppErrors, UpdateProfileResponseEntity>> updateProfile(
+      UpdateProfileParam param);
+  Future<Result<AppErrors, MembersListEntity>> listMembers(
+      ListMembersParam param);
+  Future<Result<AppErrors, MemberProfileEntity>> showMember(
+      ShowMemberParam param);
 }

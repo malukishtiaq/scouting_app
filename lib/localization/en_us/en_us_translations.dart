@@ -745,4 +745,11 @@ final Map<String, String> enUs = {
   "upload_coming_soon": "Upload feature coming soon",
   "games_coming_soon": "Games feature coming soon",
   "discover_coming_soon": "Discover feature coming soon",
+
+  // Explore Screen
+  "players_near_you": "Players near you",
+  "explore_search_hint": "Search for players...",
+  "explore_no_players": "No players found",
+  "explore_no_players_desc": "Try adjusting your search or check back later",
+  "go_to_explore": "Go to Explore",
 };

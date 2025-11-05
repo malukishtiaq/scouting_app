@@ -22,6 +22,7 @@ import '../../feature/settings/presentation/screen/features/movies_screen.dart';
 import '../../feature/settings/presentation/screen/features/games_screen.dart';
 import '../../feature/settings/presentation/screen/features/live_videos_screen.dart';
 import '../../feature/settings/presentation/screen/features/advertising_screen.dart';
+import '../../feature/explore/presentation/screen/explore_screen.dart';
 
 import '../constants/enums/route_type.dart';
 import '../ui/screens/base_screen.dart';
@@ -165,6 +166,12 @@ class NavigationRoute {
       case AdvertisingScreen.routeName:
         return FadeRoute(
           page: AdvertisingScreen(param: AdvertisingScreenParam()),
+          settings: settings,
+        );
+
+      case ExploreScreen.routeName:
+        return FadeRoute(
+          page: const ExploreScreen(),
           settings: settings,
         );
 
