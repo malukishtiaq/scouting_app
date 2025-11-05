@@ -21,21 +21,21 @@ class CommentDataEntity extends BaseEntity {
   final int id;
   final int postId;
   final int userId;
-  final String userName;
-  final String userAvatar;
-  final String comment;
+  final String content;
+  final int? commentId; // Parent comment ID (null = top-level)
   final String createdAt;
-  final int? parentCommentId;
+  final String updatedAt;
+  final List<CommentDataEntity>? replies; // Nested replies
 
   CommentDataEntity({
     required this.id,
     required this.postId,
     required this.userId,
-    required this.userName,
-    required this.userAvatar,
-    required this.comment,
+    required this.content,
+    this.commentId,
     required this.createdAt,
-    this.parentCommentId,
+    required this.updatedAt,
+    this.replies,
   });
 
   @override
@@ -43,11 +43,11 @@ class CommentDataEntity extends BaseEntity {
         id,
         postId,
         userId,
-        userName,
-        userAvatar,
-        comment,
+        content,
+        commentId,
         createdAt,
-        parentCommentId,
+        updatedAt,
+        replies,
       ];
 }
 

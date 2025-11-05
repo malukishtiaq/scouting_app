@@ -46,21 +46,21 @@ class CommentDataModel extends BaseModel<CommentDataEntity> {
   final int id;
   final int postId;
   final int userId;
-  final String userName;
-  final String userAvatar;
-  final String comment;
+  final String content;
+  final int? commentId; // Parent comment ID (null = top-level)
   final String createdAt;
-  final int? parentCommentId;
+  final String updatedAt;
+  final List<CommentDataModel>? replies; // Nested replies
 
   CommentDataModel({
     required this.id,
     required this.postId,
     required this.userId,
-    required this.userName,
-    required this.userAvatar,
-    required this.comment,
+    required this.content,
+    this.commentId,
     required this.createdAt,
-    this.parentCommentId,
+    required this.updatedAt,
+    this.replies,
   });
 
   factory CommentDataModel.fromJson(Map<String, dynamic> json) {
@@ -68,11 +68,13 @@ class CommentDataModel extends BaseModel<CommentDataEntity> {
       id: json['id'] ?? 0,
       postId: json['post_id'] ?? 0,
       userId: json['user_id'] ?? 0,
-      userName: json['user_name'] ?? '',
-      userAvatar: json['user_avatar'] ?? '',
-      comment: json['comment'] ?? '',
+      content: json['content'] ?? '',
+      commentId: json['comment_id'],
       createdAt: json['created_at'] ?? '',
-      parentCommentId: json['parent_comment_id'],
+      updatedAt: json['updated_at'] ?? '',
+      replies: (json['replies'] as List<dynamic>?)
+          ?.map((e) => CommentDataModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 
@@ -81,11 +83,11 @@ class CommentDataModel extends BaseModel<CommentDataEntity> {
       'id': id,
       'post_id': postId,
       'user_id': userId,
-      'user_name': userName,
-      'user_avatar': userAvatar,
-      'comment': comment,
+      'content': content,
+      if (commentId != null) 'comment_id': commentId,
       'created_at': createdAt,
-      if (parentCommentId != null) 'parent_comment_id': parentCommentId,
+      'updated_at': updatedAt,
+      if (replies != null) 'replies': replies!.map((e) => e.toJson()).toList(),
     };
   }
 
@@ -95,11 +97,11 @@ class CommentDataModel extends BaseModel<CommentDataEntity> {
       id: id,
       postId: postId,
       userId: userId,
-      userName: userName,
-      userAvatar: userAvatar,
-      comment: comment,
+      content: content,
+      commentId: commentId,
       createdAt: createdAt,
-      parentCommentId: parentCommentId,
+      updatedAt: updatedAt,
+      replies: replies?.map((e) => e.toEntity()).toList(),
     );
   }
 }
