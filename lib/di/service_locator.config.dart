@@ -35,12 +35,30 @@ import '../core/socket/socket_service_interface.dart' as _i740;
 import '../feature/account/data/datasource/iaccount_remote.dart' as _i494;
 import '../feature/account/domain/repository/iaccount_repository.dart' as _i462;
 import '../feature/account/domain/usecase/delete_account_usecase.dart' as _i101;
+import '../feature/account/domain/usecase/get_me_usecase.dart' as _i1043;
+import '../feature/account/domain/usecase/list_members_usecase.dart' as _i813;
 import '../feature/account/domain/usecase/login_usecase.dart' as _i256;
 import '../feature/account/domain/usecase/logout_usecase.dart' as _i942;
+import '../feature/account/domain/usecase/member_login_usecase.dart' as _i267;
+import '../feature/account/domain/usecase/member_register_usecase.dart'
+    as _i314;
 import '../feature/account/domain/usecase/resgister_usecase.dart' as _i831;
+import '../feature/account/domain/usecase/show_member_usecase.dart' as _i741;
 import '../feature/account/domain/usecase/social_login_usecase.dart' as _i983;
 import '../feature/account/domain/usecase/two_factor_usecase.dart' as _i108;
+import '../feature/account/domain/usecase/update_profile_usecase.dart' as _i672;
 import '../feature/account/domain/usecase/verify_account_usecase.dart' as _i894;
+import '../feature/comments/data/datasource/icomments_remote.dart' as _i753;
+import '../feature/comments/domain/repository/comments_repository.dart'
+    as _i1000;
+import '../feature/comments/domain/repository/icomments_repository.dart'
+    as _i141;
+import '../feature/comments/domain/usecase/create_comment_usecase.dart'
+    as _i234;
+import '../feature/comments/domain/usecase/get_post_comments_usecase.dart'
+    as _i109;
+import '../feature/comments/domain/usecase/get_user_comments_usecase.dart'
+    as _i597;
 import '../feature/explore/data/datasource/iexplore_remote.dart' as _i484;
 import '../feature/explore/data/repository/explore_repository.dart' as _i991;
 import '../feature/explore/domain/repository/iexplore_repository.dart' as _i529;
@@ -50,6 +68,12 @@ import '../feature/explore/domain/usecase/get_recommended_players_usecase.dart'
     as _i1073;
 import '../feature/explore/domain/usecase/search_players_usecase.dart' as _i68;
 import '../feature/explore/presentation/cubit/explore_cubit.dart' as _i215;
+import '../feature/likes/data/datasource/ilikes_remote.dart' as _i591;
+import '../feature/likes/domain/repository/ilikes_repository.dart' as _i1020;
+import '../feature/likes/domain/repository/likes_repository.dart' as _i548;
+import '../feature/likes/domain/usecase/get_post_likes_usecase.dart' as _i805;
+import '../feature/likes/domain/usecase/get_user_likes_usecase.dart' as _i779;
+import '../feature/likes/domain/usecase/toggle_like_usecase.dart' as _i686;
 import '../feature/posts/data/datasources/iposts_remote_datasource.dart'
     as _i177;
 import '../feature/posts/data/datasources/posts_remote_datasource.dart'
@@ -80,6 +104,16 @@ import '../feature/reels/domain/repositories/reels_repository.dart' as _i989;
 import '../feature/reels/domain/usecase/get_more_reels_usecase.dart' as _i966;
 import '../feature/reels/domain/usecase/get_reels_usecase.dart' as _i850;
 import '../feature/reels/presentation/cubit/reels_cubit.dart' as _i23;
+import '../feature/scouting_posts/data/datasource/iscouting_posts_remote.dart'
+    as _i462;
+import '../feature/scouting_posts/domain/repository/iscouting_posts_repository.dart'
+    as _i524;
+import '../feature/scouting_posts/domain/repository/scouting_posts_repository.dart'
+    as _i142;
+import '../feature/scouting_posts/domain/usecase/get_post_by_id_usecase.dart'
+    as _i338;
+import '../feature/scouting_posts/domain/usecase/get_posts_usecase.dart'
+    as _i622;
 import '../feature/settings/presentation/state_m/my_profile/my_profile_cubit.dart'
     as _i525;
 import '../feature/splash/presentation/state_m/splash_cubit.dart' as _i12;
@@ -119,8 +153,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1004.HttpClient>(() => _i1004.HttpClient());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.factory<_i737.IReelsRemoteSource>(() => _i914.ReelsRemoteSource());
+    gh.singleton<_i524.IScoutingPostsRepository>(() =>
+        _i142.ScoutingPostsRepository(gh<_i462.IScoutingPostsRemoteSource>()));
     gh.factory<_i494.IAccountRemoteSource>(() => _i494.AccountRemoteSource());
     gh.factory<_i484.IExploreRemoteSource>(() => _i484.ExploreRemoteSource());
+    gh.singleton<_i141.ICommentsRepository>(
+        () => _i1000.CommentsRepository(gh<_i753.ICommentsRemoteSource>()));
     gh.singleton<_i740.ISocketService>(() => _i593.SocketService(
           gh<_i974.Logger>(),
           gh<_i570.NotificationService>(),
@@ -138,6 +176,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i989.ReelsRepository(gh<_i737.IReelsRemoteSource>()));
     gh.factory<_i17.IUserProfileRepository>(() =>
         _i517.UserProfileRepository(gh<_i228.IUserProfileRemoteSource>()));
+    gh.singleton<_i1020.ILikesRepository>(
+        () => _i548.LikesRepository(gh<_i591.ILikesRemoteSource>()));
     gh.singleton<_i788.BackgroundTasksRegistrar>(
         () => _i788.BackgroundTasksRegistrar(gh<_i699.NoopBackgroundApi>()));
     gh.factory<_i53.IPostsRepository>(
@@ -173,6 +213,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i855.UpdateAvatarUseCase(gh<_i17.IUserProfileRepository>()));
     gh.singleton<_i13.UpdateCoverUseCase>(
         () => _i13.UpdateCoverUseCase(gh<_i17.IUserProfileRepository>()));
+    gh.singleton<_i234.CreateCommentUsecase>(
+        () => _i234.CreateCommentUsecase(gh<_i141.ICommentsRepository>()));
+    gh.singleton<_i109.GetPostCommentsUsecase>(
+        () => _i109.GetPostCommentsUsecase(gh<_i141.ICommentsRepository>()));
+    gh.singleton<_i597.GetUserCommentsUsecase>(
+        () => _i597.GetUserCommentsUsecase(gh<_i141.ICommentsRepository>()));
     gh.singleton<_i505.GenericBackgroundIntegrationTest>(() =>
         _i505.GenericBackgroundIntegrationTest(
             gh<_i821.GenericBackgroundService>()));
@@ -194,12 +240,28 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i942.LogoutUsecase(gh<_i462.IAccountRepository>()));
     gh.singleton<_i831.ResgisterUsecase>(
         () => _i831.ResgisterUsecase(gh<_i462.IAccountRepository>()));
+    gh.singleton<_i1043.GetMeUsecase>(
+        () => _i1043.GetMeUsecase(gh<_i462.IAccountRepository>()));
+    gh.singleton<_i813.ListMembersUsecase>(
+        () => _i813.ListMembersUsecase(gh<_i462.IAccountRepository>()));
+    gh.singleton<_i267.MemberLoginUsecase>(
+        () => _i267.MemberLoginUsecase(gh<_i462.IAccountRepository>()));
+    gh.singleton<_i314.MemberRegisterUsecase>(
+        () => _i314.MemberRegisterUsecase(gh<_i462.IAccountRepository>()));
+    gh.singleton<_i741.ShowMemberUsecase>(
+        () => _i741.ShowMemberUsecase(gh<_i462.IAccountRepository>()));
+    gh.singleton<_i672.UpdateProfileUsecase>(
+        () => _i672.UpdateProfileUsecase(gh<_i462.IAccountRepository>()));
     gh.factory<_i525.MyProfileCubit>(() => _i525.MyProfileCubit(
           getUserProfileUseCase: gh<_i714.GetUserProfileUseCase>(),
           updateAvatarUseCase: gh<_i855.UpdateAvatarUseCase>(),
           updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
           authService: gh<_i377.AuthService>(),
         ));
+    gh.singleton<_i622.GetPostsUsecase>(
+        () => _i622.GetPostsUsecase(gh<_i524.IScoutingPostsRepository>()));
+    gh.singleton<_i338.GetPostByIdUsecase>(
+        () => _i338.GetPostByIdUsecase(gh<_i524.IScoutingPostsRepository>()));
     gh.factory<_i652.GetNearbyPlayersUseCase>(
         () => _i652.GetNearbyPlayersUseCase(gh<_i529.IExploreRepository>()));
     gh.factory<_i1073.GetRecommendedPlayersUseCase>(() =>
@@ -232,6 +294,12 @@ extension GetItInjectableX on _i174.GetIt {
           getUserPagesUseCase: gh<_i714.GetUserPagesUseCase>(),
           getUserGroupsUseCase: gh<_i714.GetUserGroupsUseCase>(),
         ));
+    gh.singleton<_i805.GetPostLikesUsecase>(
+        () => _i805.GetPostLikesUsecase(gh<_i1020.ILikesRepository>()));
+    gh.singleton<_i779.GetUserLikesUsecase>(
+        () => _i779.GetUserLikesUsecase(gh<_i1020.ILikesRepository>()));
+    gh.singleton<_i686.ToggleLikeUsecase>(
+        () => _i686.ToggleLikeUsecase(gh<_i1020.ILikesRepository>()));
     gh.factory<_i23.ReelsCubit>(() => _i23.ReelsCubit(
           getReelsUsecase: gh<_i850.GetReelsUsecase>(),
           getMoreReelsUsecase: gh<_i966.GetMoreReelsUsecase>(),
