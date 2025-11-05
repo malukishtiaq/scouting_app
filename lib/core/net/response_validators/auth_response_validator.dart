@@ -15,7 +15,7 @@ class AuthResponseValidator extends ResponseValidator {
       return;
     }
 
-    // Check api_status field in response body for authentication responses
+    // Check api_status field in response body for WoWonder API authentication responses
     if (response.data != null && response.data["api_status"] != null) {
       final apiStatus = response.data["api_status"].toString();
 
@@ -28,6 +28,24 @@ class AuthResponseValidator extends ResponseValidator {
         error = AppErrors.customError(
           message: errorText,
           errors: response.data["errors"] ?? {"api_status": apiStatus},
+        );
+        errorMessage = errorText;
+        return;
+      }
+    }
+
+    // Check success field for Scouting API authentication responses
+    if (response.data != null && response.data["success"] != null) {
+      final success = response.data["success"];
+
+      // If success is false, check for error message
+      if (success == false) {
+        final errorText = response.data["message"] ?? "Authentication failed";
+        final errors = response.data["errors"] ?? {"error": errorText};
+
+        error = AppErrors.customError(
+          message: errorText,
+          errors: errors,
         );
         errorMessage = errorText;
         return;

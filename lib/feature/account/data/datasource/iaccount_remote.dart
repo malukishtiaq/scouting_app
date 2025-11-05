@@ -9,6 +9,7 @@ import '../../../../core/net/create_model_interceptor/primative_create_model_int
 import '../../../../core/net/response_validators/auth_response_validator.dart';
 import '../../../../mainapis.dart';
 import '../request/model/login_response_model.dart';
+import '../request/model/auth_response_model.dart';
 import '../request/param/login_param.dart';
 import '../request/param/love_loop/delete_account_param.dart';
 import '../request/param/love_loop/logout_param.dart';
