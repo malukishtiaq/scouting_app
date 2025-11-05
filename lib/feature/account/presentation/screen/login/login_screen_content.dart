@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import '../../../../../core/navigation/nav.dart';
 import '../../../../../core/constants/colors.dart';
@@ -7,6 +8,7 @@ import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/theme/app_dimensions.dart';
 import '../../../../../localization/app_localization.dart';
 import '../../../../../core/services/social_login_service.dart';
+import '../../state_m/account/account_cubit.dart';
 import '../register/register_screen.dart';
 
 class LoginScreenContent extends StatefulWidget {
@@ -32,9 +34,7 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
   void initState() {
     super.initState();
     _setupFocusListeners();
-    // Pre-fill with admin credentials for testing
-    _emailController.text = 'admin';
-    _passwordController.text = 'admin';
+    // No pre-filled credentials - users must enter their own
   }
 
   @override
@@ -66,26 +66,17 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
       return;
     }
 
-    // 🔧 Hardcoded credentials for testing (bypassed)
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
 
-    setState(() {
-      _isLoading = true;
-    });
-
-    try {
-      // 🚀 BYPASS LOGIN - Go directly to home page
-      await Future.delayed(
-          const Duration(milliseconds: 500)); // Simulate loading
-
-      // Navigate directly to home page
-      Nav.to('/HomeTabbedScreen', arguments: {});
-    } catch (e) {
-      _showErrorSnackBar('${'login_error'.tr}: $e');
-    } finally {
-      setState(() {
-        _isLoading = false;
-      });
+    // Validate inputs
+    if (email.isEmpty || password.isEmpty) {
+      _showErrorSnackBar('please_fill_all_fields'.tr);
+      return;
     }
+
+    // Call the actual login API through AccountCubit
+    BlocProvider.of<AccountCubit>(context).login(email, password);
   }
 
   void _showErrorSnackBar(String message) {
