@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import '../../../../../core/navigation/nav.dart';
 import '../../../../../core/constants/colors.dart';
@@ -8,8 +7,6 @@ import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/theme/app_dimensions.dart';
 import '../../../../../localization/app_localization.dart';
 import '../../../../../core/services/social_login_service.dart';
-import '../../state_m/account/account_cubit.dart';
-import '../../../data/request/param/social_login_param.dart';
 import '../register/register_screen.dart';
 
 class LoginScreenContent extends StatefulWidget {

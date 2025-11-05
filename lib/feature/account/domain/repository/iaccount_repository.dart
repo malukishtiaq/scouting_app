@@ -1,3 +1,4 @@
+import '../../data/request/model/auth_response_model.dart';
 import '../../domain/entity/auth_response_entity.dart';
 import '../../data/request/model/auth_response_model.dart';
 import 'package:injectable/injectable.dart';

@@ -58,6 +58,10 @@ import '../feature/likes/domain/repository/likes_repository.dart' as _i548;
 import '../feature/likes/domain/usecase/get_post_likes_usecase.dart' as _i805;
 import '../feature/likes/domain/usecase/get_user_likes_usecase.dart' as _i779;
 import '../feature/likes/domain/usecase/toggle_like_usecase.dart' as _i686;
+import '../feature/player_stats/data/datasources/iplayer_remote_datasource.dart'
+    as _i495;
+import '../feature/player_stats/domain/repositories/iplayer_repository.dart'
+    as _i834;
 import '../feature/posts/data/datasources/iposts_remote_datasource.dart'
     as _i177;
 import '../feature/posts/data/datasources/posts_remote_datasource.dart'
@@ -191,6 +195,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i855.UpdateAvatarUseCase(gh<_i17.IUserProfileRepository>()));
     gh.singleton<_i13.UpdateCoverUseCase>(
         () => _i13.UpdateCoverUseCase(gh<_i17.IUserProfileRepository>()));
+    gh.factory<_i834.IPlayerRepository>(
+        () => _i834.PlayerRepository(gh<_i495.IPlayerRemoteDatasource>()));
     gh.singleton<_i141.ICommentsRepository>(
         () => _i1000.CommentsRepository(gh<_i753.ICommentsRemoteSource>()));
     gh.singleton<_i234.CreateCommentUsecase>(

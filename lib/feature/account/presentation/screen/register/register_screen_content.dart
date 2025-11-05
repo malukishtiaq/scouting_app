@@ -6,8 +6,6 @@ import '../../../../../core/theme/app_dimensions.dart';
 import '../../../../../localization/app_localization.dart';
 import '../../../../../core/services/social_login_service.dart';
 import '../../state_m/account/account_cubit.dart';
-import '../../../data/request/param/love_loop/register_param.dart';
-import '../../../data/request/param/social_login_param.dart';
 
 class RegisterScreenContent extends StatefulWidget {
   const RegisterScreenContent({super.key});
