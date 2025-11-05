@@ -25,6 +25,8 @@ import '../request/param/get_me_param.dart';
 import '../request/param/update_profile_param.dart';
 import '../request/param/list_members_param.dart';
 import '../request/param/show_member_param.dart';
+import '../request/param/scouting_register_param.dart';
+import '../request/param/scouting_login_param.dart';
 import '../request/model/member_response_model.dart';
 import '../../domain/usecase/verify_account_usecase.dart';
 
@@ -56,8 +58,9 @@ abstract class IAccountRemoteSource extends RemoteDataSource {
 
   // Member APIs (Scouting API)
   Future<Either<AppErrors, AuthResponseModel>> memberRegister(
-      RegisterParam param);
-  Future<Either<AppErrors, AuthResponseModel>> memberLogin(LoginParam param);
+      ScoutingRegisterParam param);
+  Future<Either<AppErrors, AuthResponseModel>> memberLogin(
+      ScoutingLoginParam param);
   Future<Either<AppErrors, MemberProfileModel>> getMe(GetMeParam param);
   Future<Either<AppErrors, UpdateProfileResponseModel>> updateProfile(
       UpdateProfileParam param);

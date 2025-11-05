@@ -178,7 +178,7 @@ class AccountRemoteSource extends IAccountRemoteSource {
 
   @override
   Future<Either<AppErrors, AuthResponseModel>> memberRegister(
-      RegisterParam param) async {
+      ScoutingRegisterParam param) async {
     return await request(
       converter: (json) => AuthResponseModel.fromJson(json),
       method: HttpMethod.POST,
@@ -193,7 +193,7 @@ class AccountRemoteSource extends IAccountRemoteSource {
 
   @override
   Future<Either<AppErrors, AuthResponseModel>> memberLogin(
-      LoginParam param) async {
+      ScoutingLoginParam param) async {
     return await request(
       converter: (json) => AuthResponseModel.fromJson(json),
       method: HttpMethod.POST,
