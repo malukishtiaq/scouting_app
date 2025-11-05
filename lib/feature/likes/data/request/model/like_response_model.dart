@@ -1,5 +1,6 @@
 import 'package:scouting_app/core/models/base_model.dart';
 import 'package:scouting_app/feature/likes/domain/entity/like_response_entity.dart';
+import 'package:scouting_app/feature/account/data/request/model/member_response_model.dart';
 
 /// Like Response Model - successful like toggle
 class LikeResponseModel extends BaseModel<LikeResponseEntity> {
@@ -39,64 +40,12 @@ class LikeResponseModel extends BaseModel<LikeResponseEntity> {
   }
 }
 
-/// Like Data Model
-class LikeDataModel extends BaseModel<LikeDataEntity> {
-  final int id;
-  final int postId;
-  final int userId;
-  final String userName;
-  final String userAvatar;
-  final String createdAt;
-
-  LikeDataModel({
-    required this.id,
-    required this.postId,
-    required this.userId,
-    required this.userName,
-    required this.userAvatar,
-    required this.createdAt,
-  });
-
-  factory LikeDataModel.fromJson(Map<String, dynamic> json) {
-    return LikeDataModel(
-      id: json['id'] ?? 0,
-      postId: json['post_id'] ?? 0,
-      userId: json['user_id'] ?? 0,
-      userName: json['user_name'] ?? '',
-      userAvatar: json['user_avatar'] ?? '',
-      createdAt: json['created_at'] ?? '',
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'post_id': postId,
-      'user_id': userId,
-      'user_name': userName,
-      'user_avatar': userAvatar,
-      'created_at': createdAt,
-    };
-  }
-
-  @override
-  LikeDataEntity toEntity() {
-    return LikeDataEntity(
-      id: id,
-      postId: postId,
-      userId: userId,
-      userName: userName,
-      userAvatar: userAvatar,
-      createdAt: createdAt,
-    );
-  }
-}
-
 /// Likes List Response Model
+/// Returns list of members who liked a post
 class LikesListModel extends BaseModel<LikesListEntity> {
   final bool success;
   final String message;
-  final List<LikeDataModel> data;
+  final List<MemberDataModel> data; // Members who liked the post
 
   LikesListModel({
     required this.success,
@@ -109,7 +58,7 @@ class LikesListModel extends BaseModel<LikesListEntity> {
       success: json['success'] ?? false,
       message: json['message'] ?? '',
       data: (json['data'] as List<dynamic>?)
-              ?.map((e) => LikeDataModel.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => MemberDataModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
     );
