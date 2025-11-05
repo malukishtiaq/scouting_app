@@ -270,24 +270,24 @@ class MainAPIS {
   // ==========================================
   
   // Comments API
-  static const String apiCreateComment = "api/comments"; // POST /api/comments/{post_id}
-  static const String apiUserComments = "api/posts/comments"; // GET /api/posts/comments
-  static const String apiPostComments = "api/posts"; // GET /api/posts/{post_id}/comments
+  static const String apiCreateComment = "comments"; // POST /api/comments/{post_id}
+  static const String apiUserComments = "posts/comments"; // GET /api/posts/comments
+  static const String apiPostComments = "posts"; // GET /api/posts/{post_id}/comments
   
   // Likes API
-  static const String apiToggleLike = "api/likes"; // POST /api/likes/{post_id}
-  static const String apiUserLikes = "api/posts/likes"; // GET /api/posts/likes
-  static const String apiPostLikes = "api/posts"; // GET /api/posts/{post_id}/likes
+  static const String apiToggleLike = "likes"; // POST /api/likes/{post_id}
+  static const String apiUserLikes = "posts/likes"; // GET /api/posts/likes
+  static const String apiPostLikes = "posts"; // GET /api/posts/{post_id}/likes
   
   // Member API
-  static const String apiMemberRegister = "api/register"; // POST /api/register
-  static const String apiMemberLogin = "api/login"; // POST /api/login
-  static const String apiMemberMe = "api/me"; // GET /api/me
-  static const String apiMemberUpdate = "api/profile"; // POST /api/profile
-  static const String apiMemberList = "api/members"; // GET /api/members
-  static const String apiMemberShow = "api/members"; // GET /api/members/{user_id}
+  static const String apiMemberRegister = "register"; // POST /api/register
+  static const String apiMemberLogin = "login"; // POST /api/login
+  static const String apiMemberMe = "me"; // GET /api/me
+  static const String apiMemberUpdate = "profile"; // POST /api/profile
+  static const String apiMemberList = "members"; // GET /api/members
+  static const String apiMemberShow = "members"; // GET /api/members/{user_id}
   
   // Posts API
-  static const String apiPostsList = "api/posts"; // GET /api/posts
-  static const String apiPostsShow = "api/posts"; // GET /api/posts/{post_id}
+  static const String apiPostsList = "posts"; // GET /api/posts
+  static const String apiPostsShow = "posts"; // GET /api/posts/{post_id}
 }
