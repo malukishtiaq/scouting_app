@@ -3,10 +3,10 @@ part of 'iaccount_remote.dart';
 @Injectable(as: IAccountRemoteSource)
 class AccountRemoteSource extends IAccountRemoteSource {
   @override
-  Future<Either<AppErrors, AuthResponseModel>> login(LoginParam param) async {
-    return await request(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> login(LoginParam param) async {
+    return await request<WoWonder.AuthResponseModel>(
       converter: (json) =>
-          AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
+          WoWonder.AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
       method: HttpMethod.POST,
       url: MainAPIS.apiAuth,
       body: param.toMap(),
@@ -19,22 +19,22 @@ class AccountRemoteSource extends IAccountRemoteSource {
   }
 
   @override
-  Future<Either<AppErrors, AuthResponseModel>> resgister(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> resgister(
       RegisterParam param) async {
-    return await request(
+    return await request<WoWonder.AuthResponseModel>(
       converter: (json) {
         // Handle response like Xamarin - check api_status first
         final apiStatus = json["api_status"]?.toString() ?? "400";
 
         switch (apiStatus) {
           case "200": // Success
-            return AuthResponseModel.fromJson(
+            return WoWonder.AuthResponseModel.fromJson(
                 json); // Pass entire JSON like Xamarin
           case "220": // Verification required
-            return AuthResponseModel.fromJson(
+            return WoWonder.AuthResponseModel.fromJson(
                 json); // Pass entire JSON like Xamarin
           default: // Error
-            return AuthResponseModel.fromJson(
+            return WoWonder.AuthResponseModel.fromJson(
                 json); // Pass entire JSON like Xamarin
         }
       },
@@ -136,11 +136,11 @@ class AccountRemoteSource extends IAccountRemoteSource {
   }
 
   @override
-  Future<Either<AppErrors, AuthResponseModel>> twoFactor(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> twoFactor(
       TwoFactorParam param) async {
-    return await request(
+    return await request<WoWonder.AuthResponseModel>(
       converter: (json) =>
-          AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
+          WoWonder.AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
       method: HttpMethod.POST,
       url: 'users/two-factor', // Use a reasonable endpoint for 2FA
       body: param.toMap(),
@@ -149,11 +149,11 @@ class AccountRemoteSource extends IAccountRemoteSource {
   }
 
   @override
-  Future<Either<AppErrors, AuthResponseModel>> verifyAccount(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> verifyAccount(
       VerifyAccountParam param) async {
-    return await request(
+    return await request<WoWonder.AuthResponseModel>(
       converter: (json) =>
-          AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
+          WoWonder.AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
       method: HttpMethod.POST,
       url: 'verify-account/', // Account verification endpoint
       body: param.toMap(),
@@ -162,11 +162,11 @@ class AccountRemoteSource extends IAccountRemoteSource {
   }
 
   @override
-  Future<Either<AppErrors, AuthResponseModel>> socialLogin(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> socialLogin(
       SocialLoginParam param) async {
-    return await request(
+    return await request<WoWonder.AuthResponseModel>(
       converter: (json) =>
-          AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
+          WoWonder.AuthResponseModel.fromJson(json), // Pass entire JSON like Xamarin
       method: HttpMethod.POST,
       url: MainAPIS.apiSocialLogin, // Social login endpoint
       body: param.toMap(),
@@ -177,10 +177,10 @@ class AccountRemoteSource extends IAccountRemoteSource {
   // ========== MEMBER APIs (Scouting API) ==========
 
   @override
-  Future<Either<AppErrors, AuthResponseModel>> memberRegister(
+  Future<Either<AppErrors, Scouting.AuthResponseModel>> memberRegister(
       ScoutingRegisterParam param) async {
-    return await request(
-      converter: (json) => AuthResponseModel.fromJson(json),
+    return await request<Scouting.AuthResponseModel>(
+      converter: (json) => Scouting.AuthResponseModel.fromJson(json),
       method: HttpMethod.POST,
       url: MainAPIS.apiMemberRegister,
       body: param.toMap(),
@@ -192,10 +192,10 @@ class AccountRemoteSource extends IAccountRemoteSource {
   }
 
   @override
-  Future<Either<AppErrors, AuthResponseModel>> memberLogin(
+  Future<Either<AppErrors, Scouting.AuthResponseModel>> memberLogin(
       ScoutingLoginParam param) async {
-    return await request(
-      converter: (json) => AuthResponseModel.fromJson(json),
+    return await request<Scouting.AuthResponseModel>(
+      converter: (json) => Scouting.AuthResponseModel.fromJson(json),
       method: HttpMethod.POST,
       url: MainAPIS.apiMemberLogin,
       body: param.toMap(),

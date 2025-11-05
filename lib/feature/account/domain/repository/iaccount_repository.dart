@@ -20,8 +20,11 @@ import '../../data/request/param/get_me_param.dart';
 import '../../data/request/param/update_profile_param.dart';
 import '../../data/request/param/list_members_param.dart';
 import '../../data/request/param/show_member_param.dart';
+import '../../data/request/param/scouting_register_param.dart';
+import '../../data/request/param/scouting_login_param.dart';
 import '../../domain/usecase/verify_account_usecase.dart';
 import '../entity/member_response_entity.dart';
+import '../entity/auth_response_entity.dart';
 import '../../../../core/background/isolate_background_service.dart';
 import '../../../../di/service_locator.dart';
 import '../../../../core/background/tasks_registrar.dart';
@@ -66,8 +69,8 @@ abstract class IAccountRepository extends Repository {
   
   // Member APIs (Scouting API)
   Future<Result<AppErrors, AuthResponseEntity>> memberRegister(
-      RegisterParam param);
-  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(LoginParam param);
+      ScoutingRegisterParam param);
+  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(ScoutingLoginParam param);
   Future<Result<AppErrors, MemberProfileEntity>> getMe(GetMeParam param);
   Future<Result<AppErrors, UpdateProfileResponseEntity>> updateProfile(
       UpdateProfileParam param);

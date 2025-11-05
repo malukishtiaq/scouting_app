@@ -8,8 +8,8 @@ import '../../../../core/errors/app_errors.dart';
 import '../../../../core/net/create_model_interceptor/primative_create_model_interceptor.dart';
 import '../../../../core/net/response_validators/auth_response_validator.dart';
 import '../../../../mainapis.dart';
-import '../request/model/login_response_model.dart';
-import '../request/model/auth_response_model.dart';
+import '../request/model/login_response_model.dart' as WoWonder;
+import '../request/model/auth_response_model.dart' as Scouting;
 import '../request/param/login_param.dart';
 import '../request/param/love_loop/delete_account_param.dart';
 import '../request/param/love_loop/logout_param.dart';
@@ -37,8 +37,8 @@ abstract class IAccountRemoteSource extends RemoteDataSource {
   /// - AuthResponseModel: Successful login
   /// - AuthMessageModel: Pending verification (2FA)
   /// - ErrorModel: API errors
-  Future<Either<AppErrors, AuthResponseModel>> login(LoginParam param);
-  Future<Either<AppErrors, AuthResponseModel>> resgister(RegisterParam param);
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> login(LoginParam param);
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> resgister(RegisterParam param);
   Future<Either<AppErrors, EmptyResponse>> deleteAccount(
       DeleteAccountParam param);
   Future<Either<AppErrors, EmptyResponse>> resetPassword(
@@ -49,17 +49,17 @@ abstract class IAccountRemoteSource extends RemoteDataSource {
   Future<Either<AppErrors, EmptyResponse>> resendEmail(ResendEmailParam param);
   Future<Either<AppErrors, EmptyResponse>> sendCodeTwoFactor(
       SendCodeTwoFactorParam param);
-  Future<Either<AppErrors, AuthResponseModel>> twoFactor(TwoFactorParam param);
-  Future<Either<AppErrors, AuthResponseModel>> verifyAccount(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> twoFactor(TwoFactorParam param);
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> verifyAccount(
       VerifyAccountParam param);
-  Future<Either<AppErrors, AuthResponseModel>> socialLogin(
+  Future<Either<AppErrors, WoWonder.AuthResponseModel>> socialLogin(
       SocialLoginParam param);
   Future<Either<AppErrors, EmptyResponse>> logout(LogoutParam param);
 
   // Member APIs (Scouting API)
-  Future<Either<AppErrors, AuthResponseModel>> memberRegister(
+  Future<Either<AppErrors, Scouting.AuthResponseModel>> memberRegister(
       ScoutingRegisterParam param);
-  Future<Either<AppErrors, AuthResponseModel>> memberLogin(
+  Future<Either<AppErrors, Scouting.AuthResponseModel>> memberLogin(
       ScoutingLoginParam param);
   Future<Either<AppErrors, MemberProfileModel>> getMe(GetMeParam param);
   Future<Either<AppErrors, UpdateProfileResponseModel>> updateProfile(
