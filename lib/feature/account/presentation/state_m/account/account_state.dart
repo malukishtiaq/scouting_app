@@ -12,7 +12,7 @@ class AccountState with _$AccountState {
   const factory AccountState.registerError(
     AppErrors error,
     VoidCallback callback,
-    RegisterParam param,
+    ScoutingRegisterParam param,
   ) = RegisterError;
 
   const factory AccountState.loginSuccess(
@@ -24,32 +24,8 @@ class AccountState with _$AccountState {
 
   const factory AccountState.profileUpdateSuccess() = ProfileUpdateSuccessState;
 
-  const factory AccountState.resetPasswordSuccess(String email) =
-      ResetPasswordSuccessState;
-
-  const factory AccountState.replacePasswordSuccess(String message) =
-      ReplacePasswordSuccessState;
-
-  const factory AccountState.voucherRedeemedSuccess() =
-      VoucherRedeemedSuccessState;
-
-  const factory AccountState.accountDeletedSuccess() =
-      AccountDeletedSuccessState;
-
   const factory AccountState.showDeleteData() = ShowDeleteDataState;
   const factory AccountState.showDeleteAccount() = ShowDeleteAccountState;
-
-  const factory AccountState.socialMediaSuccess() =
-      SocialGmailLoginRequestSuccessState;
-
-  const factory AccountState.socialFBLoginRequestSuccess() =
-      SocialFBLoginRequestSuccessState;
-
-  const factory AccountState.socialLinkedInLoginRequestSuccess() =
-      SocialLinkedInLoginRequestSuccessState;
-
-  const factory AccountState.socialAppleLoginRequestSuccess() =
-      SocialAppleLoginRequestSuccessState;
 
   const factory AccountState.passwordVisibilityChanged(bool value) =
       PasswordVisibilityChanged;
@@ -67,15 +43,4 @@ class AccountState with _$AccountState {
 
   const factory AccountState.newProfilePicture(XFile? value) =
       NewProfilePicture;
-
-  const factory AccountState.linkedInLoginSuccess() = LinkedInLoginSuccess;
-
-  const factory AccountState.socialLoginSuccess(
-    AuthResponseEntity accountEntity,
-  ) = SocialLoginSuccessState;
-
-  const factory AccountState.socialLoginError(
-    AppErrors error,
-    VoidCallback callback,
-  ) = SocialLoginErrorState;
 }

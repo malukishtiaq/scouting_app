@@ -23,33 +23,20 @@ mixin _$AccountState {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,31 +44,20 @@ mixin _$AccountState {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,31 +65,20 @@ mixin _$AccountState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,24 +93,8 @@ mixin _$AccountState {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -155,9 +104,6 @@ mixin _$AccountState {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -169,22 +115,8 @@ mixin _$AccountState {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -193,9 +125,6 @@ mixin _$AccountState {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -207,20 +136,8 @@ mixin _$AccountState {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -229,9 +146,6 @@ mixin _$AccountState {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -298,33 +212,20 @@ class _$AccountInitImpl implements AccountInit {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return accountInit();
   }
@@ -335,31 +236,20 @@ class _$AccountInitImpl implements AccountInit {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return accountInit?.call();
   }
@@ -370,31 +260,20 @@ class _$AccountInitImpl implements AccountInit {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (accountInit != null) {
@@ -415,24 +294,8 @@ class _$AccountInitImpl implements AccountInit {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -442,9 +305,6 @@ class _$AccountInitImpl implements AccountInit {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return accountInit(this);
   }
@@ -459,22 +319,8 @@ class _$AccountInitImpl implements AccountInit {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -483,9 +329,6 @@ class _$AccountInitImpl implements AccountInit {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return accountInit?.call(this);
   }
@@ -500,20 +343,8 @@ class _$AccountInitImpl implements AccountInit {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -522,9 +353,6 @@ class _$AccountInitImpl implements AccountInit {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (accountInit != null) {
@@ -581,33 +409,20 @@ class _$AccountLoadingImpl implements AccountLoading {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return accountLoading();
   }
@@ -618,31 +433,20 @@ class _$AccountLoadingImpl implements AccountLoading {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return accountLoading?.call();
   }
@@ -653,31 +457,20 @@ class _$AccountLoadingImpl implements AccountLoading {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (accountLoading != null) {
@@ -698,24 +491,8 @@ class _$AccountLoadingImpl implements AccountLoading {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -725,9 +502,6 @@ class _$AccountLoadingImpl implements AccountLoading {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return accountLoading(this);
   }
@@ -742,22 +516,8 @@ class _$AccountLoadingImpl implements AccountLoading {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -766,9 +526,6 @@ class _$AccountLoadingImpl implements AccountLoading {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return accountLoading?.call(this);
   }
@@ -783,20 +540,8 @@ class _$AccountLoadingImpl implements AccountLoading {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -805,9 +550,6 @@ class _$AccountLoadingImpl implements AccountLoading {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (accountLoading != null) {
@@ -909,33 +651,20 @@ class _$AccountErrorImpl implements AccountError {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return accountError(error, callback);
   }
@@ -946,31 +675,20 @@ class _$AccountErrorImpl implements AccountError {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return accountError?.call(error, callback);
   }
@@ -981,31 +699,20 @@ class _$AccountErrorImpl implements AccountError {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (accountError != null) {
@@ -1026,24 +733,8 @@ class _$AccountErrorImpl implements AccountError {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -1053,9 +744,6 @@ class _$AccountErrorImpl implements AccountError {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return accountError(this);
   }
@@ -1070,22 +758,8 @@ class _$AccountErrorImpl implements AccountError {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -1094,9 +768,6 @@ class _$AccountErrorImpl implements AccountError {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return accountError?.call(this);
   }
@@ -1111,20 +782,8 @@ class _$AccountErrorImpl implements AccountError {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -1133,9 +792,6 @@ class _$AccountErrorImpl implements AccountError {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (accountError != null) {
@@ -1162,7 +818,8 @@ abstract class _$$RegisterErrorImplCopyWith<$Res> {
           _$RegisterErrorImpl value, $Res Function(_$RegisterErrorImpl) then) =
       __$$RegisterErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AppErrors error, VoidCallback callback, RegisterParam param});
+  $Res call(
+      {AppErrors error, VoidCallback callback, ScoutingRegisterParam param});
 
   $AppErrorsCopyWith<$Res> get error;
 }
@@ -1180,7 +837,7 @@ class __$$RegisterErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
     Object? callback = null,
-    Object? param = freezed,
+    Object? param = null,
   }) {
     return _then(_$RegisterErrorImpl(
       null == error
@@ -1191,10 +848,10 @@ class __$$RegisterErrorImplCopyWithImpl<$Res>
           ? _value.callback
           : callback // ignore: cast_nullable_to_non_nullable
               as VoidCallback,
-      freezed == param
+      null == param
           ? _value.param
           : param // ignore: cast_nullable_to_non_nullable
-              as RegisterParam,
+              as ScoutingRegisterParam,
     ));
   }
 
@@ -1217,7 +874,7 @@ class _$RegisterErrorImpl implements RegisterError {
   @override
   final VoidCallback callback;
   @override
-  final RegisterParam param;
+  final ScoutingRegisterParam param;
 
   @override
   String toString() {
@@ -1232,12 +889,11 @@ class _$RegisterErrorImpl implements RegisterError {
             (identical(other.error, error) || other.error == error) &&
             (identical(other.callback, callback) ||
                 other.callback == callback) &&
-            const DeepCollectionEquality().equals(other.param, param));
+            (identical(other.param, param) || other.param == param));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, error, callback, const DeepCollectionEquality().hash(param));
+  int get hashCode => Object.hash(runtimeType, error, callback, param);
 
   @JsonKey(ignore: true)
   @override
@@ -1253,33 +909,20 @@ class _$RegisterErrorImpl implements RegisterError {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return registerError(error, callback, param);
   }
@@ -1290,31 +933,20 @@ class _$RegisterErrorImpl implements RegisterError {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return registerError?.call(error, callback, param);
   }
@@ -1325,31 +957,20 @@ class _$RegisterErrorImpl implements RegisterError {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (registerError != null) {
@@ -1370,24 +991,8 @@ class _$RegisterErrorImpl implements RegisterError {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -1397,9 +1002,6 @@ class _$RegisterErrorImpl implements RegisterError {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return registerError(this);
   }
@@ -1414,22 +1016,8 @@ class _$RegisterErrorImpl implements RegisterError {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -1438,9 +1026,6 @@ class _$RegisterErrorImpl implements RegisterError {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return registerError?.call(this);
   }
@@ -1455,20 +1040,8 @@ class _$RegisterErrorImpl implements RegisterError {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -1477,9 +1050,6 @@ class _$RegisterErrorImpl implements RegisterError {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (registerError != null) {
@@ -1493,11 +1063,11 @@ abstract class RegisterError implements AccountState {
   const factory RegisterError(
       final AppErrors error,
       final VoidCallback callback,
-      final RegisterParam param) = _$RegisterErrorImpl;
+      final ScoutingRegisterParam param) = _$RegisterErrorImpl;
 
   AppErrors get error;
   VoidCallback get callback;
-  RegisterParam get param;
+  ScoutingRegisterParam get param;
   @JsonKey(ignore: true)
   _$$RegisterErrorImplCopyWith<_$RegisterErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1574,33 +1144,20 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return loginSuccess(accountEntity);
   }
@@ -1611,31 +1168,20 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return loginSuccess?.call(accountEntity);
   }
@@ -1646,31 +1192,20 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
@@ -1691,24 +1226,8 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -1718,9 +1237,6 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return loginSuccess(this);
   }
@@ -1735,22 +1251,8 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -1759,9 +1261,6 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return loginSuccess?.call(this);
   }
@@ -1776,20 +1275,8 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -1798,9 +1285,6 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
@@ -1893,33 +1377,20 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return userRegisteredSuccess(accountEntity);
   }
@@ -1930,31 +1401,20 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return userRegisteredSuccess?.call(accountEntity);
   }
@@ -1965,31 +1425,20 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (userRegisteredSuccess != null) {
@@ -2010,24 +1459,8 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -2037,9 +1470,6 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return userRegisteredSuccess(this);
   }
@@ -2054,22 +1484,8 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -2078,9 +1494,6 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return userRegisteredSuccess?.call(this);
   }
@@ -2095,20 +1508,8 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -2117,9 +1518,6 @@ class _$UserRegisteredSuccessStateImpl implements UserRegisteredSuccessState {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (userRegisteredSuccess != null) {
@@ -2186,33 +1584,20 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return profileUpdateSuccess();
   }
@@ -2223,31 +1608,20 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return profileUpdateSuccess?.call();
   }
@@ -2258,31 +1632,20 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (profileUpdateSuccess != null) {
@@ -2303,24 +1666,8 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -2330,9 +1677,6 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return profileUpdateSuccess(this);
   }
@@ -2347,22 +1691,8 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -2371,9 +1701,6 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return profileUpdateSuccess?.call(this);
   }
@@ -2388,20 +1715,8 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -2410,9 +1725,6 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (profileUpdateSuccess != null) {
@@ -2424,1215 +1736,6 @@ class _$ProfileUpdateSuccessStateImpl implements ProfileUpdateSuccessState {
 
 abstract class ProfileUpdateSuccessState implements AccountState {
   const factory ProfileUpdateSuccessState() = _$ProfileUpdateSuccessStateImpl;
-}
-
-/// @nodoc
-abstract class _$$ResetPasswordSuccessStateImplCopyWith<$Res> {
-  factory _$$ResetPasswordSuccessStateImplCopyWith(
-          _$ResetPasswordSuccessStateImpl value,
-          $Res Function(_$ResetPasswordSuccessStateImpl) then) =
-      __$$ResetPasswordSuccessStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email});
-}
-
-/// @nodoc
-class __$$ResetPasswordSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$ResetPasswordSuccessStateImpl>
-    implements _$$ResetPasswordSuccessStateImplCopyWith<$Res> {
-  __$$ResetPasswordSuccessStateImplCopyWithImpl(
-      _$ResetPasswordSuccessStateImpl _value,
-      $Res Function(_$ResetPasswordSuccessStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_$ResetPasswordSuccessStateImpl(
-      null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ResetPasswordSuccessStateImpl implements ResetPasswordSuccessState {
-  const _$ResetPasswordSuccessStateImpl(this.email);
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'AccountState.resetPasswordSuccess(email: $email)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResetPasswordSuccessStateImpl &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ResetPasswordSuccessStateImplCopyWith<_$ResetPasswordSuccessStateImpl>
-      get copyWith => __$$ResetPasswordSuccessStateImplCopyWithImpl<
-          _$ResetPasswordSuccessStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return resetPasswordSuccess(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return resetPasswordSuccess?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (resetPasswordSuccess != null) {
-      return resetPasswordSuccess(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return resetPasswordSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return resetPasswordSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (resetPasswordSuccess != null) {
-      return resetPasswordSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ResetPasswordSuccessState implements AccountState {
-  const factory ResetPasswordSuccessState(final String email) =
-      _$ResetPasswordSuccessStateImpl;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$$ResetPasswordSuccessStateImplCopyWith<_$ResetPasswordSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ReplacePasswordSuccessStateImplCopyWith<$Res> {
-  factory _$$ReplacePasswordSuccessStateImplCopyWith(
-          _$ReplacePasswordSuccessStateImpl value,
-          $Res Function(_$ReplacePasswordSuccessStateImpl) then) =
-      __$$ReplacePasswordSuccessStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$ReplacePasswordSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$ReplacePasswordSuccessStateImpl>
-    implements _$$ReplacePasswordSuccessStateImplCopyWith<$Res> {
-  __$$ReplacePasswordSuccessStateImplCopyWithImpl(
-      _$ReplacePasswordSuccessStateImpl _value,
-      $Res Function(_$ReplacePasswordSuccessStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ReplacePasswordSuccessStateImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ReplacePasswordSuccessStateImpl implements ReplacePasswordSuccessState {
-  const _$ReplacePasswordSuccessStateImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'AccountState.replacePasswordSuccess(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ReplacePasswordSuccessStateImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ReplacePasswordSuccessStateImplCopyWith<_$ReplacePasswordSuccessStateImpl>
-      get copyWith => __$$ReplacePasswordSuccessStateImplCopyWithImpl<
-          _$ReplacePasswordSuccessStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return replacePasswordSuccess(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return replacePasswordSuccess?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (replacePasswordSuccess != null) {
-      return replacePasswordSuccess(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return replacePasswordSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return replacePasswordSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (replacePasswordSuccess != null) {
-      return replacePasswordSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ReplacePasswordSuccessState implements AccountState {
-  const factory ReplacePasswordSuccessState(final String message) =
-      _$ReplacePasswordSuccessStateImpl;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$ReplacePasswordSuccessStateImplCopyWith<_$ReplacePasswordSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$VoucherRedeemedSuccessStateImplCopyWith<$Res> {
-  factory _$$VoucherRedeemedSuccessStateImplCopyWith(
-          _$VoucherRedeemedSuccessStateImpl value,
-          $Res Function(_$VoucherRedeemedSuccessStateImpl) then) =
-      __$$VoucherRedeemedSuccessStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$VoucherRedeemedSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$VoucherRedeemedSuccessStateImpl>
-    implements _$$VoucherRedeemedSuccessStateImplCopyWith<$Res> {
-  __$$VoucherRedeemedSuccessStateImplCopyWithImpl(
-      _$VoucherRedeemedSuccessStateImpl _value,
-      $Res Function(_$VoucherRedeemedSuccessStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$VoucherRedeemedSuccessStateImpl implements VoucherRedeemedSuccessState {
-  const _$VoucherRedeemedSuccessStateImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.voucherRedeemedSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$VoucherRedeemedSuccessStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return voucherRedeemedSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return voucherRedeemedSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (voucherRedeemedSuccess != null) {
-      return voucherRedeemedSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return voucherRedeemedSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return voucherRedeemedSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (voucherRedeemedSuccess != null) {
-      return voucherRedeemedSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class VoucherRedeemedSuccessState implements AccountState {
-  const factory VoucherRedeemedSuccessState() =
-      _$VoucherRedeemedSuccessStateImpl;
-}
-
-/// @nodoc
-abstract class _$$AccountDeletedSuccessStateImplCopyWith<$Res> {
-  factory _$$AccountDeletedSuccessStateImplCopyWith(
-          _$AccountDeletedSuccessStateImpl value,
-          $Res Function(_$AccountDeletedSuccessStateImpl) then) =
-      __$$AccountDeletedSuccessStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AccountDeletedSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountDeletedSuccessStateImpl>
-    implements _$$AccountDeletedSuccessStateImplCopyWith<$Res> {
-  __$$AccountDeletedSuccessStateImplCopyWithImpl(
-      _$AccountDeletedSuccessStateImpl _value,
-      $Res Function(_$AccountDeletedSuccessStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AccountDeletedSuccessStateImpl implements AccountDeletedSuccessState {
-  const _$AccountDeletedSuccessStateImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.accountDeletedSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AccountDeletedSuccessStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return accountDeletedSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return accountDeletedSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (accountDeletedSuccess != null) {
-      return accountDeletedSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return accountDeletedSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return accountDeletedSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (accountDeletedSuccess != null) {
-      return accountDeletedSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AccountDeletedSuccessState implements AccountState {
-  const factory AccountDeletedSuccessState() = _$AccountDeletedSuccessStateImpl;
 }
 
 /// @nodoc
@@ -3679,33 +1782,20 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return showDeleteData();
   }
@@ -3716,31 +1806,20 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return showDeleteData?.call();
   }
@@ -3751,31 +1830,20 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (showDeleteData != null) {
@@ -3796,24 +1864,8 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -3823,9 +1875,6 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return showDeleteData(this);
   }
@@ -3840,22 +1889,8 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -3864,9 +1899,6 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return showDeleteData?.call(this);
   }
@@ -3881,20 +1913,8 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -3903,9 +1923,6 @@ class _$ShowDeleteDataStateImpl implements ShowDeleteDataState {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (showDeleteData != null) {
@@ -3965,33 +1982,20 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return showDeleteAccount();
   }
@@ -4002,31 +2006,20 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return showDeleteAccount?.call();
   }
@@ -4037,31 +2030,20 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (showDeleteAccount != null) {
@@ -4082,24 +2064,8 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -4109,9 +2075,6 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return showDeleteAccount(this);
   }
@@ -4126,22 +2089,8 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -4150,9 +2099,6 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return showDeleteAccount?.call(this);
   }
@@ -4167,20 +2113,8 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -4189,9 +2123,6 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (showDeleteAccount != null) {
@@ -4203,1162 +2134,6 @@ class _$ShowDeleteAccountStateImpl implements ShowDeleteAccountState {
 
 abstract class ShowDeleteAccountState implements AccountState {
   const factory ShowDeleteAccountState() = _$ShowDeleteAccountStateImpl;
-}
-
-/// @nodoc
-abstract class _$$SocialGmailLoginRequestSuccessStateImplCopyWith<$Res> {
-  factory _$$SocialGmailLoginRequestSuccessStateImplCopyWith(
-          _$SocialGmailLoginRequestSuccessStateImpl value,
-          $Res Function(_$SocialGmailLoginRequestSuccessStateImpl) then) =
-      __$$SocialGmailLoginRequestSuccessStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SocialGmailLoginRequestSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res,
-        _$SocialGmailLoginRequestSuccessStateImpl>
-    implements _$$SocialGmailLoginRequestSuccessStateImplCopyWith<$Res> {
-  __$$SocialGmailLoginRequestSuccessStateImplCopyWithImpl(
-      _$SocialGmailLoginRequestSuccessStateImpl _value,
-      $Res Function(_$SocialGmailLoginRequestSuccessStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SocialGmailLoginRequestSuccessStateImpl
-    implements SocialGmailLoginRequestSuccessState {
-  const _$SocialGmailLoginRequestSuccessStateImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.socialMediaSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialGmailLoginRequestSuccessStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return socialMediaSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return socialMediaSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialMediaSuccess != null) {
-      return socialMediaSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return socialMediaSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return socialMediaSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialMediaSuccess != null) {
-      return socialMediaSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SocialGmailLoginRequestSuccessState implements AccountState {
-  const factory SocialGmailLoginRequestSuccessState() =
-      _$SocialGmailLoginRequestSuccessStateImpl;
-}
-
-/// @nodoc
-abstract class _$$SocialFBLoginRequestSuccessStateImplCopyWith<$Res> {
-  factory _$$SocialFBLoginRequestSuccessStateImplCopyWith(
-          _$SocialFBLoginRequestSuccessStateImpl value,
-          $Res Function(_$SocialFBLoginRequestSuccessStateImpl) then) =
-      __$$SocialFBLoginRequestSuccessStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SocialFBLoginRequestSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res,
-        _$SocialFBLoginRequestSuccessStateImpl>
-    implements _$$SocialFBLoginRequestSuccessStateImplCopyWith<$Res> {
-  __$$SocialFBLoginRequestSuccessStateImplCopyWithImpl(
-      _$SocialFBLoginRequestSuccessStateImpl _value,
-      $Res Function(_$SocialFBLoginRequestSuccessStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SocialFBLoginRequestSuccessStateImpl
-    implements SocialFBLoginRequestSuccessState {
-  const _$SocialFBLoginRequestSuccessStateImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.socialFBLoginRequestSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialFBLoginRequestSuccessStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return socialFBLoginRequestSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return socialFBLoginRequestSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialFBLoginRequestSuccess != null) {
-      return socialFBLoginRequestSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return socialFBLoginRequestSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return socialFBLoginRequestSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialFBLoginRequestSuccess != null) {
-      return socialFBLoginRequestSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SocialFBLoginRequestSuccessState implements AccountState {
-  const factory SocialFBLoginRequestSuccessState() =
-      _$SocialFBLoginRequestSuccessStateImpl;
-}
-
-/// @nodoc
-abstract class _$$SocialLinkedInLoginRequestSuccessStateImplCopyWith<$Res> {
-  factory _$$SocialLinkedInLoginRequestSuccessStateImplCopyWith(
-          _$SocialLinkedInLoginRequestSuccessStateImpl value,
-          $Res Function(_$SocialLinkedInLoginRequestSuccessStateImpl) then) =
-      __$$SocialLinkedInLoginRequestSuccessStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SocialLinkedInLoginRequestSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res,
-        _$SocialLinkedInLoginRequestSuccessStateImpl>
-    implements _$$SocialLinkedInLoginRequestSuccessStateImplCopyWith<$Res> {
-  __$$SocialLinkedInLoginRequestSuccessStateImplCopyWithImpl(
-      _$SocialLinkedInLoginRequestSuccessStateImpl _value,
-      $Res Function(_$SocialLinkedInLoginRequestSuccessStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SocialLinkedInLoginRequestSuccessStateImpl
-    implements SocialLinkedInLoginRequestSuccessState {
-  const _$SocialLinkedInLoginRequestSuccessStateImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.socialLinkedInLoginRequestSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialLinkedInLoginRequestSuccessStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return socialLinkedInLoginRequestSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return socialLinkedInLoginRequestSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialLinkedInLoginRequestSuccess != null) {
-      return socialLinkedInLoginRequestSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return socialLinkedInLoginRequestSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return socialLinkedInLoginRequestSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialLinkedInLoginRequestSuccess != null) {
-      return socialLinkedInLoginRequestSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SocialLinkedInLoginRequestSuccessState implements AccountState {
-  const factory SocialLinkedInLoginRequestSuccessState() =
-      _$SocialLinkedInLoginRequestSuccessStateImpl;
-}
-
-/// @nodoc
-abstract class _$$SocialAppleLoginRequestSuccessStateImplCopyWith<$Res> {
-  factory _$$SocialAppleLoginRequestSuccessStateImplCopyWith(
-          _$SocialAppleLoginRequestSuccessStateImpl value,
-          $Res Function(_$SocialAppleLoginRequestSuccessStateImpl) then) =
-      __$$SocialAppleLoginRequestSuccessStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SocialAppleLoginRequestSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res,
-        _$SocialAppleLoginRequestSuccessStateImpl>
-    implements _$$SocialAppleLoginRequestSuccessStateImplCopyWith<$Res> {
-  __$$SocialAppleLoginRequestSuccessStateImplCopyWithImpl(
-      _$SocialAppleLoginRequestSuccessStateImpl _value,
-      $Res Function(_$SocialAppleLoginRequestSuccessStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SocialAppleLoginRequestSuccessStateImpl
-    implements SocialAppleLoginRequestSuccessState {
-  const _$SocialAppleLoginRequestSuccessStateImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.socialAppleLoginRequestSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialAppleLoginRequestSuccessStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return socialAppleLoginRequestSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return socialAppleLoginRequestSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialAppleLoginRequestSuccess != null) {
-      return socialAppleLoginRequestSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return socialAppleLoginRequestSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return socialAppleLoginRequestSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialAppleLoginRequestSuccess != null) {
-      return socialAppleLoginRequestSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SocialAppleLoginRequestSuccessState implements AccountState {
-  const factory SocialAppleLoginRequestSuccessState() =
-      _$SocialAppleLoginRequestSuccessStateImpl;
 }
 
 /// @nodoc
@@ -5433,33 +2208,20 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return passwordVisibilityChanged(value);
   }
@@ -5470,31 +2232,20 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return passwordVisibilityChanged?.call(value);
   }
@@ -5505,31 +2256,20 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (passwordVisibilityChanged != null) {
@@ -5550,24 +2290,8 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -5577,9 +2301,6 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return passwordVisibilityChanged(this);
   }
@@ -5594,22 +2315,8 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -5618,9 +2325,6 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return passwordVisibilityChanged?.call(this);
   }
@@ -5635,20 +2339,8 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -5657,9 +2349,6 @@ class _$PasswordVisibilityChangedImpl implements PasswordVisibilityChanged {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (passwordVisibilityChanged != null) {
@@ -5754,33 +2443,20 @@ class _$ConfirmPasswordVisibilityChangedImpl
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return confirmPasswordVisibilityChanged(value);
   }
@@ -5791,31 +2467,20 @@ class _$ConfirmPasswordVisibilityChangedImpl
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return confirmPasswordVisibilityChanged?.call(value);
   }
@@ -5826,31 +2491,20 @@ class _$ConfirmPasswordVisibilityChangedImpl
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (confirmPasswordVisibilityChanged != null) {
@@ -5871,24 +2525,8 @@ class _$ConfirmPasswordVisibilityChangedImpl
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -5898,9 +2536,6 @@ class _$ConfirmPasswordVisibilityChangedImpl
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return confirmPasswordVisibilityChanged(this);
   }
@@ -5915,22 +2550,8 @@ class _$ConfirmPasswordVisibilityChangedImpl
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -5939,9 +2560,6 @@ class _$ConfirmPasswordVisibilityChangedImpl
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return confirmPasswordVisibilityChanged?.call(this);
   }
@@ -5956,20 +2574,8 @@ class _$ConfirmPasswordVisibilityChangedImpl
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -5978,9 +2584,6 @@ class _$ConfirmPasswordVisibilityChangedImpl
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (confirmPasswordVisibilityChanged != null) {
@@ -6072,33 +2675,20 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return notificationToggelled(value);
   }
@@ -6109,31 +2699,20 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return notificationToggelled?.call(value);
   }
@@ -6144,31 +2723,20 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (notificationToggelled != null) {
@@ -6189,24 +2757,8 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -6216,9 +2768,6 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return notificationToggelled(this);
   }
@@ -6233,22 +2782,8 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -6257,9 +2792,6 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return notificationToggelled?.call(this);
   }
@@ -6274,20 +2806,8 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -6296,9 +2816,6 @@ class _$NotificationToggelledImpl implements NotificationToggelled {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (notificationToggelled != null) {
@@ -6388,33 +2905,20 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return faceidToggelled(value);
   }
@@ -6425,31 +2929,20 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return faceidToggelled?.call(value);
   }
@@ -6460,31 +2953,20 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (faceidToggelled != null) {
@@ -6505,24 +2987,8 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -6532,9 +2998,6 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return faceidToggelled(this);
   }
@@ -6549,22 +3012,8 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -6573,9 +3022,6 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return faceidToggelled?.call(this);
   }
@@ -6590,20 +3036,8 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -6612,9 +3046,6 @@ class _$FaceIdToggelledImpl implements FaceIdToggelled {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (faceidToggelled != null) {
@@ -6703,33 +3134,20 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return profilePictureUrl(value);
   }
@@ -6740,31 +3158,20 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return profilePictureUrl?.call(value);
   }
@@ -6775,31 +3182,20 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (profilePictureUrl != null) {
@@ -6820,24 +3216,8 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -6847,9 +3227,6 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return profilePictureUrl(this);
   }
@@ -6864,22 +3241,8 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -6888,9 +3251,6 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return profilePictureUrl?.call(this);
   }
@@ -6905,20 +3265,8 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -6927,9 +3275,6 @@ class _$ProfilePictureUrlImpl implements ProfilePictureUrl {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (profilePictureUrl != null) {
@@ -7018,33 +3363,20 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
+            AppErrors error, VoidCallback callback, ScoutingRegisterParam param)
         registerError,
     required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
     required TResult Function(AuthResponseEntity accountEntity)
         userRegisteredSuccess,
     required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
     required TResult Function() showDeleteData,
     required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
     required TResult Function(bool value) passwordVisibilityChanged,
     required TResult Function(bool value) confirmPasswordVisibilityChanged,
     required TResult Function(bool value) notificationToggelled,
     required TResult Function(bool value) faceidToggelled,
     required TResult Function(String value) profilePictureUrl,
     required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
   }) {
     return newProfilePicture(value);
   }
@@ -7055,31 +3387,20 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     TResult? Function()? accountInit,
     TResult? Function()? accountLoading,
     TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult? Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
     TResult? Function()? showDeleteData,
     TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
     TResult? Function(bool value)? passwordVisibilityChanged,
     TResult? Function(bool value)? confirmPasswordVisibilityChanged,
     TResult? Function(bool value)? notificationToggelled,
     TResult? Function(bool value)? faceidToggelled,
     TResult? Function(String value)? profilePictureUrl,
     TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
   }) {
     return newProfilePicture?.call(value);
   }
@@ -7090,31 +3411,20 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
+    TResult Function(AppErrors error, VoidCallback callback,
+            ScoutingRegisterParam param)?
         registerError,
     TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
     TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
     TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
     TResult Function()? showDeleteData,
     TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
     TResult Function(bool value)? passwordVisibilityChanged,
     TResult Function(bool value)? confirmPasswordVisibilityChanged,
     TResult Function(bool value)? notificationToggelled,
     TResult Function(bool value)? faceidToggelled,
     TResult Function(String value)? profilePictureUrl,
     TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
     required TResult orElse(),
   }) {
     if (newProfilePicture != null) {
@@ -7135,24 +3445,8 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
         userRegisteredSuccess,
     required TResult Function(ProfileUpdateSuccessState value)
         profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
     required TResult Function(ShowDeleteDataState value) showDeleteData,
     required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
     required TResult Function(PasswordVisibilityChanged value)
         passwordVisibilityChanged,
     required TResult Function(ConfirmPasswordVisibilityChanged value)
@@ -7162,9 +3456,6 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     required TResult Function(FaceIdToggelled value) faceidToggelled,
     required TResult Function(ProfilePictureUrl value) profilePictureUrl,
     required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
   }) {
     return newProfilePicture(this);
   }
@@ -7179,22 +3470,8 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult? Function(ShowDeleteDataState value)? showDeleteData,
     TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult? Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult? Function(ConfirmPasswordVisibilityChanged value)?
@@ -7203,9 +3480,6 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     TResult? Function(FaceIdToggelled value)? faceidToggelled,
     TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
   }) {
     return newProfilePicture?.call(this);
   }
@@ -7220,20 +3494,8 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
     TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
     TResult Function(ShowDeleteDataState value)? showDeleteData,
     TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
     TResult Function(PasswordVisibilityChanged value)?
         passwordVisibilityChanged,
     TResult Function(ConfirmPasswordVisibilityChanged value)?
@@ -7242,9 +3504,6 @@ class _$NewProfilePictureImpl implements NewProfilePicture {
     TResult Function(FaceIdToggelled value)? faceidToggelled,
     TResult Function(ProfilePictureUrl value)? profilePictureUrl,
     TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
     required TResult orElse(),
   }) {
     if (newProfilePicture != null) {
@@ -7261,945 +3520,4 @@ abstract class NewProfilePicture implements AccountState {
   @JsonKey(ignore: true)
   _$$NewProfilePictureImplCopyWith<_$NewProfilePictureImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LinkedInLoginSuccessImplCopyWith<$Res> {
-  factory _$$LinkedInLoginSuccessImplCopyWith(_$LinkedInLoginSuccessImpl value,
-          $Res Function(_$LinkedInLoginSuccessImpl) then) =
-      __$$LinkedInLoginSuccessImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LinkedInLoginSuccessImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$LinkedInLoginSuccessImpl>
-    implements _$$LinkedInLoginSuccessImplCopyWith<$Res> {
-  __$$LinkedInLoginSuccessImplCopyWithImpl(_$LinkedInLoginSuccessImpl _value,
-      $Res Function(_$LinkedInLoginSuccessImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LinkedInLoginSuccessImpl implements LinkedInLoginSuccess {
-  const _$LinkedInLoginSuccessImpl();
-
-  @override
-  String toString() {
-    return 'AccountState.linkedInLoginSuccess()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LinkedInLoginSuccessImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return linkedInLoginSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return linkedInLoginSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (linkedInLoginSuccess != null) {
-      return linkedInLoginSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return linkedInLoginSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return linkedInLoginSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (linkedInLoginSuccess != null) {
-      return linkedInLoginSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LinkedInLoginSuccess implements AccountState {
-  const factory LinkedInLoginSuccess() = _$LinkedInLoginSuccessImpl;
-}
-
-/// @nodoc
-abstract class _$$SocialLoginSuccessStateImplCopyWith<$Res> {
-  factory _$$SocialLoginSuccessStateImplCopyWith(
-          _$SocialLoginSuccessStateImpl value,
-          $Res Function(_$SocialLoginSuccessStateImpl) then) =
-      __$$SocialLoginSuccessStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AuthResponseEntity accountEntity});
-}
-
-/// @nodoc
-class __$$SocialLoginSuccessStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$SocialLoginSuccessStateImpl>
-    implements _$$SocialLoginSuccessStateImplCopyWith<$Res> {
-  __$$SocialLoginSuccessStateImplCopyWithImpl(
-      _$SocialLoginSuccessStateImpl _value,
-      $Res Function(_$SocialLoginSuccessStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? accountEntity = null,
-  }) {
-    return _then(_$SocialLoginSuccessStateImpl(
-      null == accountEntity
-          ? _value.accountEntity
-          : accountEntity // ignore: cast_nullable_to_non_nullable
-              as AuthResponseEntity,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SocialLoginSuccessStateImpl implements SocialLoginSuccessState {
-  const _$SocialLoginSuccessStateImpl(this.accountEntity);
-
-  @override
-  final AuthResponseEntity accountEntity;
-
-  @override
-  String toString() {
-    return 'AccountState.socialLoginSuccess(accountEntity: $accountEntity)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialLoginSuccessStateImpl &&
-            (identical(other.accountEntity, accountEntity) ||
-                other.accountEntity == accountEntity));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, accountEntity);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SocialLoginSuccessStateImplCopyWith<_$SocialLoginSuccessStateImpl>
-      get copyWith => __$$SocialLoginSuccessStateImplCopyWithImpl<
-          _$SocialLoginSuccessStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return socialLoginSuccess(accountEntity);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return socialLoginSuccess?.call(accountEntity);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialLoginSuccess != null) {
-      return socialLoginSuccess(accountEntity);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return socialLoginSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return socialLoginSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialLoginSuccess != null) {
-      return socialLoginSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SocialLoginSuccessState implements AccountState {
-  const factory SocialLoginSuccessState(
-      final AuthResponseEntity accountEntity) = _$SocialLoginSuccessStateImpl;
-
-  AuthResponseEntity get accountEntity;
-  @JsonKey(ignore: true)
-  _$$SocialLoginSuccessStateImplCopyWith<_$SocialLoginSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SocialLoginErrorStateImplCopyWith<$Res> {
-  factory _$$SocialLoginErrorStateImplCopyWith(
-          _$SocialLoginErrorStateImpl value,
-          $Res Function(_$SocialLoginErrorStateImpl) then) =
-      __$$SocialLoginErrorStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AppErrors error, VoidCallback callback});
-
-  $AppErrorsCopyWith<$Res> get error;
-}
-
-/// @nodoc
-class __$$SocialLoginErrorStateImplCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$SocialLoginErrorStateImpl>
-    implements _$$SocialLoginErrorStateImplCopyWith<$Res> {
-  __$$SocialLoginErrorStateImplCopyWithImpl(_$SocialLoginErrorStateImpl _value,
-      $Res Function(_$SocialLoginErrorStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-    Object? callback = null,
-  }) {
-    return _then(_$SocialLoginErrorStateImpl(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as AppErrors,
-      null == callback
-          ? _value.callback
-          : callback // ignore: cast_nullable_to_non_nullable
-              as VoidCallback,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AppErrorsCopyWith<$Res> get error {
-    return $AppErrorsCopyWith<$Res>(_value.error, (value) {
-      return _then(_value.copyWith(error: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$SocialLoginErrorStateImpl implements SocialLoginErrorState {
-  const _$SocialLoginErrorStateImpl(this.error, this.callback);
-
-  @override
-  final AppErrors error;
-  @override
-  final VoidCallback callback;
-
-  @override
-  String toString() {
-    return 'AccountState.socialLoginError(error: $error, callback: $callback)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialLoginErrorStateImpl &&
-            (identical(other.error, error) || other.error == error) &&
-            (identical(other.callback, callback) ||
-                other.callback == callback));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error, callback);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SocialLoginErrorStateImplCopyWith<_$SocialLoginErrorStateImpl>
-      get copyWith => __$$SocialLoginErrorStateImplCopyWithImpl<
-          _$SocialLoginErrorStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountInit,
-    required TResult Function() accountLoading,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        accountError,
-    required TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)
-        registerError,
-    required TResult Function(AuthResponseEntity accountEntity) loginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        userRegisteredSuccess,
-    required TResult Function() profileUpdateSuccess,
-    required TResult Function(String email) resetPasswordSuccess,
-    required TResult Function(String message) replacePasswordSuccess,
-    required TResult Function() voucherRedeemedSuccess,
-    required TResult Function() accountDeletedSuccess,
-    required TResult Function() showDeleteData,
-    required TResult Function() showDeleteAccount,
-    required TResult Function() socialMediaSuccess,
-    required TResult Function() socialFBLoginRequestSuccess,
-    required TResult Function() socialLinkedInLoginRequestSuccess,
-    required TResult Function() socialAppleLoginRequestSuccess,
-    required TResult Function(bool value) passwordVisibilityChanged,
-    required TResult Function(bool value) confirmPasswordVisibilityChanged,
-    required TResult Function(bool value) notificationToggelled,
-    required TResult Function(bool value) faceidToggelled,
-    required TResult Function(String value) profilePictureUrl,
-    required TResult Function(XFile? value) newProfilePicture,
-    required TResult Function() linkedInLoginSuccess,
-    required TResult Function(AuthResponseEntity accountEntity)
-        socialLoginSuccess,
-    required TResult Function(AppErrors error, VoidCallback callback)
-        socialLoginError,
-  }) {
-    return socialLoginError(error, callback);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? accountInit,
-    TResult? Function()? accountLoading,
-    TResult? Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult? Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult? Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult? Function()? profileUpdateSuccess,
-    TResult? Function(String email)? resetPasswordSuccess,
-    TResult? Function(String message)? replacePasswordSuccess,
-    TResult? Function()? voucherRedeemedSuccess,
-    TResult? Function()? accountDeletedSuccess,
-    TResult? Function()? showDeleteData,
-    TResult? Function()? showDeleteAccount,
-    TResult? Function()? socialMediaSuccess,
-    TResult? Function()? socialFBLoginRequestSuccess,
-    TResult? Function()? socialLinkedInLoginRequestSuccess,
-    TResult? Function()? socialAppleLoginRequestSuccess,
-    TResult? Function(bool value)? passwordVisibilityChanged,
-    TResult? Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult? Function(bool value)? notificationToggelled,
-    TResult? Function(bool value)? faceidToggelled,
-    TResult? Function(String value)? profilePictureUrl,
-    TResult? Function(XFile? value)? newProfilePicture,
-    TResult? Function()? linkedInLoginSuccess,
-    TResult? Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult? Function(AppErrors error, VoidCallback callback)? socialLoginError,
-  }) {
-    return socialLoginError?.call(error, callback);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountInit,
-    TResult Function()? accountLoading,
-    TResult Function(AppErrors error, VoidCallback callback)? accountError,
-    TResult Function(
-            AppErrors error, VoidCallback callback, RegisterParam param)?
-        registerError,
-    TResult Function(AuthResponseEntity accountEntity)? loginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? userRegisteredSuccess,
-    TResult Function()? profileUpdateSuccess,
-    TResult Function(String email)? resetPasswordSuccess,
-    TResult Function(String message)? replacePasswordSuccess,
-    TResult Function()? voucherRedeemedSuccess,
-    TResult Function()? accountDeletedSuccess,
-    TResult Function()? showDeleteData,
-    TResult Function()? showDeleteAccount,
-    TResult Function()? socialMediaSuccess,
-    TResult Function()? socialFBLoginRequestSuccess,
-    TResult Function()? socialLinkedInLoginRequestSuccess,
-    TResult Function()? socialAppleLoginRequestSuccess,
-    TResult Function(bool value)? passwordVisibilityChanged,
-    TResult Function(bool value)? confirmPasswordVisibilityChanged,
-    TResult Function(bool value)? notificationToggelled,
-    TResult Function(bool value)? faceidToggelled,
-    TResult Function(String value)? profilePictureUrl,
-    TResult Function(XFile? value)? newProfilePicture,
-    TResult Function()? linkedInLoginSuccess,
-    TResult Function(AuthResponseEntity accountEntity)? socialLoginSuccess,
-    TResult Function(AppErrors error, VoidCallback callback)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialLoginError != null) {
-      return socialLoginError(error, callback);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountInit value) accountInit,
-    required TResult Function(AccountLoading value) accountLoading,
-    required TResult Function(AccountError value) accountError,
-    required TResult Function(RegisterError value) registerError,
-    required TResult Function(LoginSuccessState value) loginSuccess,
-    required TResult Function(UserRegisteredSuccessState value)
-        userRegisteredSuccess,
-    required TResult Function(ProfileUpdateSuccessState value)
-        profileUpdateSuccess,
-    required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
-    required TResult Function(ReplacePasswordSuccessState value)
-        replacePasswordSuccess,
-    required TResult Function(VoucherRedeemedSuccessState value)
-        voucherRedeemedSuccess,
-    required TResult Function(AccountDeletedSuccessState value)
-        accountDeletedSuccess,
-    required TResult Function(ShowDeleteDataState value) showDeleteData,
-    required TResult Function(ShowDeleteAccountState value) showDeleteAccount,
-    required TResult Function(SocialGmailLoginRequestSuccessState value)
-        socialMediaSuccess,
-    required TResult Function(SocialFBLoginRequestSuccessState value)
-        socialFBLoginRequestSuccess,
-    required TResult Function(SocialLinkedInLoginRequestSuccessState value)
-        socialLinkedInLoginRequestSuccess,
-    required TResult Function(SocialAppleLoginRequestSuccessState value)
-        socialAppleLoginRequestSuccess,
-    required TResult Function(PasswordVisibilityChanged value)
-        passwordVisibilityChanged,
-    required TResult Function(ConfirmPasswordVisibilityChanged value)
-        confirmPasswordVisibilityChanged,
-    required TResult Function(NotificationToggelled value)
-        notificationToggelled,
-    required TResult Function(FaceIdToggelled value) faceidToggelled,
-    required TResult Function(ProfilePictureUrl value) profilePictureUrl,
-    required TResult Function(NewProfilePicture value) newProfilePicture,
-    required TResult Function(LinkedInLoginSuccess value) linkedInLoginSuccess,
-    required TResult Function(SocialLoginSuccessState value) socialLoginSuccess,
-    required TResult Function(SocialLoginErrorState value) socialLoginError,
-  }) {
-    return socialLoginError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AccountInit value)? accountInit,
-    TResult? Function(AccountLoading value)? accountLoading,
-    TResult? Function(AccountError value)? accountError,
-    TResult? Function(RegisterError value)? registerError,
-    TResult? Function(LoginSuccessState value)? loginSuccess,
-    TResult? Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult? Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult? Function(ReplacePasswordSuccessState value)?
-        replacePasswordSuccess,
-    TResult? Function(VoucherRedeemedSuccessState value)?
-        voucherRedeemedSuccess,
-    TResult? Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult? Function(ShowDeleteDataState value)? showDeleteData,
-    TResult? Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult? Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult? Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult? Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult? Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult? Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult? Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult? Function(NotificationToggelled value)? notificationToggelled,
-    TResult? Function(FaceIdToggelled value)? faceidToggelled,
-    TResult? Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult? Function(NewProfilePicture value)? newProfilePicture,
-    TResult? Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult? Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult? Function(SocialLoginErrorState value)? socialLoginError,
-  }) {
-    return socialLoginError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountInit value)? accountInit,
-    TResult Function(AccountLoading value)? accountLoading,
-    TResult Function(AccountError value)? accountError,
-    TResult Function(RegisterError value)? registerError,
-    TResult Function(LoginSuccessState value)? loginSuccess,
-    TResult Function(UserRegisteredSuccessState value)? userRegisteredSuccess,
-    TResult Function(ProfileUpdateSuccessState value)? profileUpdateSuccess,
-    TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
-    TResult Function(ReplacePasswordSuccessState value)? replacePasswordSuccess,
-    TResult Function(VoucherRedeemedSuccessState value)? voucherRedeemedSuccess,
-    TResult Function(AccountDeletedSuccessState value)? accountDeletedSuccess,
-    TResult Function(ShowDeleteDataState value)? showDeleteData,
-    TResult Function(ShowDeleteAccountState value)? showDeleteAccount,
-    TResult Function(SocialGmailLoginRequestSuccessState value)?
-        socialMediaSuccess,
-    TResult Function(SocialFBLoginRequestSuccessState value)?
-        socialFBLoginRequestSuccess,
-    TResult Function(SocialLinkedInLoginRequestSuccessState value)?
-        socialLinkedInLoginRequestSuccess,
-    TResult Function(SocialAppleLoginRequestSuccessState value)?
-        socialAppleLoginRequestSuccess,
-    TResult Function(PasswordVisibilityChanged value)?
-        passwordVisibilityChanged,
-    TResult Function(ConfirmPasswordVisibilityChanged value)?
-        confirmPasswordVisibilityChanged,
-    TResult Function(NotificationToggelled value)? notificationToggelled,
-    TResult Function(FaceIdToggelled value)? faceidToggelled,
-    TResult Function(ProfilePictureUrl value)? profilePictureUrl,
-    TResult Function(NewProfilePicture value)? newProfilePicture,
-    TResult Function(LinkedInLoginSuccess value)? linkedInLoginSuccess,
-    TResult Function(SocialLoginSuccessState value)? socialLoginSuccess,
-    TResult Function(SocialLoginErrorState value)? socialLoginError,
-    required TResult orElse(),
-  }) {
-    if (socialLoginError != null) {
-      return socialLoginError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SocialLoginErrorState implements AccountState {
-  const factory SocialLoginErrorState(
-          final AppErrors error, final VoidCallback callback) =
-      _$SocialLoginErrorStateImpl;
-
-  AppErrors get error;
-  VoidCallback get callback;
-  @JsonKey(ignore: true)
-  _$$SocialLoginErrorStateImplCopyWith<_$SocialLoginErrorStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
