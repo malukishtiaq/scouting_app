@@ -73,7 +73,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 );
               }
               if (state is UserRegisteredSuccessState) {
-                if (state.accountEntity.userId != null) {
+                if (state.accountEntity.data.user.email.isNotEmpty) {
                   // Schedule navigation for next frame to avoid navigator lock
                   WidgetsBinding.instance.addPostFrameCallback((_) async {
                     if (mounted) {

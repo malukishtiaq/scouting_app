@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import '../../di/service_locator.dart';
 import '../services/deep_link_handler.dart';
-import '../../feature/account/presentation/screen/forgot_password/forgot_password_screen.dart';
 import '../../feature/account/presentation/screen/login/login_screen.dart';
 import '../../feature/account/presentation/screen/register/register_screen.dart';
 import '../../feature/account/presentation/screen/welcome/welcome_screen.dart';
@@ -77,11 +76,6 @@ class NavigationRoute {
               referralCode: referralCode,
             ),
           ),
-          settings: settings,
-        );
-      case ForgotPasswordScreen.routeName:
-        return FadeRoute(
-          page: const ForgotPasswordScreen(param: ForgotPasswordParam()),
           settings: settings,
         );
 

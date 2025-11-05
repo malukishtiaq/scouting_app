@@ -11,7 +11,6 @@ import '../../../../../core/services/social_login_service.dart';
 import '../../state_m/account/account_cubit.dart';
 import '../../../data/request/param/social_login_param.dart';
 import '../register/register_screen.dart';
-import '../forgot_password/forgot_password_screen.dart';
 
 class LoginScreenContent extends StatefulWidget {
   const LoginScreenContent({super.key});
@@ -103,8 +102,8 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
   }
 
   void _handleForgotPassword() {
-    Nav.to(ForgotPasswordScreen.routeName,
-        arguments: const ForgotPasswordParam());
+    // TODO: Implement forgot password functionality
+    // Nav.to(ForgotPasswordScreen.routeName, arguments: const ForgotPasswordParam());
   }
 
   void _handleCreateAccount() {
@@ -131,19 +130,8 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
       }
 
       if (result.isSuccess) {
-        // Handle successful social login
-        BlocProvider.of<AccountCubit>(context).socialLogin(
-          SocialLoginParam(
-            socialProvider: provider,
-            socialUserId: result.user!.userId,
-            socialAccessToken: result.user!.accessToken,
-            email: result.user!.email,
-            username: result.user!.displayName,
-            firstName: result.user!.firstName,
-            lastName: result.user!.lastName,
-            profilePicture: result.user!.profilePicture,
-          ),
-        );
+        // TODO: Implement social login with Scouting API
+        _showErrorSnackBar('Social login not yet implemented');
       } else {
         _showErrorSnackBar(
             result.error?.userFriendlyMessage ?? 'Social login failed');

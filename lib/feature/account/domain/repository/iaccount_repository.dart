@@ -1,4 +1,5 @@
 import '../../domain/entity/auth_response_entity.dart';
+import '../../data/request/model/auth_response_model.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../core/errors/app_errors.dart';
 import '../../../../core/repositories/repository.dart';

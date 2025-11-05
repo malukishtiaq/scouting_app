@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
               );
             }
             if (state is LoginSuccessState) {
-              if (state.accountEntity.accessToken?.isNotEmpty ?? false) {
+              if (state.accountEntity.data.token.isNotEmpty) {
                 // if (kDebugMode) {
                 //   dev.debugger();
                 // }
@@ -95,18 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                 });
               }
-              return const LoginScreenContent();
-            }
-            if (state is SocialGmailLoginRequestSuccessState) {
-              // Schedule navigation for next frame to avoid navigator lock
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                if (mounted) {
-                  // Nav.to(
-                  //   HomeTabbedScreen.routeName,
-                  //   arguments: {},
-                  // );
-                }
-              });
               return const LoginScreenContent();
             }
             return const LoginScreenContent();

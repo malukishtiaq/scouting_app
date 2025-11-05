@@ -49,14 +49,7 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
 
     try {
       // Call the cubit to handle registration
-      BlocProvider.of<AccountCubit>(context).resgister(
-        RegisterParam(
-          email: email,
-          password: password,
-          username: email.split('@')[0],
-          confirmPassword: password,
-        ),
-      );
+      BlocProvider.of<AccountCubit>(context).register(email, password);
     } catch (e) {
       _showErrorSnackBar('${'registration_error'.tr}: $e');
       setState(() {
@@ -82,18 +75,8 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
       }
 
       if (result.isSuccess) {
-        BlocProvider.of<AccountCubit>(context).socialLogin(
-          SocialLoginParam(
-            socialProvider: provider,
-            socialUserId: result.user!.userId,
-            socialAccessToken: result.user!.accessToken,
-            email: result.user!.email,
-            username: result.user!.displayName,
-            firstName: result.user!.firstName,
-            lastName: result.user!.lastName,
-            profilePicture: result.user!.profilePicture,
-          ),
-        );
+        // TODO: Implement social login with Scouting API
+        _showErrorSnackBar('Social login not yet implemented');
       } else {
         _showErrorSnackBar(
             result.error?.userFriendlyMessage ?? 'Social login failed');
