@@ -1,11 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
+import '../../../../../core/models/base_model.dart';
 import '../../../domain/entities/player_entity.dart';
 
 part 'player_model.g.dart';
 
 /// Player Model - Data Layer
 @JsonSerializable(explicitToJson: true)
-class PlayerModel {
+class PlayerModel extends BaseModel<PlayerEntity> {
   @JsonKey(name: 'player_id')
   final String? playerId;
   @JsonKey(name: 'full_name')
@@ -36,7 +37,7 @@ class PlayerModel {
   final List<GameModel>? upcomingGames;
   final List<MediaModel>? media;
 
-  const PlayerModel({
+  PlayerModel({
     this.playerId,
     this.fullName,
     this.avatar,
@@ -226,4 +227,3 @@ class MediaModel {
     );
   }
 }
-

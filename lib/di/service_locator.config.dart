@@ -140,6 +140,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1004.HttpClient>(() => _i1004.HttpClient());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.factory<_i737.IReelsRemoteSource>(() => _i914.ReelsRemoteSource());
+    gh.factory<_i495.IPlayerRemoteDatasource>(
+        () => _i495.PlayerRemoteDatasource());
     gh.factory<_i753.ICommentsRemoteSource>(() => _i753.CommentsRemoteSource());
     gh.factory<_i494.IAccountRemoteSource>(() => _i494.AccountRemoteSource());
     gh.factory<_i462.IScoutingPostsRemoteSource>(

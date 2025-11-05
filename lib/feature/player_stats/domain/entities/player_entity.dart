@@ -1,8 +1,10 @@
 import 'package:equatable/equatable.dart';
 
+import '../../../../core/entities/base_entity.dart';
+
 /// Player Entity - Domain Layer
 /// Contains all player information including personal details, stats, and media
-class PlayerEntity extends Equatable {
+class PlayerEntity extends BaseEntity {
   final String? playerId;
   final String? fullName;
   final String? avatar;
@@ -25,7 +27,7 @@ class PlayerEntity extends Equatable {
   final List<GameEntity>? upcomingGames;
   final List<MediaEntity>? media;
 
-  const PlayerEntity({
+  PlayerEntity({
     this.playerId,
     this.fullName,
     this.avatar,
@@ -293,4 +295,3 @@ class MediaEntity extends Equatable {
     );
   }
 }
-

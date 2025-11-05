@@ -1,10 +1,10 @@
-import 'package:equatable/equatable.dart';
+import '../../../../../core/params/base_params.dart';
 
 /// Parameter for fetching player data
-class GetPlayerParam extends Equatable {
+class GetPlayerParam extends BaseParams {
   final String playerId;
 
-  const GetPlayerParam({required this.playerId});
+  GetPlayerParam({required this.playerId});
 
   Map<String, dynamic> toJson() {
     return {
@@ -14,5 +14,11 @@ class GetPlayerParam extends Equatable {
 
   @override
   List<Object?> get props => [playerId];
-}
 
+  @override
+  Map<String, dynamic> toMap() {
+    return {
+      'player_id': playerId,
+    };
+  }
+}

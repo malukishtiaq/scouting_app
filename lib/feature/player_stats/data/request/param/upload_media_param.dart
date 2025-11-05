@@ -1,7 +1,9 @@
 import 'package:equatable/equatable.dart';
 
+import '../../../../../core/params/base_params.dart';
+
 /// Parameter for uploading player media
-class UploadMediaParam extends Equatable {
+class UploadMediaParam extends BaseParams {
   final String playerId;
   final String mediaPath;
   final String mediaType; // "video" or "photo"
@@ -37,5 +39,10 @@ class UploadMediaParam extends Equatable {
         title,
         description,
       ];
-}
 
+  @override
+  Map<String, dynamic> toMap() {
+    // TODO: implement toMap
+    throw UnimplementedError();
+  }
+}

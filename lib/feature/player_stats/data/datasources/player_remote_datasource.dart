@@ -4,11 +4,11 @@ part of 'iplayer_remote_datasource.dart';
 class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
   @override
   Future<Either<AppErrors, PlayerModel>> getPlayer(GetPlayerParam param) async {
+    // Use existing Member API - GET /api/members/{user_id}
     return await request<PlayerModel>(
       converter: (json) => PlayerModel.fromJson(json),
       method: HttpMethod.GET,
-      url: MainAPIS.apiGetPlayer, // TODO: Add to mainapis.dart
-      queryParameters: param.toMap(),
+      url: MainAPIS.apiMemberShow,
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
       withAuthentication: true,
       enableLogging: true,
@@ -19,10 +19,11 @@ class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
   @override
   Future<Either<AppErrors, PlayerModel>> updatePlayer(
       UpdatePlayerParam param) async {
+    // Use existing Member API - POST /api/profile
     return await request<PlayerModel>(
       converter: (json) => PlayerModel.fromJson(json),
       method: HttpMethod.POST,
-      url: MainAPIS.apiUpdatePlayer, // TODO: Add to mainapis.dart
+      url: MainAPIS.apiMemberUpdate, // api/profile
       body: param.toMap(),
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
       withAuthentication: true,
@@ -33,55 +34,24 @@ class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
   @override
   Future<Either<AppErrors, MediaModel>> uploadMedia(
       UploadMediaParam param) async {
-    return await requestUploadFile<MediaModel>(
-      converter: (json) => MediaModel.fromJson(json),
-      method: HttpMethod.POST,
-      url: MainAPIS.apiUploadPlayerMedia, // TODO: Add to mainapis.dart
-      file: param.mediaPath,
-      fileKey: 'media_file',
-      body: {
-        'player_id': param.playerId,
-        'media_type': param.mediaType,
-        if (param.title != null) 'title': param.title,
-        if (param.description != null) 'description': param.description,
-      },
-      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
-      withAuthentication: true,
-      enableLogging: true,
-    );
+    // TODO: This API endpoint needs to be implemented on the backend
+    // Expected: POST /api/media/upload or POST /api/profile/media
+    throw UnimplementedError('Upload media API not yet available. Please provide the API endpoint from your documentation.');
   }
 
   @override
   Future<Either<AppErrors, List<GameModel>>> getUpcomingGames(
       GetPlayerParam param) async {
-    return await request<List<GameModel>>(
-      converter: (json) => (json as List)
-          .map((game) => GameModel.fromJson(game as Map<String, dynamic>))
-          .toList(),
-      method: HttpMethod.GET,
-      url: MainAPIS.apiGetUpcomingGames, // TODO: Add to mainapis.dart
-      queryParameters: param.toMap(),
-      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
-      withAuthentication: true,
-      enableLogging: true,
-      params: param,
-    );
+    // TODO: This API endpoint needs to be implemented on the backend
+    // Expected: GET /api/games or GET /api/schedule
+    throw UnimplementedError('Get upcoming games API not yet available. Please provide the API endpoint from your documentation.');
   }
 
   @override
   Future<Either<AppErrors, List<MediaModel>>> getPlayerMedia(
       GetPlayerParam param) async {
-    return await request<List<MediaModel>>(
-      converter: (json) => (json as List)
-          .map((media) => MediaModel.fromJson(media as Map<String, dynamic>))
-          .toList(),
-      method: HttpMethod.GET,
-      url: MainAPIS.apiGetPlayerMedia, // TODO: Add to mainapis.dart
-      queryParameters: param.toMap(),
-      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
-      withAuthentication: true,
-      enableLogging: true,
-      params: param,
-    );
+    // TODO: This API endpoint needs to be implemented on the backend
+    // Expected: GET /api/media or GET /api/profile/media
+    throw UnimplementedError('Get player media API not yet available. Please provide the API endpoint from your documentation.');
   }
 }
