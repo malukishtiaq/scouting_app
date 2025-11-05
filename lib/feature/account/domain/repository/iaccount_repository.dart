@@ -1,4 +1,5 @@
-import '../../domain/entity/login_response_entity.dart';
+import '../../domain/entity/login_response_entity.dart' as WoWonder;
+import '../../domain/entity/auth_response_entity.dart' as Scouting;
 import '../../../../core/models/empty_response.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../core/errors/app_errors.dart';
@@ -24,7 +25,6 @@ import '../../data/request/param/scouting_register_param.dart';
 import '../../data/request/param/scouting_login_param.dart';
 import '../../domain/usecase/verify_account_usecase.dart';
 import '../entity/member_response_entity.dart';
-import '../entity/auth_response_entity.dart';
 import '../../../../core/background/isolate_background_service.dart';
 import '../../../../di/service_locator.dart';
 import '../../../../core/background/tasks_registrar.dart';
@@ -37,9 +37,9 @@ abstract class IAccountRepository extends Repository {
   /// - Successful login
   /// - Pending verification (2FA)
   /// - Error responses
-  Future<Result<AppErrors, AuthResponseEntity>> login(LoginParam param);
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> login(LoginParam param);
 
-  Future<Result<AppErrors, AuthResponseEntity>> resgister(RegisterParam param);
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> resgister(RegisterParam param);
 
   Future<Result<AppErrors, EmptyResponse>> deleteAccount(
       DeleteAccountParam param);
@@ -57,20 +57,20 @@ abstract class IAccountRepository extends Repository {
   Future<Result<AppErrors, EmptyResponse>> sendCodeTwoFactor(
       SendCodeTwoFactorParam param);
 
-  Future<Result<AppErrors, AuthResponseEntity>> twoFactor(TwoFactorParam param);
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> twoFactor(TwoFactorParam param);
 
-  Future<Result<AppErrors, AuthResponseEntity>> verifyAccount(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> verifyAccount(
       VerifyAccountParam param);
 
-  Future<Result<AppErrors, AuthResponseEntity>> socialLogin(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> socialLogin(
       SocialLoginParam param);
 
   Future<Result<AppErrors, EmptyResponse>> logout(LogoutParam param);
   
   // Member APIs (Scouting API)
-  Future<Result<AppErrors, AuthResponseEntity>> memberRegister(
+  Future<Result<AppErrors, Scouting.AuthResponseEntity>> memberRegister(
       ScoutingRegisterParam param);
-  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(ScoutingLoginParam param);
+  Future<Result<AppErrors, Scouting.AuthResponseEntity>> memberLogin(ScoutingLoginParam param);
   Future<Result<AppErrors, MemberProfileEntity>> getMe(GetMeParam param);
   Future<Result<AppErrors, UpdateProfileResponseEntity>> updateProfile(
       UpdateProfileParam param);
