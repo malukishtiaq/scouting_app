@@ -34,20 +34,13 @@ import '../core/socket/socket_service.dart' as _i593;
 import '../core/socket/socket_service_interface.dart' as _i740;
 import '../feature/account/data/datasource/iaccount_remote.dart' as _i494;
 import '../feature/account/domain/repository/iaccount_repository.dart' as _i462;
-import '../feature/account/domain/usecase/delete_account_usecase.dart' as _i101;
 import '../feature/account/domain/usecase/get_me_usecase.dart' as _i1043;
 import '../feature/account/domain/usecase/list_members_usecase.dart' as _i813;
-import '../feature/account/domain/usecase/login_usecase.dart' as _i256;
-import '../feature/account/domain/usecase/logout_usecase.dart' as _i942;
 import '../feature/account/domain/usecase/member_login_usecase.dart' as _i267;
 import '../feature/account/domain/usecase/member_register_usecase.dart'
     as _i314;
-import '../feature/account/domain/usecase/resgister_usecase.dart' as _i831;
 import '../feature/account/domain/usecase/show_member_usecase.dart' as _i741;
-import '../feature/account/domain/usecase/social_login_usecase.dart' as _i983;
-import '../feature/account/domain/usecase/two_factor_usecase.dart' as _i108;
 import '../feature/account/domain/usecase/update_profile_usecase.dart' as _i672;
-import '../feature/account/domain/usecase/verify_account_usecase.dart' as _i894;
 import '../feature/comments/data/datasource/icomments_remote.dart' as _i753;
 import '../feature/comments/domain/repository/comments_repository.dart'
     as _i1000;
@@ -213,20 +206,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i166.TestGenericService(gh<_i821.GenericBackgroundService>()));
     gh.factory<_i462.IAccountRepository>(
         () => _i462.AccountRepository(gh<_i494.IAccountRemoteSource>()));
-    gh.factory<_i983.SocialLoginUseCase>(
-        () => _i983.SocialLoginUseCase(gh<_i462.IAccountRepository>()));
-    gh.factory<_i108.TwoFactorUseCase>(
-        () => _i108.TwoFactorUseCase(gh<_i462.IAccountRepository>()));
-    gh.factory<_i894.VerifyAccountUseCase>(
-        () => _i894.VerifyAccountUseCase(gh<_i462.IAccountRepository>()));
-    gh.singleton<_i101.DeleteAccountUsecase>(
-        () => _i101.DeleteAccountUsecase(gh<_i462.IAccountRepository>()));
-    gh.singleton<_i256.LoginUsecase>(
-        () => _i256.LoginUsecase(gh<_i462.IAccountRepository>()));
-    gh.singleton<_i942.LogoutUsecase>(
-        () => _i942.LogoutUsecase(gh<_i462.IAccountRepository>()));
-    gh.singleton<_i831.ResgisterUsecase>(
-        () => _i831.ResgisterUsecase(gh<_i462.IAccountRepository>()));
     gh.singleton<_i1043.GetMeUsecase>(
         () => _i1043.GetMeUsecase(gh<_i462.IAccountRepository>()));
     gh.singleton<_i813.ListMembersUsecase>(

@@ -1180,7 +1180,7 @@ class __$$RegisterErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
     Object? callback = null,
-    Object? param = null,
+    Object? param = freezed,
   }) {
     return _then(_$RegisterErrorImpl(
       null == error
@@ -1191,7 +1191,7 @@ class __$$RegisterErrorImplCopyWithImpl<$Res>
           ? _value.callback
           : callback // ignore: cast_nullable_to_non_nullable
               as VoidCallback,
-      null == param
+      freezed == param
           ? _value.param
           : param // ignore: cast_nullable_to_non_nullable
               as RegisterParam,
@@ -1232,11 +1232,12 @@ class _$RegisterErrorImpl implements RegisterError {
             (identical(other.error, error) || other.error == error) &&
             (identical(other.callback, callback) ||
                 other.callback == callback) &&
-            (identical(other.param, param) || other.param == param));
+            const DeepCollectionEquality().equals(other.param, param));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error, callback, param);
+  int get hashCode => Object.hash(
+      runtimeType, error, callback, const DeepCollectionEquality().hash(param));
 
   @JsonKey(ignore: true)
   @override
