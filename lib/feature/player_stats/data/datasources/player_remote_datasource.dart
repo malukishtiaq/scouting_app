@@ -8,7 +8,7 @@ class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
     return await request<PlayerModel>(
       converter: (json) => PlayerModel.fromJson(json),
       method: HttpMethod.GET,
-      url: MainAPIS.apiMemberShow,
+      url: '${MainAPIS.apiMemberShow}/${param.playerId}',
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
       withAuthentication: true,
       enableLogging: true,
@@ -29,29 +29,5 @@ class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
       withAuthentication: true,
       enableLogging: true,
     );
-  }
-
-  @override
-  Future<Either<AppErrors, MediaModel>> uploadMedia(
-      UploadMediaParam param) async {
-    // TODO: This API endpoint needs to be implemented on the backend
-    // Expected: POST /api/media/upload or POST /api/profile/media
-    throw UnimplementedError('Upload media API not yet available. Please provide the API endpoint from your documentation.');
-  }
-
-  @override
-  Future<Either<AppErrors, List<GameModel>>> getUpcomingGames(
-      GetPlayerParam param) async {
-    // TODO: This API endpoint needs to be implemented on the backend
-    // Expected: GET /api/games or GET /api/schedule
-    throw UnimplementedError('Get upcoming games API not yet available. Please provide the API endpoint from your documentation.');
-  }
-
-  @override
-  Future<Either<AppErrors, List<MediaModel>>> getPlayerMedia(
-      GetPlayerParam param) async {
-    // TODO: This API endpoint needs to be implemented on the backend
-    // Expected: GET /api/media or GET /api/profile/media
-    throw UnimplementedError('Get player media API not yet available. Please provide the API endpoint from your documentation.');
   }
 }

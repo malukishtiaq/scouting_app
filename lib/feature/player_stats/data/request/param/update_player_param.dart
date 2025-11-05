@@ -1,7 +1,9 @@
 import 'package:equatable/equatable.dart';
 
+import '../../../../../core/params/base_params.dart';
+
 /// Parameter for updating player data
-class UpdatePlayerParam extends Equatable {
+class UpdatePlayerParam extends BaseParams {
   final String playerId;
   final String? fullName;
   final String? avatar;
@@ -16,7 +18,7 @@ class UpdatePlayerParam extends Equatable {
   final String? averageLocation;
   final String? bio;
 
-  const UpdatePlayerParam({
+  UpdatePlayerParam({
     required this.playerId,
     this.fullName,
     this.avatar,
@@ -70,4 +72,3 @@ class UpdatePlayerParam extends Equatable {
         bio,
       ];
 }
-

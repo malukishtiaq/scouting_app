@@ -1,5 +1,3 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../../core/params/base_params.dart';
 
 /// Parameter for uploading player media
@@ -10,7 +8,7 @@ class UploadMediaParam extends BaseParams {
   final String? title;
   final String? description;
 
-  const UploadMediaParam({
+  UploadMediaParam({
     required this.playerId,
     required this.mediaPath,
     required this.mediaType,
@@ -32,17 +30,13 @@ class UploadMediaParam extends BaseParams {
   }
 
   @override
-  List<Object?> get props => [
-        playerId,
-        mediaPath,
-        mediaType,
-        title,
-        description,
-      ];
-
-  @override
   Map<String, dynamic> toMap() {
-    // TODO: implement toMap
-    throw UnimplementedError();
+    return {
+      'player_id': playerId,
+      'media_path': mediaPath,
+      'media_type': mediaType,
+      'title': title,
+      'description': description,
+    };
   }
 }

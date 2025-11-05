@@ -21,28 +21,4 @@ class PlayerRepository extends IPlayerRepository {
       remoteResult: await remoteDataSource.updatePlayer(param),
     );
   }
-
-  @override
-  Future<Result<AppErrors, MediaEntity>> uploadMedia(
-      UploadMediaParam param) async {
-    return execute<MediaModel, MediaEntity>(
-      remoteResult: await remoteDataSource.uploadMedia(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, List<GameEntity>>> getUpcomingGames(
-      GetPlayerParam param) async {
-    return execute<List<GameModel>, List<GameEntity>>(
-      remoteResult: await remoteDataSource.getUpcomingGames(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, List<MediaEntity>>> getPlayerMedia(
-      GetPlayerParam param) async {
-    return execute<List<MediaModel>, List<MediaEntity>>(
-      remoteResult: await remoteDataSource.getPlayerMedia(param),
-    );
-  }
 }

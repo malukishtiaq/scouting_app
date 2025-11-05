@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import '../../../../core/errors/app_errors.dart';
+import '../../../../core/usecases/usecase.dart';
 import '../../data/request/param/update_player_param.dart';
 import '../entities/player_entity.dart';
 import '../repositories/iplayer_repository.dart';
 
 /// Update Player Use Case
-class UpdatePlayerUsecase {
+class UpdatePlayerUsecase extends UseCase<PlayerEntity, UpdatePlayerParam> {
   final IPlayerRepository repository;
 
   const UpdatePlayerUsecase({required this.repository});
@@ -14,4 +15,3 @@ class UpdatePlayerUsecase {
     return await repository.updatePlayer(param);
   }
 }
-
