@@ -7,14 +7,14 @@ class AccountRepository extends IAccountRepository {
   AccountRepository(this.remoteDataSource);
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> login(LoginParam param) async {
-    final result = execute(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> login(LoginParam param) async {
+    final result = execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
       remoteResult: await remoteDataSource.login(param),
     );
 
     // Cast the result to the correct type
-    final authResult = Result<AppErrors, AuthResponseEntity>(
-      data: result.data as AuthResponseEntity?,
+    final authResult = Result<AppErrors, WoWonder.AuthResponseEntity>(
+      data: result.data as WoWonder.AuthResponseEntity?,
       error: result.error,
     );
 
@@ -74,9 +74,9 @@ class AccountRepository extends IAccountRepository {
   }
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> resgister(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> resgister(
       RegisterParam param) async {
-    return execute(
+    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
       remoteResult: await remoteDataSource.resgister(param),
     );
   }
@@ -130,25 +130,25 @@ class AccountRepository extends IAccountRepository {
   }
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> twoFactor(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> twoFactor(
       TwoFactorParam param) async {
-    return execute(
+    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
       remoteResult: await remoteDataSource.twoFactor(param),
     );
   }
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> verifyAccount(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> verifyAccount(
       VerifyAccountParam param) async {
-    return execute(
+    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
       remoteResult: await remoteDataSource.verifyAccount(param),
     );
   }
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> socialLogin(
+  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> socialLogin(
       SocialLoginParam param) async {
-    return execute(
+    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
       remoteResult: await remoteDataSource.socialLogin(param),
     );
   }
@@ -163,17 +163,17 @@ class AccountRepository extends IAccountRepository {
   // ========== MEMBER APIs (Scouting API) ==========
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> memberRegister(
-      RegisterParam param) async {
-    return execute(
+  Future<Result<AppErrors, Scouting.AuthResponseEntity>> memberRegister(
+      ScoutingRegisterParam param) async {
+    return execute<Scouting.AuthResponseModel, Scouting.AuthResponseEntity>(
       remoteResult: await remoteDataSource.memberRegister(param),
     );
   }
 
   @override
-  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(
-      LoginParam param) async {
-    return execute(
+  Future<Result<AppErrors, Scouting.AuthResponseEntity>> memberLogin(
+      ScoutingLoginParam param) async {
+    return execute<Scouting.AuthResponseModel, Scouting.AuthResponseEntity>(
       remoteResult: await remoteDataSource.memberLogin(param),
     );
   }
