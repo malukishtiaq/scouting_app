@@ -1,14 +1,20 @@
 import '../../../../../core/params/base_params.dart';
 
 /// Parameter for listing all members
+/// GET /api/members?page={page}
 class ListMembersParam extends BaseParams {
+  final int? page; // Page number for pagination (optional)
+
   ListMembersParam({
+    this.page,
     super.cancelToken,
   });
 
   @override
   Map<String, dynamic> toMap() {
-    return {};
+    return {
+      if (page != null) 'page': page,
+    };
   }
 
   @override

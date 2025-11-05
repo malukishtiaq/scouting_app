@@ -255,6 +255,7 @@ class AccountRemoteSource extends IAccountRemoteSource {
       converter: (json) => MembersListModel.fromJson(json),
       method: HttpMethod.GET,
       url: MainAPIS.apiMemberList,
+      queryParameters: param.toMap(), // Pass page as query parameter
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
       withAuthentication: true, // Requires authentication
       enableLogging: false,
