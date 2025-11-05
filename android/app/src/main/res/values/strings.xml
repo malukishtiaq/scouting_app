@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- OneSignal App ID -->
+    <string name="onesignal_app_id" translatable="false">64974c58-9993-40ed-b782-0814edc401ea</string>
+    <!-- Google Cloud Messaging API key (for FCM) -->
+    <string name="onesignal_google_project_number" translatable="false">657181382689</string>
+</resources>
+

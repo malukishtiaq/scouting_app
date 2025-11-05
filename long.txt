@@ -1,0 +1,99 @@
+Restarted application in 4,895ms.
+I/flutter (25592): 🚀 Starting configureInjection...
+I/flutter (25592): ✅ Injectable dependencies initialized
+I/flutter (25592): 🔧 AccountService: Initialized for Scouting API
+I/flutter (25592): 📍 API URL: https://scouting.terveys.io/api/
+I/flutter (25592): 🌐 Website URL: https://scouting.terveys.io
+I/flutter (25592): 🔗 Main: Initializing DeepLinkHandler...
+I/flutter (25592): 🔗 DeepLinkHandler: Initializing...
+I/flutter (25592): ✅ Critical assets preloaded successfully
+I/flutter (25592): 🔗 MainApp: initState() called
+I/flutter (25592): 🔗 MainApp: Setting navigation key...
+I/flutter (25592): 🔗 MainApp: DeepLinkHandler already initialized in main.dart
+I/flutter (25592): 🔔 [INIT] Starting notification services initialization...
+I/flutter (25592): 🔔 [NOTIFICATION] Initializing notification service...
+I/flutter (25592): 📶 Network quality changed: good (~5.0Mbps)
+I/flutter (25592): ✅ Media optimization services initialized with reactive adaptation
+I/System.out(25592): 🔗 MainActivity: getInitialLink() = null
+I/flutter (25592): 🔗 DeepLinkHandler: Initial link: null
+I/flutter (25592): 🔗 DeepLinkHandler: Initialization complete
+I/flutter (25592): 🔗 Main: DeepLinkHandler initialized successfully
+I/flutter (25592): 🧪 Testing referral link: https://baadbaan.host/register?ref=testuser123
+I/flutter (25592): 🔗 Deep link received: https://baadbaan.host/register?ref=testuser123
+I/flutter (25592): 🔗 Parsed URI - Host: baadbaan.host, Path: /register, Query: {ref: testuser123}
+I/flutter (25592): ✅ Referral code detected: testuser123
+I/flutter (25592): 🔗 Main: Deep link test completed
+I/flutter (25592): ✅ [NOTIFICATION] Service initialized successfully
+I/flutter (25592): 🔔 [INIT] Notification service initialized
+I/flutter (25592): ✅ Background chat service initialized
+I/flutter (25592): 🔔 [INIT] Background service initialized
+I/flutter (25592): ✅ [INIT] All notification services initialized successfully
+W/OnBackInvokedCallback(25592): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback(25592): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ScrollIdentify(25592): on fling
+I/ScrollIdentify(25592): on fling
+W/MIUIScout ANR(25592): AnrScout only want msg within 20s, so stop here
+D/MIUIScout ANR(25592): get period history msg: (Current message:null)
+D/MIUIScout ANR(25592): get period history msg:In recent 20s, total historyMsgCount=31
+W/MIUIScout ANR(25592): Print Message Id: 0 MessageInfo: { when=-7s235ms what=3 target=android.view.GestureDetector$GestureHandler }
+W/MIUIScout ANR(25592): Print Message Id: 1 MessageInfo: { when=-7s136ms callback=io.flutter.plugins.webviewflutter.AndroidWebkitLibraryPigeonInstanceManager$$ExternalSyntheticLambda0 target=android.os.Handler }
+W/MIUIScout ANR(25592): (Print messages: 2, polling=false, quitting=false)
+I/wonder.combined(25592): Thread[6,tid=25598,WaitingInMainSignalCatcherLoop,Thread*=0xb400006fbbc3a000,peer=0x13fc0220,"Signal Catcher"]: reacting to signal 3
+I/wonder.combined(25592):
+I/wonder.combined(25592): Wrote stack traces to tombstoned
+F/crash_dump64(25925): crash_dump.cpp:515] failed to attach to thread 541: Permission denied
+I/flutter (25592): Flutter Error: type 'RegisterScreenParam' is not a subtype of type 'Map<String, dynamic>?' in type cast
+I/flutter (25592): Stack trace: #0      NavigationRoute.generateRoute (package:scouting_app/core/navigation/route_generator.dart:58:41)
+I/flutter (25592): #1      _WidgetsAppState._onGenerateRoute (package:flutter/src/widgets/app.dart:1562:37)
+I/flutter (25592): #2      NavigatorState._routeNamed (package:flutter/src/widgets/navigator.dart:4643:47)
+I/flutter (25592): #3      NavigatorState.pushNamed (package:flutter/src/widgets/navigator.dart:4711:21)
+I/flutter (25592): #4      Navigator.pushNamed (package:flutter/src/widgets/navigator.dart:1905:34)
+I/flutter (25592): #5      Nav.to (package:scouting_app/core/navigation/nav.dart:17:22)
+I/flutter (25592): #6      _LoginScreenContentState._handleCreateAccount (package:scouting_app/feature/account/presentation/screen/login/login_screen_content.dart:111:9)
+I/flutter (25592): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:345:24)
+I/flutter (25592): #8      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
+I/flutter (25592): #9      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
+I/flutter (25592): #10     BaseTapGestureRecognizer.handlePrimaryPointer (package:flutter/
+I/flutter (25592): 💾 Memory pressure: critical (639.0MB / 124.8%)
+I/flutter (25592): 💾 Memory pressure critical - adapting...
+I/flutter (25592): 🧹 Cleared cache due to memory pressure
+W/MIUIInput(25592): AnrScout input event latency is 21389, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+W/MIUIInput(25592): AnrScout input event latency is 21210, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+W/MIUIInput(25592): AnrScout input event latency is 20213, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+W/MIUIInput(25592): AnrScout input event latency is 20049, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+W/MIUIInput(25592): AnrScout input event latency is 19452, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+W/MIUIInput(25592): AnrScout input event latency is 19272, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+W/MIUIInput(25592): AnrScout input event latency is 16348, windowName 'com.wowonder.combined/com.wowonder.combined.MainActivity'
+I/Choreographer(25592): Skipped 1392 frames!  The application may be doing too much work on its main thread.
+W/Looper  (25592): PerfMonitor doFrame : time=1ms vsyncFrame=0 latency=23215ms procState=-1 historyMsgCount=1
+I/libPerfCtl(25592): fbcNotifySbeRescue ret=-1
+I/flutter (25592): Flutter Error: type 'RegisterScreenParam' is not a subtype of type 'Map<String, dynamic>?' in type cast
+I/flutter (25592): Stack trace: #0      NavigationRoute.generateRoute (package:scouting_app/core/navigation/route_generator.dart:58:41)
+I/flutter (25592): #1      _WidgetsAppState._onGenerateRoute (package:flutter/src/widgets/app.dart:1562:37)
+I/flutter (25592): #2      NavigatorState._routeNamed (package:flutter/src/widgets/navigator.dart:4643:47)
+I/flutter (25592): #3      NavigatorState.pushNamed (package:flutter/src/widgets/navigator.dart:4711:21)
+I/flutter (25592): #4      Navigator.pushNamed (package:flutter/src/widgets/navigator.dart:1905:34)
+I/flutter (25592): #5      Nav.to (package:scouting_app/core/navigation/nav.dart:17:22)
+I/flutter (25592): #6      _LoginScreenContentState._handleCreateAccount (package:scouting_app/feature/account/presentation/screen/login/login_screen_content.dart:111:9)
+I/flutter (25592): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:345:24)
+I/flutter (25592): #8      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
+I/flutter (25592): #9      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
+I/flutter (25592): #10     BaseTapGestureRecognizer.handlePrimaryPointer (package:flutter/
+I/flutter (25592): Flutter Error: type 'RegisterScreenParam' is not a subtype of type 'Map<String, dynamic>?' in type cast
+I/flutter (25592): Stack trace: #0      NavigationRoute.generateRoute (package:scouting_app/core/navigation/route_generator.dart:58:41)
+I/flutter (25592): #1      _WidgetsAppState._onGenerateRoute (package:flutter/src/widgets/app.dart:1562:37)
+I/flutter (25592): #2      NavigatorState._routeNamed (package:flutter/src/widgets/navigator.dart:4643:47)
+I/flutter (25592): #3      NavigatorState.pushNamed (package:flutter/src/widgets/navigator.dart:4711:21)
+I/flutter (25592): #4      Navigator.pushNamed (package:flutter/src/widgets/navigator.dart:1905:34)
+I/flutter (25592): #5      Nav.to (package:scouting_app/core/navigation/nav.dart:17:22)
+I/flutter (25592): #6      _LoginScreenContentState._handleCreateAccount (package:scouting_app/feature/account/presentation/screen/login/login_screen_content.dart:111:9)
+I/flutter (25592): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:345:24)
+I/flutter (25592): #8      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
+I/flutter (25592): #9      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
+I/flutter (25592): #10     BaseTapGestureRecognizer.handlePrimaryPointer (package:flutter/
+D/DecorView[](25592): onWindowFocusChanged hasWindowFocus true
+I/HandWritingStubImpl(25592): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(25592): getCurrentKeyboardType: 1
+Reloaded 1 of 3050 libraries in 1,871ms (compile: 105 ms, reload: 846 ms, reassemble: 631 ms).
+Reloaded 1 of 3050 libraries in 1,868ms (compile: 120 ms, reload: 824 ms, reassemble: 549 ms).
+Reloaded 1 of 3050 libraries in 1,906ms (compile: 210 ms, reload: 816 ms, reassemble: 528 ms).

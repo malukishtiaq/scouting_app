@@ -4,6 +4,9 @@ import '../cubit/reels_cubit.dart';
 import '../cubit/reels_state.dart';
 import '../widget/reel_player_widget.dart';
 import '../../../../core/video/video_cache_manager.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/theme/app_dimensions.dart';
+import '../../../../localization/app_localization.dart';
 
 class ReelsScreen extends StatefulWidget {
   static const String routeName = '/reels';
@@ -17,6 +20,7 @@ class ReelsScreen extends StatefulWidget {
 class _ReelsScreenState extends State<ReelsScreen> with WidgetsBindingObserver {
   late PageController _pageController;
   int _currentIndex = 0;
+  int _selectedNavIndex = 0; // For bottom navigation
 
   // Gesture tracking for quick flicks
   double _dragStartY = 0;
@@ -62,6 +66,7 @@ class _ReelsScreenState extends State<ReelsScreen> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      extendBody: true, // Extend body behind bottom nav
       body: BlocConsumer<ReelsCubit, ReelsState>(
         listener: (context, state) {
           if (state is ReelsError) {
@@ -238,7 +243,156 @@ class _ReelsScreenState extends State<ReelsScreen> with WidgetsBindingObserver {
           );
         },
       ),
+      bottomNavigationBar: _buildBottomNavigationBar(),
     );
+  }
+
+  /// Build TikTok-style bottom navigation bar (from Figma)
+  Widget _buildBottomNavigationBar() {
+    return Container(
+      height: 80,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Colors.transparent,
+            Colors.black.withOpacity(0.3),
+            Colors.black.withOpacity(0.6),
+          ],
+        ),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildNavIcon(
+              icon: Icons.person_outline,
+              label: 'home'.tr,
+              index: 0,
+            ),
+            _buildNavIcon(
+              icon: Icons.sports_soccer,
+              label: 'explore'.tr,
+              index: 1,
+            ),
+            _buildNavIcon(
+              icon: Icons.add_circle_outline,
+              label: '',
+              index: 2,
+              isCenter: true,
+            ),
+            _buildNavIcon(
+              icon: Icons.videogame_asset_outlined,
+              label: 'games'.tr,
+              index: 3,
+            ),
+            _buildNavIcon(
+              icon: Icons.public,
+              label: 'discover'.tr,
+              index: 4,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Build navigation icon button
+  Widget _buildNavIcon({
+    required IconData icon,
+    required String label,
+    required int index,
+    bool isCenter = false,
+  }) {
+    final isSelected = _selectedNavIndex == index;
+
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedNavIndex = index;
+        });
+        _handleNavigation(index);
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            icon,
+            color: isSelected
+                ? AppColors.primary
+                : AppColors.textOnPrimary,
+            size: isCenter ? AppDimensions.iconLarge : AppDimensions.iconMedium,
+          ),
+          if (label.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.only(top: AppDimensions.spacing4),
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: isSelected
+                      ? AppColors.primary
+                      : AppColors.textSecondary,
+                  fontSize: 10,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  /// Handle bottom navigation
+  void _handleNavigation(int index) {
+    switch (index) {
+      case 0: // Profile/People
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('home_coming_soon'.tr),
+            backgroundColor: AppColors.surface,
+            duration: const Duration(seconds: 1),
+          ),
+        );
+        break;
+      case 1: // Explore/Ball
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('explore_coming_soon'.tr),
+            backgroundColor: AppColors.surface,
+            duration: const Duration(seconds: 1),
+          ),
+        );
+        break;
+      case 2: // Add/Upload (center)
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('upload_coming_soon'.tr),
+            backgroundColor: AppColors.surface,
+            duration: const Duration(seconds: 1),
+          ),
+        );
+        break;
+      case 3: // Games/Controller
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('games_coming_soon'.tr),
+            backgroundColor: AppColors.surface,
+            duration: const Duration(seconds: 1),
+          ),
+        );
+        break;
+      case 4: // Discover/Globe
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('discover_coming_soon'.tr),
+            backgroundColor: AppColors.surface,
+            duration: const Duration(seconds: 1),
+          ),
+        );
+        break;
+    }
   }
 
   Widget _buildBackOverlay(BuildContext context) {
