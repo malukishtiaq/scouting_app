@@ -222,16 +222,30 @@ class AccountRemoteSource extends IAccountRemoteSource {
   @override
   Future<Either<AppErrors, UpdateProfileResponseModel>> updateProfile(
       UpdateProfileParam param) async {
-    return await request(
-      converter: (json) => UpdateProfileResponseModel.fromJson(json),
-      method: HttpMethod.POST,
-      url: MainAPIS.apiMemberUpdate,
-      body: param.toMap(),
-      createModelInterceptor: const PrimitiveCreateModelInterceptor(),
-      withAuthentication: true, // Requires authentication
-      enableLogging: true,
-      params: param, // Pass params for cache invalidation
-    );
+    // If avatar file is provided, use upload method (multipart/form-data)
+    if (param.avatarPath != null && param.avatarPath!.isNotEmpty) {
+      return await requestUploadFile(
+        converter: (json) => UpdateProfileResponseModel.fromJson(json),
+        url: MainAPIS.apiMemberUpdate,
+        fileKey: 'avatar', // Field name for avatar file
+        filePath: param.avatarPath!,
+        data: param.toMap(), // Other form fields
+        withAuthentication: true, // Requires authentication
+        enableLogging: true,
+      );
+    } else {
+      // No file upload, use regular request
+      return await request(
+        converter: (json) => UpdateProfileResponseModel.fromJson(json),
+        method: HttpMethod.POST,
+        url: MainAPIS.apiMemberUpdate,
+        body: param.toMap(),
+        createModelInterceptor: const PrimitiveCreateModelInterceptor(),
+        withAuthentication: true, // Requires authentication
+        enableLogging: true,
+        params: param, // Pass params for cache invalidation
+      );
+    }
   }
 
   @override

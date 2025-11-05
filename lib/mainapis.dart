@@ -283,7 +283,7 @@ class MainAPIS {
   static const String apiMemberRegister = "api/members/register"; // POST /api/members/register
   static const String apiMemberLogin = "api/members/login"; // POST /api/members/login
   static const String apiMemberMe = "api/me"; // GET /api/me
-  static const String apiMemberUpdate = "api/members/update"; // POST /api/members/update
+  static const String apiMemberUpdate = "api/profile"; // POST /api/profile
   static const String apiMemberList = "api/members"; // GET /api/members
   static const String apiMemberShow = "api/members"; // GET /api/members/{user_id}
   
