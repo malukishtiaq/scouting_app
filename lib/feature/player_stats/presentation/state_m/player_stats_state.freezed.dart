@@ -22,15 +22,6 @@ mixin _$PlayerStatsState {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) =>
@@ -41,13 +32,6 @@ mixin _$PlayerStatsState {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) =>
@@ -58,12 +42,6 @@ mixin _$PlayerStatsState {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -75,12 +53,6 @@ mixin _$PlayerStatsState {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) =>
@@ -91,12 +63,6 @@ mixin _$PlayerStatsState {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) =>
@@ -107,12 +73,6 @@ mixin _$PlayerStatsState {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),
@@ -180,15 +140,6 @@ class _$PlayerStatsInitialImpl implements PlayerStatsInitial {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) {
@@ -202,13 +153,6 @@ class _$PlayerStatsInitialImpl implements PlayerStatsInitial {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) {
@@ -222,12 +166,6 @@ class _$PlayerStatsInitialImpl implements PlayerStatsInitial {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -245,12 +183,6 @@ class _$PlayerStatsInitialImpl implements PlayerStatsInitial {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) {
@@ -264,12 +196,6 @@ class _$PlayerStatsInitialImpl implements PlayerStatsInitial {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) {
@@ -283,12 +209,6 @@ class _$PlayerStatsInitialImpl implements PlayerStatsInitial {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),
@@ -346,15 +266,6 @@ class _$PlayerStatsLoadingImpl implements PlayerStatsLoading {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) {
@@ -368,13 +279,6 @@ class _$PlayerStatsLoadingImpl implements PlayerStatsLoading {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) {
@@ -388,12 +292,6 @@ class _$PlayerStatsLoadingImpl implements PlayerStatsLoading {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -411,12 +309,6 @@ class _$PlayerStatsLoadingImpl implements PlayerStatsLoading {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) {
@@ -430,12 +322,6 @@ class _$PlayerStatsLoadingImpl implements PlayerStatsLoading {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) {
@@ -449,12 +335,6 @@ class _$PlayerStatsLoadingImpl implements PlayerStatsLoading {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),
@@ -539,15 +419,6 @@ class _$PlayerStatsLoadedImpl implements PlayerStatsLoaded {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) {
@@ -561,13 +432,6 @@ class _$PlayerStatsLoadedImpl implements PlayerStatsLoaded {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) {
@@ -581,12 +445,6 @@ class _$PlayerStatsLoadedImpl implements PlayerStatsLoaded {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -604,12 +462,6 @@ class _$PlayerStatsLoadedImpl implements PlayerStatsLoaded {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) {
@@ -623,12 +475,6 @@ class _$PlayerStatsLoadedImpl implements PlayerStatsLoaded {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) {
@@ -642,12 +488,6 @@ class _$PlayerStatsLoadedImpl implements PlayerStatsLoaded {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),
@@ -748,15 +588,6 @@ class _$PlayerStatsErrorImpl implements PlayerStatsError {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) {
@@ -770,13 +601,6 @@ class _$PlayerStatsErrorImpl implements PlayerStatsError {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) {
@@ -790,12 +614,6 @@ class _$PlayerStatsErrorImpl implements PlayerStatsError {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -813,12 +631,6 @@ class _$PlayerStatsErrorImpl implements PlayerStatsError {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) {
@@ -832,12 +644,6 @@ class _$PlayerStatsErrorImpl implements PlayerStatsError {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) {
@@ -851,12 +657,6 @@ class _$PlayerStatsErrorImpl implements PlayerStatsError {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),
@@ -876,1258 +676,6 @@ abstract class PlayerStatsError implements PlayerStatsState {
   @JsonKey(ignore: true)
   _$$PlayerStatsErrorImplCopyWith<_$PlayerStatsErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PlayerStatsGamesLoadingImplCopyWith<$Res> {
-  factory _$$PlayerStatsGamesLoadingImplCopyWith(
-          _$PlayerStatsGamesLoadingImpl value,
-          $Res Function(_$PlayerStatsGamesLoadingImpl) then) =
-      __$$PlayerStatsGamesLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PlayerEntity player});
-}
-
-/// @nodoc
-class __$$PlayerStatsGamesLoadingImplCopyWithImpl<$Res>
-    extends _$PlayerStatsStateCopyWithImpl<$Res, _$PlayerStatsGamesLoadingImpl>
-    implements _$$PlayerStatsGamesLoadingImplCopyWith<$Res> {
-  __$$PlayerStatsGamesLoadingImplCopyWithImpl(
-      _$PlayerStatsGamesLoadingImpl _value,
-      $Res Function(_$PlayerStatsGamesLoadingImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? player = null,
-  }) {
-    return _then(_$PlayerStatsGamesLoadingImpl(
-      null == player
-          ? _value.player
-          : player // ignore: cast_nullable_to_non_nullable
-              as PlayerEntity,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlayerStatsGamesLoadingImpl implements PlayerStatsGamesLoading {
-  const _$PlayerStatsGamesLoadingImpl(this.player);
-
-  @override
-  final PlayerEntity player;
-
-  @override
-  String toString() {
-    return 'PlayerStatsState.gamesLoading(player: $player)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStatsGamesLoadingImpl &&
-            (identical(other.player, player) || other.player == player));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, player);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStatsGamesLoadingImplCopyWith<_$PlayerStatsGamesLoadingImpl>
-      get copyWith => __$$PlayerStatsGamesLoadingImplCopyWithImpl<
-          _$PlayerStatsGamesLoadingImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(PlayerEntity player) loaded,
-    required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
-    required TResult Function(PlayerEntity player) playerUpdating,
-    required TResult Function(PlayerEntity player) playerUpdated,
-  }) {
-    return gamesLoading(player);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(PlayerEntity player)? loaded,
-    TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult? Function(PlayerEntity player)? playerUpdating,
-    TResult? Function(PlayerEntity player)? playerUpdated,
-  }) {
-    return gamesLoading?.call(player);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(PlayerEntity player)? loaded,
-    TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult Function(PlayerEntity player)? playerUpdating,
-    TResult Function(PlayerEntity player)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (gamesLoading != null) {
-      return gamesLoading(player);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PlayerStatsInitial value) initial,
-    required TResult Function(PlayerStatsLoading value) loading,
-    required TResult Function(PlayerStatsLoaded value) loaded,
-    required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
-    required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
-    required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
-  }) {
-    return gamesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PlayerStatsInitial value)? initial,
-    TResult? Function(PlayerStatsLoading value)? loading,
-    TResult? Function(PlayerStatsLoaded value)? loaded,
-    TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-  }) {
-    return gamesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PlayerStatsInitial value)? initial,
-    TResult Function(PlayerStatsLoading value)? loading,
-    TResult Function(PlayerStatsLoaded value)? loaded,
-    TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (gamesLoading != null) {
-      return gamesLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlayerStatsGamesLoading implements PlayerStatsState {
-  const factory PlayerStatsGamesLoading(final PlayerEntity player) =
-      _$PlayerStatsGamesLoadingImpl;
-
-  PlayerEntity get player;
-  @JsonKey(ignore: true)
-  _$$PlayerStatsGamesLoadingImplCopyWith<_$PlayerStatsGamesLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PlayerStatsGamesLoadedImplCopyWith<$Res> {
-  factory _$$PlayerStatsGamesLoadedImplCopyWith(
-          _$PlayerStatsGamesLoadedImpl value,
-          $Res Function(_$PlayerStatsGamesLoadedImpl) then) =
-      __$$PlayerStatsGamesLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PlayerEntity player, List<GameEntity> games});
-}
-
-/// @nodoc
-class __$$PlayerStatsGamesLoadedImplCopyWithImpl<$Res>
-    extends _$PlayerStatsStateCopyWithImpl<$Res, _$PlayerStatsGamesLoadedImpl>
-    implements _$$PlayerStatsGamesLoadedImplCopyWith<$Res> {
-  __$$PlayerStatsGamesLoadedImplCopyWithImpl(
-      _$PlayerStatsGamesLoadedImpl _value,
-      $Res Function(_$PlayerStatsGamesLoadedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? player = null,
-    Object? games = null,
-  }) {
-    return _then(_$PlayerStatsGamesLoadedImpl(
-      null == player
-          ? _value.player
-          : player // ignore: cast_nullable_to_non_nullable
-              as PlayerEntity,
-      null == games
-          ? _value._games
-          : games // ignore: cast_nullable_to_non_nullable
-              as List<GameEntity>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlayerStatsGamesLoadedImpl implements PlayerStatsGamesLoaded {
-  const _$PlayerStatsGamesLoadedImpl(this.player, final List<GameEntity> games)
-      : _games = games;
-
-  @override
-  final PlayerEntity player;
-  final List<GameEntity> _games;
-  @override
-  List<GameEntity> get games {
-    if (_games is EqualUnmodifiableListView) return _games;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_games);
-  }
-
-  @override
-  String toString() {
-    return 'PlayerStatsState.gamesLoaded(player: $player, games: $games)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStatsGamesLoadedImpl &&
-            (identical(other.player, player) || other.player == player) &&
-            const DeepCollectionEquality().equals(other._games, _games));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, player, const DeepCollectionEquality().hash(_games));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStatsGamesLoadedImplCopyWith<_$PlayerStatsGamesLoadedImpl>
-      get copyWith => __$$PlayerStatsGamesLoadedImplCopyWithImpl<
-          _$PlayerStatsGamesLoadedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(PlayerEntity player) loaded,
-    required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
-    required TResult Function(PlayerEntity player) playerUpdating,
-    required TResult Function(PlayerEntity player) playerUpdated,
-  }) {
-    return gamesLoaded(player, games);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(PlayerEntity player)? loaded,
-    TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult? Function(PlayerEntity player)? playerUpdating,
-    TResult? Function(PlayerEntity player)? playerUpdated,
-  }) {
-    return gamesLoaded?.call(player, games);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(PlayerEntity player)? loaded,
-    TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult Function(PlayerEntity player)? playerUpdating,
-    TResult Function(PlayerEntity player)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (gamesLoaded != null) {
-      return gamesLoaded(player, games);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PlayerStatsInitial value) initial,
-    required TResult Function(PlayerStatsLoading value) loading,
-    required TResult Function(PlayerStatsLoaded value) loaded,
-    required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
-    required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
-    required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
-  }) {
-    return gamesLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PlayerStatsInitial value)? initial,
-    TResult? Function(PlayerStatsLoading value)? loading,
-    TResult? Function(PlayerStatsLoaded value)? loaded,
-    TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-  }) {
-    return gamesLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PlayerStatsInitial value)? initial,
-    TResult Function(PlayerStatsLoading value)? loading,
-    TResult Function(PlayerStatsLoaded value)? loaded,
-    TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (gamesLoaded != null) {
-      return gamesLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlayerStatsGamesLoaded implements PlayerStatsState {
-  const factory PlayerStatsGamesLoaded(
-          final PlayerEntity player, final List<GameEntity> games) =
-      _$PlayerStatsGamesLoadedImpl;
-
-  PlayerEntity get player;
-  List<GameEntity> get games;
-  @JsonKey(ignore: true)
-  _$$PlayerStatsGamesLoadedImplCopyWith<_$PlayerStatsGamesLoadedImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PlayerStatsMediaLoadingImplCopyWith<$Res> {
-  factory _$$PlayerStatsMediaLoadingImplCopyWith(
-          _$PlayerStatsMediaLoadingImpl value,
-          $Res Function(_$PlayerStatsMediaLoadingImpl) then) =
-      __$$PlayerStatsMediaLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PlayerEntity player});
-}
-
-/// @nodoc
-class __$$PlayerStatsMediaLoadingImplCopyWithImpl<$Res>
-    extends _$PlayerStatsStateCopyWithImpl<$Res, _$PlayerStatsMediaLoadingImpl>
-    implements _$$PlayerStatsMediaLoadingImplCopyWith<$Res> {
-  __$$PlayerStatsMediaLoadingImplCopyWithImpl(
-      _$PlayerStatsMediaLoadingImpl _value,
-      $Res Function(_$PlayerStatsMediaLoadingImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? player = null,
-  }) {
-    return _then(_$PlayerStatsMediaLoadingImpl(
-      null == player
-          ? _value.player
-          : player // ignore: cast_nullable_to_non_nullable
-              as PlayerEntity,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlayerStatsMediaLoadingImpl implements PlayerStatsMediaLoading {
-  const _$PlayerStatsMediaLoadingImpl(this.player);
-
-  @override
-  final PlayerEntity player;
-
-  @override
-  String toString() {
-    return 'PlayerStatsState.mediaLoading(player: $player)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStatsMediaLoadingImpl &&
-            (identical(other.player, player) || other.player == player));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, player);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStatsMediaLoadingImplCopyWith<_$PlayerStatsMediaLoadingImpl>
-      get copyWith => __$$PlayerStatsMediaLoadingImplCopyWithImpl<
-          _$PlayerStatsMediaLoadingImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(PlayerEntity player) loaded,
-    required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
-    required TResult Function(PlayerEntity player) playerUpdating,
-    required TResult Function(PlayerEntity player) playerUpdated,
-  }) {
-    return mediaLoading(player);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(PlayerEntity player)? loaded,
-    TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult? Function(PlayerEntity player)? playerUpdating,
-    TResult? Function(PlayerEntity player)? playerUpdated,
-  }) {
-    return mediaLoading?.call(player);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(PlayerEntity player)? loaded,
-    TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult Function(PlayerEntity player)? playerUpdating,
-    TResult Function(PlayerEntity player)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaLoading != null) {
-      return mediaLoading(player);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PlayerStatsInitial value) initial,
-    required TResult Function(PlayerStatsLoading value) loading,
-    required TResult Function(PlayerStatsLoaded value) loaded,
-    required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
-    required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
-    required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
-  }) {
-    return mediaLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PlayerStatsInitial value)? initial,
-    TResult? Function(PlayerStatsLoading value)? loading,
-    TResult? Function(PlayerStatsLoaded value)? loaded,
-    TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-  }) {
-    return mediaLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PlayerStatsInitial value)? initial,
-    TResult Function(PlayerStatsLoading value)? loading,
-    TResult Function(PlayerStatsLoaded value)? loaded,
-    TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaLoading != null) {
-      return mediaLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlayerStatsMediaLoading implements PlayerStatsState {
-  const factory PlayerStatsMediaLoading(final PlayerEntity player) =
-      _$PlayerStatsMediaLoadingImpl;
-
-  PlayerEntity get player;
-  @JsonKey(ignore: true)
-  _$$PlayerStatsMediaLoadingImplCopyWith<_$PlayerStatsMediaLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PlayerStatsMediaLoadedImplCopyWith<$Res> {
-  factory _$$PlayerStatsMediaLoadedImplCopyWith(
-          _$PlayerStatsMediaLoadedImpl value,
-          $Res Function(_$PlayerStatsMediaLoadedImpl) then) =
-      __$$PlayerStatsMediaLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PlayerEntity player, List<MediaEntity> media});
-}
-
-/// @nodoc
-class __$$PlayerStatsMediaLoadedImplCopyWithImpl<$Res>
-    extends _$PlayerStatsStateCopyWithImpl<$Res, _$PlayerStatsMediaLoadedImpl>
-    implements _$$PlayerStatsMediaLoadedImplCopyWith<$Res> {
-  __$$PlayerStatsMediaLoadedImplCopyWithImpl(
-      _$PlayerStatsMediaLoadedImpl _value,
-      $Res Function(_$PlayerStatsMediaLoadedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? player = null,
-    Object? media = null,
-  }) {
-    return _then(_$PlayerStatsMediaLoadedImpl(
-      null == player
-          ? _value.player
-          : player // ignore: cast_nullable_to_non_nullable
-              as PlayerEntity,
-      null == media
-          ? _value._media
-          : media // ignore: cast_nullable_to_non_nullable
-              as List<MediaEntity>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlayerStatsMediaLoadedImpl implements PlayerStatsMediaLoaded {
-  const _$PlayerStatsMediaLoadedImpl(this.player, final List<MediaEntity> media)
-      : _media = media;
-
-  @override
-  final PlayerEntity player;
-  final List<MediaEntity> _media;
-  @override
-  List<MediaEntity> get media {
-    if (_media is EqualUnmodifiableListView) return _media;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_media);
-  }
-
-  @override
-  String toString() {
-    return 'PlayerStatsState.mediaLoaded(player: $player, media: $media)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStatsMediaLoadedImpl &&
-            (identical(other.player, player) || other.player == player) &&
-            const DeepCollectionEquality().equals(other._media, _media));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, player, const DeepCollectionEquality().hash(_media));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStatsMediaLoadedImplCopyWith<_$PlayerStatsMediaLoadedImpl>
-      get copyWith => __$$PlayerStatsMediaLoadedImplCopyWithImpl<
-          _$PlayerStatsMediaLoadedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(PlayerEntity player) loaded,
-    required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
-    required TResult Function(PlayerEntity player) playerUpdating,
-    required TResult Function(PlayerEntity player) playerUpdated,
-  }) {
-    return mediaLoaded(player, media);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(PlayerEntity player)? loaded,
-    TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult? Function(PlayerEntity player)? playerUpdating,
-    TResult? Function(PlayerEntity player)? playerUpdated,
-  }) {
-    return mediaLoaded?.call(player, media);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(PlayerEntity player)? loaded,
-    TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult Function(PlayerEntity player)? playerUpdating,
-    TResult Function(PlayerEntity player)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaLoaded != null) {
-      return mediaLoaded(player, media);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PlayerStatsInitial value) initial,
-    required TResult Function(PlayerStatsLoading value) loading,
-    required TResult Function(PlayerStatsLoaded value) loaded,
-    required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
-    required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
-    required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
-  }) {
-    return mediaLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PlayerStatsInitial value)? initial,
-    TResult? Function(PlayerStatsLoading value)? loading,
-    TResult? Function(PlayerStatsLoaded value)? loaded,
-    TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-  }) {
-    return mediaLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PlayerStatsInitial value)? initial,
-    TResult Function(PlayerStatsLoading value)? loading,
-    TResult Function(PlayerStatsLoaded value)? loaded,
-    TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaLoaded != null) {
-      return mediaLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlayerStatsMediaLoaded implements PlayerStatsState {
-  const factory PlayerStatsMediaLoaded(
-          final PlayerEntity player, final List<MediaEntity> media) =
-      _$PlayerStatsMediaLoadedImpl;
-
-  PlayerEntity get player;
-  List<MediaEntity> get media;
-  @JsonKey(ignore: true)
-  _$$PlayerStatsMediaLoadedImplCopyWith<_$PlayerStatsMediaLoadedImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PlayerStatsMediaUploadingImplCopyWith<$Res> {
-  factory _$$PlayerStatsMediaUploadingImplCopyWith(
-          _$PlayerStatsMediaUploadingImpl value,
-          $Res Function(_$PlayerStatsMediaUploadingImpl) then) =
-      __$$PlayerStatsMediaUploadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PlayerEntity player});
-}
-
-/// @nodoc
-class __$$PlayerStatsMediaUploadingImplCopyWithImpl<$Res>
-    extends _$PlayerStatsStateCopyWithImpl<$Res,
-        _$PlayerStatsMediaUploadingImpl>
-    implements _$$PlayerStatsMediaUploadingImplCopyWith<$Res> {
-  __$$PlayerStatsMediaUploadingImplCopyWithImpl(
-      _$PlayerStatsMediaUploadingImpl _value,
-      $Res Function(_$PlayerStatsMediaUploadingImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? player = null,
-  }) {
-    return _then(_$PlayerStatsMediaUploadingImpl(
-      null == player
-          ? _value.player
-          : player // ignore: cast_nullable_to_non_nullable
-              as PlayerEntity,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlayerStatsMediaUploadingImpl implements PlayerStatsMediaUploading {
-  const _$PlayerStatsMediaUploadingImpl(this.player);
-
-  @override
-  final PlayerEntity player;
-
-  @override
-  String toString() {
-    return 'PlayerStatsState.mediaUploading(player: $player)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStatsMediaUploadingImpl &&
-            (identical(other.player, player) || other.player == player));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, player);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStatsMediaUploadingImplCopyWith<_$PlayerStatsMediaUploadingImpl>
-      get copyWith => __$$PlayerStatsMediaUploadingImplCopyWithImpl<
-          _$PlayerStatsMediaUploadingImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(PlayerEntity player) loaded,
-    required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
-    required TResult Function(PlayerEntity player) playerUpdating,
-    required TResult Function(PlayerEntity player) playerUpdated,
-  }) {
-    return mediaUploading(player);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(PlayerEntity player)? loaded,
-    TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult? Function(PlayerEntity player)? playerUpdating,
-    TResult? Function(PlayerEntity player)? playerUpdated,
-  }) {
-    return mediaUploading?.call(player);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(PlayerEntity player)? loaded,
-    TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult Function(PlayerEntity player)? playerUpdating,
-    TResult Function(PlayerEntity player)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaUploading != null) {
-      return mediaUploading(player);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PlayerStatsInitial value) initial,
-    required TResult Function(PlayerStatsLoading value) loading,
-    required TResult Function(PlayerStatsLoaded value) loaded,
-    required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
-    required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
-    required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
-  }) {
-    return mediaUploading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PlayerStatsInitial value)? initial,
-    TResult? Function(PlayerStatsLoading value)? loading,
-    TResult? Function(PlayerStatsLoaded value)? loaded,
-    TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-  }) {
-    return mediaUploading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PlayerStatsInitial value)? initial,
-    TResult Function(PlayerStatsLoading value)? loading,
-    TResult Function(PlayerStatsLoaded value)? loaded,
-    TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaUploading != null) {
-      return mediaUploading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlayerStatsMediaUploading implements PlayerStatsState {
-  const factory PlayerStatsMediaUploading(final PlayerEntity player) =
-      _$PlayerStatsMediaUploadingImpl;
-
-  PlayerEntity get player;
-  @JsonKey(ignore: true)
-  _$$PlayerStatsMediaUploadingImplCopyWith<_$PlayerStatsMediaUploadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PlayerStatsMediaUploadedImplCopyWith<$Res> {
-  factory _$$PlayerStatsMediaUploadedImplCopyWith(
-          _$PlayerStatsMediaUploadedImpl value,
-          $Res Function(_$PlayerStatsMediaUploadedImpl) then) =
-      __$$PlayerStatsMediaUploadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PlayerEntity player, MediaEntity newMedia});
-}
-
-/// @nodoc
-class __$$PlayerStatsMediaUploadedImplCopyWithImpl<$Res>
-    extends _$PlayerStatsStateCopyWithImpl<$Res, _$PlayerStatsMediaUploadedImpl>
-    implements _$$PlayerStatsMediaUploadedImplCopyWith<$Res> {
-  __$$PlayerStatsMediaUploadedImplCopyWithImpl(
-      _$PlayerStatsMediaUploadedImpl _value,
-      $Res Function(_$PlayerStatsMediaUploadedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? player = null,
-    Object? newMedia = null,
-  }) {
-    return _then(_$PlayerStatsMediaUploadedImpl(
-      null == player
-          ? _value.player
-          : player // ignore: cast_nullable_to_non_nullable
-              as PlayerEntity,
-      null == newMedia
-          ? _value.newMedia
-          : newMedia // ignore: cast_nullable_to_non_nullable
-              as MediaEntity,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlayerStatsMediaUploadedImpl implements PlayerStatsMediaUploaded {
-  const _$PlayerStatsMediaUploadedImpl(this.player, this.newMedia);
-
-  @override
-  final PlayerEntity player;
-  @override
-  final MediaEntity newMedia;
-
-  @override
-  String toString() {
-    return 'PlayerStatsState.mediaUploaded(player: $player, newMedia: $newMedia)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStatsMediaUploadedImpl &&
-            (identical(other.player, player) || other.player == player) &&
-            (identical(other.newMedia, newMedia) ||
-                other.newMedia == newMedia));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, player, newMedia);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStatsMediaUploadedImplCopyWith<_$PlayerStatsMediaUploadedImpl>
-      get copyWith => __$$PlayerStatsMediaUploadedImplCopyWithImpl<
-          _$PlayerStatsMediaUploadedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(PlayerEntity player) loaded,
-    required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
-    required TResult Function(PlayerEntity player) playerUpdating,
-    required TResult Function(PlayerEntity player) playerUpdated,
-  }) {
-    return mediaUploaded(player, newMedia);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(PlayerEntity player)? loaded,
-    TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult? Function(PlayerEntity player)? playerUpdating,
-    TResult? Function(PlayerEntity player)? playerUpdated,
-  }) {
-    return mediaUploaded?.call(player, newMedia);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(PlayerEntity player)? loaded,
-    TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
-    TResult Function(PlayerEntity player)? playerUpdating,
-    TResult Function(PlayerEntity player)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaUploaded != null) {
-      return mediaUploaded(player, newMedia);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PlayerStatsInitial value) initial,
-    required TResult Function(PlayerStatsLoading value) loading,
-    required TResult Function(PlayerStatsLoaded value) loaded,
-    required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
-    required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
-    required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
-  }) {
-    return mediaUploaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PlayerStatsInitial value)? initial,
-    TResult? Function(PlayerStatsLoading value)? loading,
-    TResult? Function(PlayerStatsLoaded value)? loaded,
-    TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-  }) {
-    return mediaUploaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PlayerStatsInitial value)? initial,
-    TResult Function(PlayerStatsLoading value)? loading,
-    TResult Function(PlayerStatsLoaded value)? loaded,
-    TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
-    TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
-    TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
-    required TResult orElse(),
-  }) {
-    if (mediaUploaded != null) {
-      return mediaUploaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlayerStatsMediaUploaded implements PlayerStatsState {
-  const factory PlayerStatsMediaUploaded(
-          final PlayerEntity player, final MediaEntity newMedia) =
-      _$PlayerStatsMediaUploadedImpl;
-
-  PlayerEntity get player;
-  MediaEntity get newMedia;
-  @JsonKey(ignore: true)
-  _$$PlayerStatsMediaUploadedImplCopyWith<_$PlayerStatsMediaUploadedImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2202,15 +750,6 @@ class _$PlayerStatsPlayerUpdatingImpl implements PlayerStatsPlayerUpdating {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) {
@@ -2224,13 +763,6 @@ class _$PlayerStatsPlayerUpdatingImpl implements PlayerStatsPlayerUpdating {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) {
@@ -2244,12 +776,6 @@ class _$PlayerStatsPlayerUpdatingImpl implements PlayerStatsPlayerUpdating {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -2267,12 +793,6 @@ class _$PlayerStatsPlayerUpdatingImpl implements PlayerStatsPlayerUpdating {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) {
@@ -2286,12 +806,6 @@ class _$PlayerStatsPlayerUpdatingImpl implements PlayerStatsPlayerUpdating {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) {
@@ -2305,12 +819,6 @@ class _$PlayerStatsPlayerUpdatingImpl implements PlayerStatsPlayerUpdating {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),
@@ -2403,15 +911,6 @@ class _$PlayerStatsPlayerUpdatedImpl implements PlayerStatsPlayerUpdated {
     required TResult Function() loading,
     required TResult Function(PlayerEntity player) loaded,
     required TResult Function(AppErrors error) error,
-    required TResult Function(PlayerEntity player) gamesLoading,
-    required TResult Function(PlayerEntity player, List<GameEntity> games)
-        gamesLoaded,
-    required TResult Function(PlayerEntity player) mediaLoading,
-    required TResult Function(PlayerEntity player, List<MediaEntity> media)
-        mediaLoaded,
-    required TResult Function(PlayerEntity player) mediaUploading,
-    required TResult Function(PlayerEntity player, MediaEntity newMedia)
-        mediaUploaded,
     required TResult Function(PlayerEntity player) playerUpdating,
     required TResult Function(PlayerEntity player) playerUpdated,
   }) {
@@ -2425,13 +924,6 @@ class _$PlayerStatsPlayerUpdatedImpl implements PlayerStatsPlayerUpdated {
     TResult? Function()? loading,
     TResult? Function(PlayerEntity player)? loaded,
     TResult? Function(AppErrors error)? error,
-    TResult? Function(PlayerEntity player)? gamesLoading,
-    TResult? Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult? Function(PlayerEntity player)? mediaLoading,
-    TResult? Function(PlayerEntity player, List<MediaEntity> media)?
-        mediaLoaded,
-    TResult? Function(PlayerEntity player)? mediaUploading,
-    TResult? Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult? Function(PlayerEntity player)? playerUpdating,
     TResult? Function(PlayerEntity player)? playerUpdated,
   }) {
@@ -2445,12 +937,6 @@ class _$PlayerStatsPlayerUpdatedImpl implements PlayerStatsPlayerUpdated {
     TResult Function()? loading,
     TResult Function(PlayerEntity player)? loaded,
     TResult Function(AppErrors error)? error,
-    TResult Function(PlayerEntity player)? gamesLoading,
-    TResult Function(PlayerEntity player, List<GameEntity> games)? gamesLoaded,
-    TResult Function(PlayerEntity player)? mediaLoading,
-    TResult Function(PlayerEntity player, List<MediaEntity> media)? mediaLoaded,
-    TResult Function(PlayerEntity player)? mediaUploading,
-    TResult Function(PlayerEntity player, MediaEntity newMedia)? mediaUploaded,
     TResult Function(PlayerEntity player)? playerUpdating,
     TResult Function(PlayerEntity player)? playerUpdated,
     required TResult orElse(),
@@ -2468,12 +954,6 @@ class _$PlayerStatsPlayerUpdatedImpl implements PlayerStatsPlayerUpdated {
     required TResult Function(PlayerStatsLoading value) loading,
     required TResult Function(PlayerStatsLoaded value) loaded,
     required TResult Function(PlayerStatsError value) error,
-    required TResult Function(PlayerStatsGamesLoading value) gamesLoading,
-    required TResult Function(PlayerStatsGamesLoaded value) gamesLoaded,
-    required TResult Function(PlayerStatsMediaLoading value) mediaLoading,
-    required TResult Function(PlayerStatsMediaLoaded value) mediaLoaded,
-    required TResult Function(PlayerStatsMediaUploading value) mediaUploading,
-    required TResult Function(PlayerStatsMediaUploaded value) mediaUploaded,
     required TResult Function(PlayerStatsPlayerUpdating value) playerUpdating,
     required TResult Function(PlayerStatsPlayerUpdated value) playerUpdated,
   }) {
@@ -2487,12 +967,6 @@ class _$PlayerStatsPlayerUpdatedImpl implements PlayerStatsPlayerUpdated {
     TResult? Function(PlayerStatsLoading value)? loading,
     TResult? Function(PlayerStatsLoaded value)? loaded,
     TResult? Function(PlayerStatsError value)? error,
-    TResult? Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult? Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult? Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult? Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult? Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult? Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult? Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult? Function(PlayerStatsPlayerUpdated value)? playerUpdated,
   }) {
@@ -2506,12 +980,6 @@ class _$PlayerStatsPlayerUpdatedImpl implements PlayerStatsPlayerUpdated {
     TResult Function(PlayerStatsLoading value)? loading,
     TResult Function(PlayerStatsLoaded value)? loaded,
     TResult Function(PlayerStatsError value)? error,
-    TResult Function(PlayerStatsGamesLoading value)? gamesLoading,
-    TResult Function(PlayerStatsGamesLoaded value)? gamesLoaded,
-    TResult Function(PlayerStatsMediaLoading value)? mediaLoading,
-    TResult Function(PlayerStatsMediaLoaded value)? mediaLoaded,
-    TResult Function(PlayerStatsMediaUploading value)? mediaUploading,
-    TResult Function(PlayerStatsMediaUploaded value)? mediaUploaded,
     TResult Function(PlayerStatsPlayerUpdating value)? playerUpdating,
     TResult Function(PlayerStatsPlayerUpdated value)? playerUpdated,
     required TResult orElse(),

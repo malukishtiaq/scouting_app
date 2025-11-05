@@ -1,5 +1,3 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../../core/params/base_params.dart';
 
 /// Parameter for updating player data
@@ -56,19 +54,15 @@ class UpdatePlayerParam extends BaseParams {
   }
 
   @override
-  List<Object?> get props => [
-        playerId,
-        fullName,
-        avatar,
-        coverImage,
-        team,
-        position,
-        height,
-        weight,
-        age,
-        graduationClass,
-        school,
-        averageLocation,
-        bio,
-      ];
+  Map<String, dynamic> toMap() {
+    return {
+      'player_id': playerId,
+      'full_name': fullName,
+      'avatar': avatar,
+      'cover_image': coverImage,
+      'team': team,
+      'position': position,
+      'height': height,
+    };
+  }
 }

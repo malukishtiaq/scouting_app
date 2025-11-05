@@ -73,10 +73,10 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircularProgressIndicator(
+          const CircularProgressIndicator(
             color: AppColors.primary,
           ),
-          SizedBox(height: AppDimensions.spacing16),
+          const SizedBox(height: AppDimensions.spacing16),
           Text(
             'loading_player_data'.tr,
             style: AppTextStyles.bodyMedium.copyWith(
@@ -91,16 +91,16 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
   Widget _buildErrorState(String message) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(AppDimensions.spacing32),
+        padding: const EdgeInsets.all(AppDimensions.spacing32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               Icons.error_outline,
               size: AppDimensions.iconXXLarge * 2,
               color: AppColors.error,
             ),
-            SizedBox(height: AppDimensions.spacing24),
+            const SizedBox(height: AppDimensions.spacing24),
             Text(
               'error_loading_player_data'.tr,
               style: AppTextStyles.h5.copyWith(
@@ -108,7 +108,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: AppDimensions.spacing8),
+            const SizedBox(height: AppDimensions.spacing8),
             Text(
               message,
               style: AppTextStyles.bodyMedium.copyWith(
@@ -116,13 +116,13 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: AppDimensions.spacing24),
+            const SizedBox(height: AppDimensions.spacing24),
             ElevatedButton(
               onPressed: () => _cubit.loadPlayer(widget.playerId),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: AppColors.textOnPrimary,
-                minimumSize: Size(200, AppDimensions.buttonHeightMedium),
+                minimumSize: const Size(200, AppDimensions.buttonHeightMedium),
                 shape: RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.circular(AppDimensions.radiusMedium),
@@ -149,17 +149,17 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildProfileHeader(player),
-              SizedBox(height: AppDimensions.spacing16),
+              const SizedBox(height: AppDimensions.spacing16),
               _buildActionButtons(),
-              SizedBox(height: AppDimensions.spacing24),
+              const SizedBox(height: AppDimensions.spacing24),
               _buildStatsSection(player),
-              SizedBox(height: AppDimensions.spacing24),
+              const SizedBox(height: AppDimensions.spacing24),
               _buildPlayerInfoSection(player),
-              SizedBox(height: AppDimensions.spacing24),
+              const SizedBox(height: AppDimensions.spacing24),
               _buildUpcomingGamesSection(player, games),
-              SizedBox(height: AppDimensions.spacing24),
+              const SizedBox(height: AppDimensions.spacing24),
               _buildMediaSection(player, media),
-              SizedBox(height: AppDimensions.spacing24),
+              const SizedBox(height: AppDimensions.spacing24),
             ],
           ),
         ),
@@ -178,12 +178,12 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
       pinned: true,
       backgroundColor: AppColors.backgroundDark,
       leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: AppColors.textOnPrimary),
+        icon: const Icon(Icons.arrow_back, color: AppColors.textOnPrimary),
         onPressed: () => Navigator.of(context).pop(),
       ),
       actions: [
         IconButton(
-          icon: Icon(Icons.more_vert, color: AppColors.textOnPrimary),
+          icon: const Icon(Icons.more_vert, color: AppColors.textOnPrimary),
           onPressed: () => _showMoreOptions(context),
         ),
       ],
@@ -230,7 +230,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
         : '';
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
+      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
       child: Row(
         children: [
           Stack(
@@ -251,7 +251,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                     fit: BoxFit.cover,
                     placeholder: (context, url) => Container(
                       color: AppColors.surface,
-                      child: Icon(
+                      child: const Icon(
                         Icons.person,
                         size: AppDimensions.iconXLarge,
                         color: AppColors.textTertiary,
@@ -259,7 +259,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                     ),
                     errorWidget: (context, url, error) => Container(
                       color: AppColors.surface,
-                      child: Icon(
+                      child: const Icon(
                         Icons.person,
                         size: AppDimensions.iconXLarge,
                         color: AppColors.textTertiary,
@@ -273,7 +273,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                   bottom: 0,
                   right: 0,
                   child: Container(
-                    padding: EdgeInsets.all(AppDimensions.spacing4),
+                    padding: const EdgeInsets.all(AppDimensions.spacing4),
                     decoration: BoxDecoration(
                       color: AppColors.primary,
                       shape: BoxShape.circle,
@@ -282,7 +282,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                         width: 2,
                       ),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.verified,
                       size: AppDimensions.iconMedium,
                       color: AppColors.textOnPrimary,
@@ -291,7 +291,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                 ),
             ],
           ),
-          SizedBox(width: AppDimensions.spacing16),
+          const SizedBox(width: AppDimensions.spacing16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -309,14 +309,14 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                       ),
                     ),
                     if (player.isPro == true) ...[
-                      SizedBox(width: AppDimensions.spacing8),
+                      const SizedBox(width: AppDimensions.spacing8),
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: AppDimensions.spacing8,
                           vertical: AppDimensions.spacing4,
                         ),
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [Colors.amber, Colors.orange],
                           ),
                           borderRadius:
@@ -332,7 +332,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                     ],
                   ],
                 ),
-                SizedBox(height: AppDimensions.spacing4),
+                const SizedBox(height: AppDimensions.spacing4),
                 if (player.username != null)
                   Text(
                     '@${player.username}',
@@ -341,7 +341,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
                     ),
                   ),
                 if (player.position != null) ...[
-                  SizedBox(height: AppDimensions.spacing4),
+                  const SizedBox(height: AppDimensions.spacing4),
                   Text(
                     player.position!,
                     style: AppTextStyles.bodyMedium.copyWith(
@@ -360,7 +360,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
 
   Widget _buildActionButtons() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
+      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
       child: Row(
         children: [
           Expanded(
@@ -368,12 +368,12 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               onPressed: () {
                 // TODO: Navigate to edit profile screen
               },
-              icon: Icon(Icons.edit, size: AppDimensions.iconMedium),
+              icon: const Icon(Icons.edit, size: AppDimensions.iconMedium),
               label: Text('edit_profile'.tr, style: AppTextStyles.buttonMedium),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: AppColors.textOnPrimary,
-                minimumSize: Size(0, AppDimensions.buttonHeightMedium),
+                minimumSize: const Size(0, AppDimensions.buttonHeightMedium),
                 shape: RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.circular(AppDimensions.radiusMedium),
@@ -381,23 +381,22 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               ),
             ),
           ),
-          SizedBox(width: AppDimensions.spacing12),
+          const SizedBox(width: AppDimensions.spacing12),
           Expanded(
             child: ElevatedButton.icon(
               onPressed: () {
                 // TODO: Navigate to upload media screen
               },
-              icon: Icon(Icons.upload, size: AppDimensions.iconMedium),
-              label:
-                  Text('upload_media'.tr, style: AppTextStyles.buttonMedium),
+              icon: const Icon(Icons.upload, size: AppDimensions.iconMedium),
+              label: Text('upload_media'.tr, style: AppTextStyles.buttonMedium),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.surface,
                 foregroundColor: AppColors.textPrimary,
-                minimumSize: Size(0, AppDimensions.buttonHeightMedium),
+                minimumSize: const Size(0, AppDimensions.buttonHeightMedium),
                 shape: RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.circular(AppDimensions.radiusMedium),
-                  side: BorderSide(color: AppColors.borderLight),
+                  side: const BorderSide(color: AppColors.borderLight),
                 ),
               ),
             ),
@@ -411,7 +410,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
     if (player.stats == null) return const SizedBox.shrink();
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
+      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
       child: PlayerStatsCard(
         gamesPlayed: player.stats!.gamesPlayed ?? 0,
         goals: player.stats!.goals ?? 0,
@@ -422,14 +421,14 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
 
   Widget _buildPlayerInfoSection(PlayerEntity player) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
-      padding: EdgeInsets.all(AppDimensions.spacing12),
+      margin: const EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
+      padding: const EdgeInsets.all(AppDimensions.spacing12),
       decoration: AppDecorations.card,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: AppDimensions.spacing12),
+            padding: const EdgeInsets.only(bottom: AppDimensions.spacing12),
             child: Text(
               'player_info'.tr,
               style: AppTextStyles.h6.copyWith(
@@ -437,7 +436,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               ),
             ),
           ),
-          Divider(color: AppColors.borderLight, height: 1),
+          const Divider(color: AppColors.borderLight, height: 1),
           if (player.team != null)
             PlayerInfoItem(
               label: 'team'.tr,
@@ -479,43 +478,13 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
     );
   }
 
-  Widget _buildUpcomingGamesSection(PlayerEntity player,
-      List<GameEntity>? games) {
+  Widget _buildUpcomingGamesSection(
+      PlayerEntity player, List<GameEntity>? games) {
     if (games == null) {
-      // Load games if not loaded yet
-      Future.microtask(
-          () => _cubit.loadUpcomingGames(player.playerId ?? widget.playerId));
       return _buildLoadingSection('upcoming_games'.tr);
     }
-
     return UpcomingGamesList(games: games);
   }
-
-  Widget _buildMediaSection(PlayerEntity player, List<MediaEntity>? media) {
-    if (media == null) {
-      // Load media if not loaded yet
-      Future.microtask(
-          () => _cubit.loadPlayerMedia(player.playerId ?? widget.playerId));
-      return _buildLoadingSection('videos'.tr);
-    }
-
-    return MediaGallery(media: media);
-  }
-
-  Widget _buildLoadingSection(String title) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppDimensions.spacing16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: AppTextStyles.h5.copyWith(
-              color: AppColors.textPrimary,
-            ),
-          ),
-          SizedBox(height: AppDimensions.spacing16),
-          Center(
             child: CircularProgressIndicator(
               color: AppColors.primary,
               strokeWidth: 2,
@@ -531,7 +500,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
       context: context,
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(AppDimensions.radiusLarge),
@@ -543,16 +512,15 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
             Container(
               width: 40,
               height: 4,
-              margin: EdgeInsets.only(top: AppDimensions.spacing12),
+              margin: const EdgeInsets.only(top: AppDimensions.spacing12),
               decoration: BoxDecoration(
                 color: AppColors.borderLight,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
-            SizedBox(height: AppDimensions.spacing20),
+            const SizedBox(height: AppDimensions.spacing20),
             ListTile(
-              leading:
-                  Icon(Icons.share, color: AppColors.primary),
+              leading: const Icon(Icons.share, color: AppColors.primary),
               title: Text('share'.tr, style: AppTextStyles.bodyMedium),
               onTap: () {
                 Navigator.pop(context);
@@ -560,18 +528,17 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.report, color: AppColors.warning),
+              leading: const Icon(Icons.report, color: AppColors.warning),
               title: Text('product_report'.tr, style: AppTextStyles.bodyMedium),
               onTap: () {
                 Navigator.pop(context);
                 // TODO: Report profile
               },
             ),
-            SizedBox(height: AppDimensions.spacing20),
+            const SizedBox(height: AppDimensions.spacing20),
           ],
         ),
       ),
     );
   }
 }
-

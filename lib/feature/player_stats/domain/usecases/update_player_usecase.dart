@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import '../../../../core/errors/app_errors.dart';
+import '../../../../core/results/result.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../data/request/param/update_player_param.dart';
 import '../entities/player_entity.dart';
@@ -9,9 +9,10 @@ import '../repositories/iplayer_repository.dart';
 class UpdatePlayerUsecase extends UseCase<PlayerEntity, UpdatePlayerParam> {
   final IPlayerRepository repository;
 
-  const UpdatePlayerUsecase({required this.repository});
+  UpdatePlayerUsecase({required this.repository});
 
-  Future<Either<AppErrors, PlayerEntity>> call(UpdatePlayerParam param) async {
+  @override
+  Future<Result<AppErrors, PlayerEntity>> call(UpdatePlayerParam param) async {
     return await repository.updatePlayer(param);
   }
 }

@@ -4,8 +4,7 @@ part of 'iplayer_remote_datasource.dart';
 class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
   @override
   Future<Either<AppErrors, PlayerModel>> getPlayer(GetPlayerParam param) async {
-    // Use existing Member API - GET /api/members/{user_id}
-    return await request<PlayerModel>(
+    return await request(
       converter: (json) => PlayerModel.fromJson(json),
       method: HttpMethod.GET,
       url: '${MainAPIS.apiMemberShow}/${param.playerId}',
@@ -20,7 +19,7 @@ class PlayerRemoteDatasource extends IPlayerRemoteDatasource {
   Future<Either<AppErrors, PlayerModel>> updatePlayer(
       UpdatePlayerParam param) async {
     // Use existing Member API - POST /api/profile
-    return await request<PlayerModel>(
+    return await request(
       converter: (json) => PlayerModel.fromJson(json),
       method: HttpMethod.POST,
       url: MainAPIS.apiMemberUpdate, // api/profile
