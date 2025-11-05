@@ -6,20 +6,25 @@ class AccountRepository extends IAccountRepository {
 
   AccountRepository(this.remoteDataSource);
 
-  @override
-  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> login(LoginParam param) async {
-    final result = execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.login(param),
-    );
+  // ========== SCOUTING API ==========
 
-    // Cast the result to the correct type
-    final authResult = Result<AppErrors, WoWonder.AuthResponseEntity>(
-      data: result.data as WoWonder.AuthResponseEntity?,
-      error: result.error,
+  @override
+  Future<Result<AppErrors, AuthResponseEntity>> memberRegister(
+      ScoutingRegisterParam param) async {
+    return execute<AuthResponseModel, AuthResponseEntity>(
+      remoteResult: await remoteDataSource.memberRegister(param),
+    );
+  }
+
+  @override
+  Future<Result<AppErrors, AuthResponseEntity>> memberLogin(
+      ScoutingLoginParam param) async {
+    final result = execute<AuthResponseModel, AuthResponseEntity>(
+      remoteResult: await remoteDataSource.memberLogin(param),
     );
 
     // If login is successful, trigger background services immediately
-    if (authResult.hasDataOnly) {
+    if (result.hasDataOnly) {
       try {
         // Re-enabled: Background services for normal operation
         _triggerBackgroundServices();
@@ -30,7 +35,7 @@ class AccountRepository extends IAccountRepository {
       }
     }
 
-    return authResult;
+    return result;
   }
 
   /// Trigger background services in isolate after successful login
@@ -71,111 +76,6 @@ class AccountRepository extends IAccountRepository {
         print('❌ Failed to start background services: $e');
       }
     });
-  }
-
-  @override
-  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> resgister(
-      RegisterParam param) async {
-    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.resgister(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> deleteAccount(
-      DeleteAccountParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.deleteAccount(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> resetPassword(
-      ResetPasswordParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.resetPassword(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> resendCode(
-      ResendCodeParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.resendCode(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> replacePassword(
-      ReplacePasswordParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.replacePassword(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> resendEmail(
-      ResendEmailParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.resendEmail(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> sendCodeTwoFactor(
-      SendCodeTwoFactorParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.sendCodeTwoFactor(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> twoFactor(
-      TwoFactorParam param) async {
-    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.twoFactor(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> verifyAccount(
-      VerifyAccountParam param) async {
-    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.verifyAccount(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, WoWonder.AuthResponseEntity>> socialLogin(
-      SocialLoginParam param) async {
-    return execute<WoWonder.AuthResponseModel, WoWonder.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.socialLogin(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, EmptyResponse>> logout(LogoutParam param) async {
-    return executeForNoEntity(
-      remoteResult: await remoteDataSource.logout(param),
-    );
-  }
-
-  // ========== MEMBER APIs (Scouting API) ==========
-
-  @override
-  Future<Result<AppErrors, Scouting.AuthResponseEntity>> memberRegister(
-      ScoutingRegisterParam param) async {
-    return execute<Scouting.AuthResponseModel, Scouting.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.memberRegister(param),
-    );
-  }
-
-  @override
-  Future<Result<AppErrors, Scouting.AuthResponseEntity>> memberLogin(
-      ScoutingLoginParam param) async {
-    return execute<Scouting.AuthResponseModel, Scouting.AuthResponseEntity>(
-      remoteResult: await remoteDataSource.memberLogin(param),
-    );
   }
 
   @override
