@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 import 'package:scouting_app/core/common/app_config.dart';
 
+import '../common/local_storage.dart';
 import '../constants/app/app_constants.dart';
 import '../../mainapis.dart';
 
@@ -18,7 +19,13 @@ class AuthInterceptor extends Interceptor {
     }
     options.headers[AppConstants.HEADER_ACCEPT] =
         'application/json, text/plain, */*';
-    options.headers[AppConstants.HEADER_AUTH] = 'Bearer ';
+
+    final token = LocalStorage.authToken;
+    if (token != null && token.isNotEmpty) {
+      options.headers[AppConstants.HEADER_AUTH] = 'Bearer $token';
+    } else {
+      options.headers.remove(AppConstants.HEADER_AUTH);
+    }
 
     // Set headers to avoid bot-protection blocks (Imunify360)
     const userAgent =
@@ -28,12 +35,6 @@ class AuthInterceptor extends Interceptor {
     options.headers['Origin'] = MainAPIS.websiteUrl;
     options.headers['Referer'] = MainAPIS.websiteUrl;
 
-    // Append access_token as query param if present
-    try {
-      // Read token from shared prefs (KEY_TOKEN)
-      // Uses LocalStorage.authToken
-      // Import not available here to avoid cycle; token should already be in Session or Query
-    } catch (_) {}
     options.headers[AppConstants.APP_NAME] = AppConstants.TITLE_APP_NAME;
 
     options.headers[AppConstants.HEADER_LANGUAGE] = Intl.getCurrentLocale();

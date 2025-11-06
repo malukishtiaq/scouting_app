@@ -131,6 +131,38 @@ class AppDecorations {
         ),
       );
 
+  static BoxDecoration get highlightGradientOverlay => const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            AppColors.transparent,
+            AppColors.overlay,
+          ],
+          stops: [0.0, 1.0],
+        ),
+      );
+
+  static BoxDecoration get circularOverlay => const BoxDecoration(
+        color: AppColors.overlay,
+        shape: BoxShape.circle,
+      );
+
+  static BoxDecoration bottomNavigation({double opacity = 0.8}) => BoxDecoration(
+        color: AppColors.backgroundDark.withOpacity(opacity),
+        border: const Border(
+          top: BorderSide(
+            color: AppColors.borderMedium,
+            width: 1.0,
+          ),
+        ),
+      );
+
+  static BoxDecoration get primaryCircle => const BoxDecoration(
+        color: AppColors.primary,
+        shape: BoxShape.circle,
+      );
+
   // ===== DIVIDERS =====
   static BoxDecoration get divider => BoxDecoration(
         color: AppColors.borderLight,

@@ -6,6 +6,8 @@ import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/ui/widgets/flutter_target/app_loader.dart';
 import '../../../../../core/ui/widgets/flutter_target/app_messages.dart';
 import '../../../../../localization/app_localization.dart';
+import '../../../../../core/navigation/nav.dart';
+import '../../../../home/presentation/screen/home_tabbed_screen.dart';
 import '../../state_m/account/account_cubit.dart';
 import 'login_screen_content.dart';
 // Onboarding flow intentionally not used in login for now
@@ -67,19 +69,18 @@ class _LoginScreenState extends State<LoginScreen> {
             }
             if (state is LoginSuccessState) {
               if (state.accountEntity.data.token.isNotEmpty) {
-                // if (kDebugMode) {
-                //   dev.debugger();
-                // }
                 // Schedule navigation for next frame to avoid navigator lock
+                // Wait a bit for session setup to complete
                 WidgetsBinding.instance.addPostFrameCallback((_) async {
                   if (mounted) {
-                    // Check if there's pending shared content to resume sharing flow
+                    // Small delay to ensure session setup completes
+                    await Future.delayed(const Duration(milliseconds: 500));
                     if (mounted) {
-                      // Navigate directly to home
-                      // Nav.to(
-                      //   HomeTabbedScreen.routeName,
-                      //   arguments: HomeTabbedScreenParam(),
-                      // );
+                      // Navigate to home screen (replace login screen)
+                      Nav.off(
+                        HomeTabbedScreen.routeName,
+                        arguments: HomeTabbedScreenParam(),
+                      );
                     }
                   }
                 });

@@ -16,6 +16,7 @@ class MemberProfileEntity extends BaseEntity {
 
 /// Member Data Entity
 class MemberDataEntity extends BaseEntity {
+  final String? userId;
   final String name;
   final String email;
   final bool emailVerified;
@@ -27,8 +28,11 @@ class MemberDataEntity extends BaseEntity {
   final String? primaryPosition;
   final String? preferredFoot;
   final bool profileComplete;
+  final String? phoneNumber;
+  final String? username;
 
   MemberDataEntity({
+    this.userId,
     required this.name,
     required this.email,
     required this.emailVerified,
@@ -40,10 +44,13 @@ class MemberDataEntity extends BaseEntity {
     this.primaryPosition,
     this.preferredFoot,
     required this.profileComplete,
+    this.phoneNumber,
+    this.username,
   });
 
   @override
   List<Object?> get props => [
+        userId,
         name,
         email,
         emailVerified,
@@ -55,6 +62,8 @@ class MemberDataEntity extends BaseEntity {
         primaryPosition,
         preferredFoot,
         profileComplete,
+        phoneNumber,
+        username,
       ];
 }
 

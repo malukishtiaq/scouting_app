@@ -469,6 +469,9 @@ final Map<String, String> enUs = {
   "wowonder": "WoWonder",
   "reels": "Reels",
   "create_post": "Create Post",
+  "create_game": "Create Game",
+  "create_highlight": "Create highlight",
+  "feature_coming_soon": "This feature is coming soon.",
   "registration_error": "Registration Error",
 
   // Splash Screen

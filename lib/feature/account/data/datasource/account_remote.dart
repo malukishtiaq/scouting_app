@@ -37,12 +37,16 @@ class AccountRemoteSource extends IAccountRemoteSource {
   @override
   Future<Either<AppErrors, MemberProfileModel>> getMe(GetMeParam param) async {
     return await request(
-      converter: (json) => MemberProfileModel.fromJson(json),
+      converter: (json) {
+        // Debug log the raw response
+        print('🔍 GET /me API Response: $json');
+        return MemberProfileModel.fromJson(json);
+      },
       method: HttpMethod.GET,
       url: MainAPIS.apiMemberMe,
       createModelInterceptor: const PrimitiveCreateModelInterceptor(),
       withAuthentication: true, // Requires authentication
-      enableLogging: false,
+      enableLogging: true, // Enable logging to see the response
       params: param, // Pass params for caching
     );
   }

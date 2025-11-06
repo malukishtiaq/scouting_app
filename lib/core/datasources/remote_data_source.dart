@@ -101,35 +101,6 @@ class RemoteDataSource {
     bool enableLogging = false, // Add parameter to control per-method logging
     BaseParams? params, // ✅ NEW: Accept params for automatic cache control
   }) async {
-    // ✅ 1. Check cache if params indicate caching is enabled (skip if forceRefresh)
-    if (params != null && params.isCacheEnabled && !params.shouldBypassCache) {
-      try {
-        final cacheService = getIt<GenericCacheService>();
-        final cacheKey = params.cacheKey;
-
-        print(
-            '🔍 Checking cache for: $cacheKey (feature: ${params.cacheFeature})');
-
-        final cached = await cacheService.get<T>(
-          feature: params.cacheFeature,
-          key: cacheKey,
-          fromJson: (json) => converter(json),
-          ttl: params.cacheTTL,
-        );
-
-        if (cached != null) {
-          print('⚡ Cache HIT: $cacheKey');
-          return Right(cached);
-        }
-
-        print('❌ Cache MISS: $cacheKey');
-      } catch (e) {
-        print('⚠️ Cache error (continuing with API call): $e');
-        // Continue with API call if cache fails
-      }
-    } else if (params != null && params.shouldBypassCache) {
-      print('🔄 Force refresh: Bypassing cache for ${params.cacheFeature}');
-    }
     // Register the response.
     ModelsFactory().registerModel(
       T.toString(),

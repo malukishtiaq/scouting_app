@@ -12,10 +12,46 @@ class MemberProfileModel extends BaseModel<MemberProfileEntity> {
   });
 
   factory MemberProfileModel.fromJson(Map<String, dynamic> json) {
-    return MemberProfileModel(
-      success: json['success'] ?? false,
-      data: MemberDataModel.fromJson(json['data'] ?? {}),
-    );
+    try {
+      // Handle different response structures
+      // Case 1: {success: true, data: {...}}
+      if (json.containsKey('data') && json['data'] is Map) {
+        return MemberProfileModel(
+          success: json['success'] ?? false,
+          data: MemberDataModel.fromJson(json['data'] as Map<String, dynamic>),
+        );
+      }
+      
+      // Case 2: Direct user object (WoWonder style)
+      // {user_id: "123", name: "John", email: "john@example.com", ...}
+      else if (json.containsKey('user_id') || json.containsKey('id')) {
+        return MemberProfileModel(
+          success: true,
+          data: MemberDataModel.fromJson(json),
+        );
+      }
+      
+      // Case 3: Wrapped in 'user' key
+      // {success: true, user: {...}}
+      else if (json.containsKey('user') && json['user'] is Map) {
+        return MemberProfileModel(
+          success: json['success'] ?? true,
+          data: MemberDataModel.fromJson(json['user'] as Map<String, dynamic>),
+        );
+      }
+      
+      // Default: treat entire response as data
+      else {
+        return MemberProfileModel(
+          success: true,
+          data: MemberDataModel.fromJson(json),
+        );
+      }
+    } catch (e) {
+      print('❌ Error parsing MemberProfileModel: $e');
+      print('📄 JSON was: $json');
+      rethrow;
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -36,6 +72,7 @@ class MemberProfileModel extends BaseModel<MemberProfileEntity> {
 
 /// Member Data Model
 class MemberDataModel extends BaseModel<MemberDataEntity> {
+  final String? userId;
   final String name;
   final String email;
   final bool emailVerified;
@@ -47,8 +84,11 @@ class MemberDataModel extends BaseModel<MemberDataEntity> {
   final String? primaryPosition;
   final String? preferredFoot;
   final bool profileComplete;
+  final String? phoneNumber;
+  final String? username;
 
   MemberDataModel({
+    this.userId,
     required this.name,
     required this.email,
     required this.emailVerified,
@@ -60,26 +100,49 @@ class MemberDataModel extends BaseModel<MemberDataEntity> {
     this.primaryPosition,
     this.preferredFoot,
     required this.profileComplete,
+    this.phoneNumber,
+    this.username,
   });
 
   factory MemberDataModel.fromJson(Map<String, dynamic> json) {
-    return MemberDataModel(
-      name: json['name'] ?? '',
-      email: json['email'] ?? '',
-      emailVerified: json['email_verified'] ?? false,
-      registrationDate: json['registration_date'],
-      avatar: json['avatar'] ?? '',
-      age: json['age'],
-      weight: json['weight']?.toDouble(),
-      height: json['height']?.toDouble(),
-      primaryPosition: json['primary_position'],
-      preferredFoot: json['preferred_foot'],
-      profileComplete: json['profile_complete'] ?? false,
-    );
+    try {
+      return MemberDataModel(
+        userId: json['user_id']?.toString() ?? json['id']?.toString(),
+        name: json['name'] ?? json['full_name'] ?? json['username'] ?? '',
+        email: json['email'] ?? '',
+        emailVerified: json['email_verified'] ?? 
+                       json['email_verified_at'] != null ?? 
+                       json['verified'] == 1 ?? 
+                       false,
+        registrationDate: json['registration_date'] ?? 
+                          json['registered'] ?? 
+                          json['created_at'],
+        avatar: json['avatar'] ?? 
+                json['profile_picture'] ?? 
+                json['image'] ?? 
+                '',
+        age: json['age'] != null ? int.tryParse(json['age'].toString()) : null,
+        weight: json['weight']?.toDouble(),
+        height: json['height']?.toDouble(),
+        primaryPosition: json['primary_position'] ?? json['position'],
+        preferredFoot: json['preferred_foot'] ?? json['foot'],
+        profileComplete: json['profile_complete'] ?? 
+                         json['is_pro'] ?? 
+                         json['verified'] == 1 ?? 
+                         false,
+        phoneNumber: json['phone_number'] ?? json['phone'],
+        username: json['username'] ?? json['user_name'],
+      );
+    } catch (e) {
+      print('❌ Error parsing MemberDataModel: $e');
+      print('📄 JSON was: $json');
+      rethrow;
+    }
   }
 
   Map<String, dynamic> toJson() {
     return {
+      if (userId != null) 'user_id': userId,
       'name': name,
       'email': email,
       'email_verified': emailVerified,
@@ -91,12 +154,15 @@ class MemberDataModel extends BaseModel<MemberDataEntity> {
       if (primaryPosition != null) 'primary_position': primaryPosition,
       if (preferredFoot != null) 'preferred_foot': preferredFoot,
       'profile_complete': profileComplete,
+      if (phoneNumber != null) 'phone_number': phoneNumber,
+      if (username != null) 'username': username,
     };
   }
 
   @override
   MemberDataEntity toEntity() {
     return MemberDataEntity(
+      userId: userId,
       name: name,
       email: email,
       emailVerified: emailVerified,
@@ -108,6 +174,8 @@ class MemberDataModel extends BaseModel<MemberDataEntity> {
       primaryPosition: primaryPosition,
       preferredFoot: preferredFoot,
       profileComplete: profileComplete,
+      phoneNumber: phoneNumber,
+      username: username,
     );
   }
 }

@@ -10,7 +10,6 @@ import '../../../../mainapis.dart';
 import '../../domain/entities/player_entity.dart';
 import '../state_m/player_stats_cubit.dart';
 import '../state_m/player_stats_state.dart';
-import '../widgets/media_gallery.dart';
 import '../widgets/player_info_item.dart';
 import '../widgets/player_stats_card.dart';
 import '../widgets/upcoming_games_list.dart';
@@ -52,14 +51,6 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
             loading: () => _buildLoadingState(),
             loaded: (player) => _buildPlayerProfile(player),
             error: (error) => _buildErrorState(error.message ?? 'error'.tr),
-            gamesLoading: (player) => _buildPlayerProfile(player),
-            gamesLoaded: (player, games) =>
-                _buildPlayerProfile(player, games: games),
-            mediaLoading: (player) => _buildPlayerProfile(player),
-            mediaLoaded: (player, media) =>
-                _buildPlayerProfile(player, media: media),
-            mediaUploading: (player) => _buildPlayerProfile(player),
-            mediaUploaded: (player, newMedia) => _buildPlayerProfile(player),
             playerUpdating: (player) => _buildPlayerProfile(player),
             playerUpdated: (player) => _buildPlayerProfile(player),
           );
@@ -158,8 +149,6 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
               const SizedBox(height: AppDimensions.spacing24),
               _buildUpcomingGamesSection(player, games),
               const SizedBox(height: AppDimensions.spacing24),
-              _buildMediaSection(player, media),
-              const SizedBox(height: AppDimensions.spacing24),
             ],
           ),
         ),
@@ -184,7 +173,7 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
       actions: [
         IconButton(
           icon: const Icon(Icons.more_vert, color: AppColors.textOnPrimary),
-          onPressed: () => _showMoreOptions(context),
+          onPressed: () {},
         ),
       ],
       flexibleSpace: FlexibleSpaceBar(
@@ -481,64 +470,8 @@ class _PlayerStatsScreenState extends State<PlayerStatsScreen> {
   Widget _buildUpcomingGamesSection(
       PlayerEntity player, List<GameEntity>? games) {
     if (games == null) {
-      return _buildLoadingSection('upcoming_games'.tr);
+      return const SizedBox.shrink();
     }
     return UpcomingGamesList(games: games);
-  }
-            child: CircularProgressIndicator(
-              color: AppColors.primary,
-              strokeWidth: 2,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _showMoreOptions(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (context) => Container(
-        decoration: const BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(AppDimensions.radiusLarge),
-          ),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 40,
-              height: 4,
-              margin: const EdgeInsets.only(top: AppDimensions.spacing12),
-              decoration: BoxDecoration(
-                color: AppColors.borderLight,
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
-            const SizedBox(height: AppDimensions.spacing20),
-            ListTile(
-              leading: const Icon(Icons.share, color: AppColors.primary),
-              title: Text('share'.tr, style: AppTextStyles.bodyMedium),
-              onTap: () {
-                Navigator.pop(context);
-                // TODO: Share profile
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.report, color: AppColors.warning),
-              title: Text('product_report'.tr, style: AppTextStyles.bodyMedium),
-              onTap: () {
-                Navigator.pop(context);
-                // TODO: Report profile
-              },
-            ),
-            const SizedBox(height: AppDimensions.spacing20),
-          ],
-        ),
-      ),
-    );
   }
 }

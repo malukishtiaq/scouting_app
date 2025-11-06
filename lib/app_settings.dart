@@ -1,4 +1,3 @@
-import 'core/socket/socket_constants.dart';
 import 'core/services/account_service.dart';
 
 class AppSettings {
@@ -500,15 +499,6 @@ class AppSettings {
       .socket; // Socket server is working - use real-time connection
   static const String socketPort =
       "449"; // HTTPS socket port for SSL connections
-  static const SocketTransport socketTransport =
-      SocketTransport.polling; // Use polling for stability
-  static const Duration socketTimeout = Duration(seconds: 20);
-  static const Duration reconnectionDelay = Duration(seconds: 1);
-  static const Duration maxReconnectionDelay = Duration(seconds: 5);
-  static const int maxReconnectionAttempts = 10;
-  static const bool enableSocketHeartbeat = true;
-  static const Duration heartbeatInterval = Duration(seconds: 25);
-  static const Duration pongTimeout = Duration(seconds: 5);
 
   // Live Streaming Configuration (mirroring Xamarin AppSettings.cs)
   static const bool showLive = true;

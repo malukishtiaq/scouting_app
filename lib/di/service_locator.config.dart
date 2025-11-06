@@ -30,8 +30,6 @@ import '../core/services/notification_analytics_service.dart' as _i3;
 import '../core/services/notification_preferences_service.dart' as _i975;
 import '../core/services/notification_service.dart' as _i570;
 import '../core/services/referral_sharing_service.dart' as _i142;
-import '../core/socket/socket_service.dart' as _i593;
-import '../core/socket/socket_service_interface.dart' as _i740;
 import '../feature/account/data/datasource/iaccount_remote.dart' as _i494;
 import '../feature/account/domain/repository/iaccount_repository.dart' as _i462;
 import '../feature/account/domain/usecase/get_me_usecase.dart' as _i1043;
@@ -126,6 +124,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i81.IsolateBackgroundService>(
         () => _i81.IsolateBackgroundService());
     gh.singleton<_i1028.SessionData>(() => _i1028.SessionData());
+    gh.singleton<_i377.AuthService>(() => _i377.AuthService());
     gh.singleton<_i822.BackgroundChatService>(
         () => _i822.BackgroundChatService());
     gh.singleton<_i3.NotificationAnalyticsService>(
@@ -144,20 +143,16 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i495.PlayerRemoteDatasource());
     gh.factory<_i753.ICommentsRemoteSource>(() => _i753.CommentsRemoteSource());
     gh.factory<_i494.IAccountRemoteSource>(() => _i494.AccountRemoteSource());
+    gh.factory<_i12.SplashCubit>(
+        () => _i12.SplashCubit(gh<_i377.AuthService>()));
     gh.factory<_i462.IScoutingPostsRemoteSource>(
         () => _i462.ScoutingPostsRemoteSource());
-    gh.singleton<_i740.ISocketService>(() => _i593.SocketService(
-          gh<_i974.Logger>(),
-          gh<_i570.NotificationService>(),
-        ));
     gh.factory<_i228.IUserProfileRemoteSource>(
         () => _i228.UserProfileRemoteSource());
     gh.factory<_i177.IPostsRemoteSource>(() => _i524.PostsRemoteSource());
     gh.factory<_i591.ILikesRemoteSource>(() => _i591.LikesRemoteSource());
     gh.singleton<_i798.GenericCacheService>(
         () => _i798.GenericCacheService(gh<_i591.DbProvider>()));
-    gh.singleton<_i377.AuthService>(
-        () => _i377.AuthService(gh<_i740.ISocketService>()));
     gh.factory<_i864.IReelsRepository>(
         () => _i989.ReelsRepository(gh<_i737.IReelsRemoteSource>()));
     gh.factory<_i17.IUserProfileRepository>(() =>
@@ -226,16 +221,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i741.ShowMemberUsecase(gh<_i462.IAccountRepository>()));
     gh.singleton<_i672.UpdateProfileUsecase>(
         () => _i672.UpdateProfileUsecase(gh<_i462.IAccountRepository>()));
-    gh.factory<_i525.MyProfileCubit>(() => _i525.MyProfileCubit(
-          getUserProfileUseCase: gh<_i714.GetUserProfileUseCase>(),
-          updateAvatarUseCase: gh<_i855.UpdateAvatarUseCase>(),
-          updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
-          authService: gh<_i377.AuthService>(),
-        ));
     gh.singleton<_i524.IScoutingPostsRepository>(() =>
         _i142.ScoutingPostsRepository(gh<_i462.IScoutingPostsRemoteSource>()));
-    gh.factory<_i12.SplashCubit>(
-        () => _i12.SplashCubit(gh<_i377.AuthService>()));
     gh.factory<_i805.GetPostsUsecase>(
         () => _i805.GetPostsUsecase(gh<_i53.IPostsRepository>()));
     gh.factory<_i316.GetPostByIdUsecase>(
@@ -271,6 +258,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i23.ReelsCubit>(() => _i23.ReelsCubit(
           getReelsUsecase: gh<_i850.GetReelsUsecase>(),
           getMoreReelsUsecase: gh<_i966.GetMoreReelsUsecase>(),
+        ));
+    gh.factory<_i525.MyProfileCubit>(() => _i525.MyProfileCubit(
+          getMeUsecase: gh<_i1043.GetMeUsecase>(),
+          updateAvatarUseCase: gh<_i855.UpdateAvatarUseCase>(),
+          updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
+          authService: gh<_i377.AuthService>(),
         ));
     gh.singleton<_i622.GetPostsUsecase>(
         () => _i622.GetPostsUsecase(gh<_i524.IScoutingPostsRepository>()));

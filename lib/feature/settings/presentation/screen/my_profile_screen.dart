@@ -12,7 +12,9 @@ import 'package:image_picker/image_picker.dart';
 import '../state_m/my_profile/my_profile_state.dart';
 import '../../../../core/constants/colors.dart';
 
-class MyProfileScreenParam {}
+class MyProfileScreenParam {
+  const MyProfileScreenParam();
+}
 
 class MyProfileScreen extends BaseScreen<MyProfileScreenParam> {
   static const routeName = "/MyProfileScreen";

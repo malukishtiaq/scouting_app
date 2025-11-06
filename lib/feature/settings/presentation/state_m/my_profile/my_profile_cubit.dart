@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../../core/services/auth_service.dart';
-import '../../../../profile/domain/usecases/get_user_profile_usecase.dart';
+import '../../../../account/domain/usecase/get_me_usecase.dart';
+import '../../../../account/data/request/param/get_me_param.dart';
 import '../../../../profile/domain/usecases/update_avatar_usecase.dart';
 import '../../../../profile/domain/usecases/update_cover_usecase.dart';
-import '../../../../profile/data/request/param/user_profile_param.dart';
 import '../../../../profile/data/request/param/update_avatar_param.dart';
 import '../../../../profile/data/request/param/update_cover_param.dart';
 import '../../../../profile/domain/entities/user_profile_entity.dart';
@@ -12,7 +12,7 @@ import 'my_profile_state.dart';
 
 @injectable
 class MyProfileCubit extends Cubit<MyProfileState> {
-  final GetUserProfileUseCase _getUserProfileUseCase;
+  final GetMeUsecase _getMeUsecase;
   final UpdateAvatarUseCase _updateAvatarUseCase;
   final UpdateCoverUseCase _updateCoverUseCase;
   final AuthService _authService;
@@ -20,11 +20,11 @@ class MyProfileCubit extends Cubit<MyProfileState> {
   bool _isLoading = false;
 
   MyProfileCubit({
-    required GetUserProfileUseCase getUserProfileUseCase,
+    required GetMeUsecase getMeUsecase,
     required UpdateAvatarUseCase updateAvatarUseCase,
     required UpdateCoverUseCase updateCoverUseCase,
     required AuthService authService,
-  })  : _getUserProfileUseCase = getUserProfileUseCase,
+  })  : _getMeUsecase = getMeUsecase,
         _updateAvatarUseCase = updateAvatarUseCase,
         _updateCoverUseCase = updateCoverUseCase,
         _authService = authService,
@@ -41,9 +41,8 @@ class MyProfileCubit extends Cubit<MyProfileState> {
 
     _isLoading = true;
 
-    // Get current user ID
-    final userId = _authService.currentUserId?.toString();
-    if (userId == null || userId.isEmpty) {
+    // Check if user is logged in
+    if (!_authService.isLoggedIn) {
       emit(MyProfileState.error(
         message: 'User not logged in',
         profile: null,
@@ -54,13 +53,59 @@ class MyProfileCubit extends Cubit<MyProfileState> {
 
     emit(const MyProfileState.loading());
 
-    try {
-      final param = GetUserProfileParam(
-        userId: userId,
-        fetch: 'user_data,following', // Match Xamarin: "user_data,following"
-      );
+    // ⚠️ WORKAROUND: Temporarily disabled /api/me call due to backend bug
+    // The backend's Helper::isUserProfileCompleted() crashes when playerProfile is null
+    // Using mock profile data until backend is fixed
+    print('⚠️ MyProfileCubit: Skipping /api/me call due to backend bug');
+    print('ℹ️ Using mock profile data until backend is fixed');
 
-      final result = await _getUserProfileUseCase(param);
+    // Create a mock profile from auth service data
+    final mockProfile = UserProfileEntity(
+      userId: _authService.currentUserId?.toString() ?? '0',
+      username: _authService.currentUsername ?? 'User',
+      email: 'user@example.com', // TODO: Get from login response
+      firstName: _authService.currentUsername ?? 'User',
+      lastName: '',
+      avatar: 'https://scouting.terveys.io/images/default-avatar.png',
+      cover: '',
+      about: '',
+      gender: '',
+      birthday: '',
+      countryId: '',
+      website: '',
+      facebook: '',
+      google: '',
+      twitter: '',
+      instagram: '',
+      youtube: '',
+      vk: '',
+      lastSeenUnixTime: 0,
+      lastSeenStatus: '',
+      isFollowing: false,
+      canFollow: false,
+      isFollowingMe: false,
+      isBlocked: false,
+      isReported: false,
+      points: 0,
+      proType: '',
+      verified: false,
+      details: null,
+    );
+
+    emit(MyProfileState.loaded(
+      profile: mockProfile,
+      following: [],
+      hasReachedMax: false,
+    ));
+    _isLoading = false;
+    return;
+
+    // TODO: Re-enable this when backend fixes the bug
+    /*
+    try {
+      // Use /me endpoint to get current user profile (Scouting API)
+      final param = GetMeParam();
+      final result = await _getMeUsecase(param);
 
       if (isClosed) {
         _isLoading = false;
@@ -69,9 +114,44 @@ class MyProfileCubit extends Cubit<MyProfileState> {
 
       result.pick(
         onData: (response) {
+          // Convert MemberDataEntity to UserProfileEntity for compatibility
+          final memberData = response.data;
+          final profile = UserProfileEntity(
+            userId: _authService.currentUserId?.toString() ?? '0',
+            username: memberData.name ?? '',
+            email: memberData.email,
+            firstName: memberData.name ?? '',
+            lastName: '',
+            avatar: memberData.avatar,
+            cover: '', // Not available in Scouting API /me response
+            about: '', // Not available in Scouting API /me response
+            gender: '', // Not available in Scouting API /me response
+            birthday: '', // Not available in Scouting API /me response
+            countryId: '', // Not available in Scouting API /me response
+            website: '', // Not available in Scouting API /me response
+            facebook: '', // Not available in Scouting API /me response
+            google: '', // Not available in Scouting API /me response
+            twitter: '', // Not available in Scouting API /me response
+            instagram: '', // Not available in Scouting API /me response
+            youtube: '', // Not available in Scouting API /me response
+            vk: '', // Not available in Scouting API /me response
+            lastSeenUnixTime: 0, // Not available in Scouting API /me response
+            lastSeenStatus: '', // Not available in Scouting API /me response
+            isFollowing: false, // Not available in Scouting API /me response
+            canFollow: false, // Not available in Scouting API /me response
+            isFollowingMe: false, // Not available in Scouting API /me response
+            isBlocked: false, // Not available in Scouting API /me response
+            isReported: false, // Not available in Scouting API /me response
+            points: 0, // Not available in Scouting API /me response
+            proType: '', // Not available in Scouting API /me response
+            verified:
+                memberData.emailVerified, // Map email_verified to verified
+            details: null, // Not available in Scouting API /me response
+          );
+
           emit(MyProfileState.loaded(
-            profile: response.userData,
-            following: response.following,
+            profile: profile,
+            following: [], // No following data from /me endpoint
             hasReachedMax: false,
           ));
           _isLoading = false;
@@ -96,6 +176,7 @@ class MyProfileCubit extends Cubit<MyProfileState> {
       ));
       _isLoading = false;
     }
+    */
   }
 
   Future<void> refreshProfile() async {

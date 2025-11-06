@@ -34,7 +34,9 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
   void initState() {
     super.initState();
     _setupFocusListeners();
-    // No pre-filled credentials - users must enter their own
+    // Hardcoded login credentials for testing
+    _emailController.text = 'gbailey2@example.net2';
+    _passwordController.text = '+-0pBNvYgxwmi/#iw';
   }
 
   @override

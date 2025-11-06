@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/ui/screens/base_screen.dart';
 
-class GamesScreenParam {}
+class GamesScreenParam {
+  const GamesScreenParam();
+}
 
 /// Games screen - equivalent to GamesActivity in Xamarin
 class GamesScreen extends BaseScreen<GamesScreenParam> {

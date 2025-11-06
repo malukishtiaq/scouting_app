@@ -2,17 +2,13 @@ import 'package:injectable/injectable.dart';
 import '../common/local_storage.dart';
 import '../providers/session_data.dart';
 import '../../di/service_locator.dart';
-import '../../feature/profile/domain/usecases/get_user_profile_usecase.dart';
-import '../../feature/profile/data/request/param/user_profile_param.dart';
-import '../socket/socket_service_interface.dart';
-import '../../app_settings.dart';
+import '../../feature/account/domain/usecase/get_me_usecase.dart';
+import '../../feature/account/data/request/param/get_me_param.dart';
 import 'background_chat_service.dart';
 
 @singleton
 class AuthService {
-  final ISocketService _socketService;
-
-  AuthService(this._socketService);
+  AuthService();
 
   /// Check if user has valid stored credentials and auto-login
   Future<bool> tryAutoLogin() async {
@@ -35,22 +31,22 @@ class AuthService {
         print('Background user profile fetch failed: $e');
       });
 
-      // Connect socket if using Socket.IO (like Xamarin) - do in background
-      if (AppSettings.connectionType == SocketConnectionType.socket) {
-        print('🔌 Auto-login: Connecting to socket server...');
-        _initializeSocket(storedToken, storedUserId).catchError((e) {
-          print('⚠️ Auto-login socket connection failed: $e');
-          // Don't fail login if socket fails - it's optional
-        });
-      } else {
-        // Start background polling service for API mode (like Xamarin)
-        print('🔄 Auto-login: Starting background polling service...');
-        final backgroundService = getIt<BackgroundChatService>();
-        backgroundService.startPolling().catchError((e) {
-          print('⚠️ Auto-login background polling failed: $e');
-          // Don't fail login if polling fails - it's optional
-        });
-      }
+      // Socket service disabled - no longer needed
+      // if (AppSettings.connectionType == SocketConnectionType.socket) {
+      //   print('🔌 Auto-login: Connecting to socket server...');
+      //   _initializeSocket(storedToken, storedUserId).catchError((e) {
+      //     print('⚠️ Auto-login socket connection failed: $e');
+      //     // Don't fail login if socket fails - it's optional
+      //   });
+      // } else {
+      // Start background polling service for API mode (like Xamarin)
+      print('🔄 Auto-login: Starting background polling service...');
+      final backgroundService = getIt<BackgroundChatService>();
+      backgroundService.startPolling().catchError((e) {
+        print('⚠️ Auto-login background polling failed: $e');
+        // Don't fail login if polling fails - it's optional
+      });
+      // }
 
       // Validate token with server (optional - can be done in background)
       // For now, we'll trust the stored token
@@ -93,11 +89,11 @@ class AuthService {
   /// Clear all session data and stored credentials
   Future<void> clearSession() async {
     try {
-      // Disconnect socket if using Socket.IO (like Xamarin)
-      if (AppSettings.connectionType == SocketConnectionType.socket) {
-        print('🔌 Disconnecting socket on logout...');
-        await _socketService.disconnect();
-      }
+      // Socket service disabled - no longer needed
+      // if (AppSettings.connectionType == SocketConnectionType.socket) {
+      //   print('🔌 Disconnecting socket on logout...');
+      //   await _socketService.disconnect();
+      // }
 
       // Clear session data
       final sessionData = getIt<SessionData>();
@@ -142,16 +138,16 @@ class AuthService {
         // Continue - OneSignal is optional
       }
 
-      // Connect socket if using Socket.IO (like Xamarin)
-      if (AppSettings.connectionType == SocketConnectionType.socket) {
-        print('🔌 Connecting to socket server on login...');
-        await _initializeSocket(accessToken, userId);
-      } else {
-        // Start background polling service for API mode (like Xamarin)
-        print('🔄 Starting background polling service...');
-        final backgroundService = getIt<BackgroundChatService>();
-        await backgroundService.startPolling();
-      }
+      // Socket service disabled - no longer needed
+      // if (AppSettings.connectionType == SocketConnectionType.socket) {
+      //   print('🔌 Connecting to socket server on login...');
+      //   await _initializeSocket(accessToken, userId);
+      // } else {
+      // Start background polling service for API mode (like Xamarin)
+      print('🔄 Starting background polling service...');
+      final backgroundService = getIt<BackgroundChatService>();
+      await backgroundService.startPolling();
+      // }
     } catch (e) {
       print('Error setting up session: $e');
       rethrow;
@@ -159,55 +155,73 @@ class AuthService {
   }
 
   /// Initialize socket connection (like Xamarin's InitStart)
-  Future<void> _initializeSocket(String accessToken, int userId) async {
-    try {
-      // Connect to socket server
-      await _socketService.connect();
-
-      // Wait longer for connection to establish
-      await Future.delayed(const Duration(milliseconds: 2000));
-
-      // Check connection status with retries
-      int retryCount = 0;
-      const maxRetries = 3;
-
-      while (!_socketService.isConnected && retryCount < maxRetries) {
-        retryCount++;
-        print('🔄 Socket connection attempt $retryCount/$maxRetries...');
-        await Future.delayed(const Duration(milliseconds: 1000));
-      }
-
-      // Join socket room with username and access token
-      if (_socketService.isConnected) {
-        final sessionData = getIt<SessionData>();
-        final username = sessionData.userProfile?.username ?? userId.toString();
-
-        await _socketService.join(username, accessToken);
-        print('✅ Socket connected and joined successfully');
-      } else {
-        print(
-            '⚠️ Socket connection failed after $maxRetries attempts - will retry later');
-      }
-    } catch (e) {
-      print('❌ Socket initialization error: $e');
-      // Don't throw - socket is optional, login should still succeed
-    }
-  }
+  /// DISABLED: Socket service no longer needed
+  // Future<void> _initializeSocket(String accessToken, int userId) async {
+  //   try {
+  //     // Connect to socket server
+  //     await _socketService.connect();
+  //
+  //     // Wait longer for connection to establish
+  //     await Future.delayed(const Duration(milliseconds: 2000));
+  //
+  //     // Check connection status with retries
+  //     int retryCount = 0;
+  //     const maxRetries = 3;
+  //
+  //     while (!_socketService.isConnected && retryCount < maxRetries) {
+  //       retryCount++;
+  //       print('🔄 Socket connection attempt $retryCount/$maxRetries...');
+  //       await Future.delayed(const Duration(milliseconds: 1000));
+  //     }
+  //
+  //     // Join socket room with username and access token
+  //     if (_socketService.isConnected) {
+  //       final sessionData = getIt<SessionData>();
+  //       final username = sessionData.userProfile?.username ?? userId.toString();
+  //
+  //       await _socketService.join(username, accessToken);
+  //       print('✅ Socket connected and joined successfully');
+  //     } else {
+  //       print(
+  //           '⚠️ Socket connection failed after $maxRetries attempts - will retry later');
+  //     }
+  //   } catch (e) {
+  //     print('❌ Socket initialization error: $e');
+  //     // Don't throw - socket is optional, login should still succeed
+  //   }
+  // }
 
   /// Fetch user profile data and store in session
+  /// ⚠️ WORKAROUND: Currently /api/me has a backend bug where it fails for new users
+  /// with incomplete profiles. This is disabled until backend is fixed.
+  /// The app now uses the user data from login/register responses instead.
   Future<void> _fetchAndStoreUserProfile(int userId) async {
-    try {
-      final getUserProfileUseCase = getIt<GetUserProfileUseCase>();
-      final param = GetUserProfileParam(userId: userId.toString());
+    print(
+        '⚠️ Skipping /api/me call due to backend bug (null playerProfile issue)');
+    print('ℹ️ Using user data from login/register response instead');
 
-      final result = await getUserProfileUseCase(param);
+    // TODO: Re-enable this when backend fixes the Helper::isUserProfileCompleted()
+    // null pointer issue in app/Core/Helper.php line 10
+
+    /*
+    try {
+      // Use /me endpoint to get current user profile (doesn't require userId)
+      final getMeUsecase = getIt<GetMeUsecase>();
+      final param = GetMeParam();
+
+      final result = await getMeUsecase(param);
 
       result.pick(
         onData: (response) {
           // Store user profile in session data
           final sessionData = getIt<SessionData>();
-          sessionData.userProfile = response.userData;
-          print('✅ User profile loaded: ${response.userData.username}');
+          // Convert MemberDataEntity to UserProfileDataEntity if needed
+          // For now, we'll store the member data
+          // sessionData.userProfile = response.data;
+          
+          // Update userId from the profile if available
+          // Note: MemberDataEntity doesn't have userId, so we keep the passed userId
+          print('✅ User profile loaded: ${response.data.email}');
         },
         onError: (error) {
           print('❌ Failed to load user profile: $error');
@@ -218,6 +232,7 @@ class AuthService {
       print('❌ Error fetching user profile: $e');
       // Don't throw error - session setup should still succeed
     }
+    */
   }
 
   /// Get current user ID

@@ -155,15 +155,18 @@ class AccountCubit extends Cubit<AccountState> {
 
       if (token.isNotEmpty) {
         // Use AuthService for consistent session management
+        // Note: userId will be fetched by AuthService when it calls /me endpoint
         final authService = getIt<AuthService>();
         await authService.setupSession(
           accessToken: token,
-          userId: 0, // TODO: Get user ID from API if needed
+          userId: LocalStorage.memberID > 0 ? LocalStorage.memberID : 0,
         );
 
-        // Store user email
+        // Store user email and token
         getIt<SessionData>().token = token;
         LocalStorage.persistToken(token);
+        
+        print('✅ Session data setup completed successfully');
       }
     } catch (e) {
       print('Error setting up session: $e');
