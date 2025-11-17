@@ -6,6 +6,7 @@ import '../../domain/entities/user_preferences_entity.dart';
 import '../../../../core/services/navigation_style_manager.dart';
 import '../../../../core/navigation/nav.dart';
 import '../../../account/presentation/screen/login/login_screen.dart';
+import 'my_profile_screen.dart';
 import 'theme_security_settings_screen.dart';
 import 'notification_settings_screen.dart';
 import 'privacy_settings_screen.dart';
@@ -19,7 +20,6 @@ import 'features/advertising_screen.dart';
 import '../../../../core/providers/session_data.dart';
 import '../../../../di/service_locator.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'my_profile_screen.dart';
 
 /// Main settings screen matching Xamarin design
 class SettingsScreen extends StatefulWidget {
@@ -658,17 +658,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _performLogout() async {
     try {
-      // Navigate to login screen
-      if (mounted) {
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(
-            builder: (context) => const LoginScreen(
-              param: LoginScreenParam(from: LoginFrom.mainScreen),
-            ),
-          ),
-          (route) => false,
-        );
-      }
+      // Use existing logout logic from Utils
+      await Utils.logout();
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(

@@ -67,6 +67,21 @@ class VideoCacheManager {
     _cleanupCache();
   }
 
+  /// Pause all cached controllers without disposing them
+  void pauseAll() {
+    for (final controller in _controllerCache.values) {
+      try {
+        if (controller.value.isPlaying) {
+          controller.pause();
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print('⚠️ Pause all controllers error: $e');
+        }
+      }
+    }
+  }
+
   /// Preload video for better performance
   Future<void> preloadVideo(String videoUrl) async {
     try {

@@ -24,6 +24,12 @@ class PostDataEntity extends BaseEntity {
   final String audio;
   final String videoThumbnail;
   final String audioThumbnail;
+  final String publisherName;
+  final String publisherUsername;
+  final String publisherAvatar;
+  final int likeCount;
+  final int commentCount;
+  final int shareCount;
   PostDataEntity({
     required this.id,
     required this.title,
@@ -33,6 +39,12 @@ class PostDataEntity extends BaseEntity {
     required this.audio,
     required this.videoThumbnail,
     required this.audioThumbnail,
+    required this.publisherName,
+    required this.publisherUsername,
+    required this.publisherAvatar,
+    required this.likeCount,
+    required this.commentCount,
+    required this.shareCount,
   });
 
   @override
@@ -45,5 +57,11 @@ class PostDataEntity extends BaseEntity {
         audio,
         videoThumbnail,
         audioThumbnail,
+        publisherName,
+        publisherUsername,
+        publisherAvatar,
+        likeCount,
+        commentCount,
+        shareCount,
       ];
 }

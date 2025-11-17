@@ -26,6 +26,18 @@ class PostsRepository extends Repository implements IPostsRepository {
   }
 
   @override
+  Future<Result<AppErrors, PostsResponseEntity>> getMyPosts(
+      GetPostsParam param) async {
+    try {
+      final remoteResult = await _remoteSource.getMyPosts(param);
+      return execute(remoteResult: remoteResult);
+    } catch (e) {
+      return Result(
+          error: AppErrors.customError(message: 'Repository error: $e'));
+    }
+  }
+
+  @override
   Future<Result<AppErrors, PostEntity>> getPostById(
       GetPostByIdParam param) async {
     try {

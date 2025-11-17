@@ -33,6 +33,9 @@ import '../feature/profile/domain/usecases/get_user_profile_usecase.dart';
 import '../feature/profile/domain/usecases/update_avatar_usecase.dart';
 import '../feature/profile/domain/usecases/update_cover_usecase.dart';
 import '../feature/profile/domain/repositories/iuser_profile_repository.dart';
+import '../feature/posts/domain/usecase/get_my_posts_usecase.dart';
+import '../feature/settings/presentation/state_m/my_profile/my_profile_posts_cubit.dart';
+import '../feature/posts/domain/repositories/iposts_repository.dart';
 import '../core/services/gifts_service.dart';
 import '../core/services/user_service.dart';
 import '../core/services/community_service.dart';
@@ -162,6 +165,17 @@ Future<void> configureInjection() async {
   if (!getIt.isRegistered<UpdateCoverUseCase>()) {
     getIt.registerLazySingleton<UpdateCoverUseCase>(
         () => UpdateCoverUseCase(getIt<IUserProfileRepository>()));
+  }
+
+  if (!getIt.isRegistered<GetMyPostsUsecase>()) {
+    getIt.registerLazySingleton<GetMyPostsUsecase>(
+        () => GetMyPostsUsecase(getIt<IPostsRepository>()));
+  }
+
+  if (!getIt.isRegistered<MyProfilePostsCubit>()) {
+    getIt.registerFactory<MyProfilePostsCubit>(() => MyProfilePostsCubit(
+          getMyPostsUsecase: getIt<GetMyPostsUsecase>(),
+        ));
   }
 
   // My Profile cubit is auto-registered via @injectable annotation

@@ -8,6 +8,7 @@ import 'package:scouting_app/core/common/utils/size_utils.dart';
 import 'package:scouting_app/localization/app_localization.dart';
 import 'package:scouting_app/core/services/notification_service.dart';
 import 'package:scouting_app/core/services/background_chat_service.dart';
+import 'package:scouting_app/core/navigation/app_route_observer.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
@@ -75,6 +76,7 @@ class _MainAppState extends State<MainApp> {
           ),
           debugShowCheckedModeBanner: false,
           navigatorKey: _navigatorKey,
+          navigatorObservers: [appRouteObserver],
           home: SplashScreen(param: SplashScreenParam()),
           onGenerateRoute: getIt<NavigationRoute>().generateRoute,
           localizationsDelegates: const [

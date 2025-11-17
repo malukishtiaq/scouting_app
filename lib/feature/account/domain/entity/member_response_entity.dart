@@ -23,8 +23,8 @@ class MemberDataEntity extends BaseEntity {
   final String? registrationDate;
   final String avatar;
   final int? age;
-  final double? weight;
-  final double? height;
+  final int? weight;  // Changed from double? to int?
+  final int? height;  // Changed from double? to int?
   final String? primaryPosition;
   final String? preferredFoot;
   final bool profileComplete;

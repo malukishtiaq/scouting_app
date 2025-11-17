@@ -37,6 +37,12 @@ class UserProfileEntity extends BaseEntity {
   final List<UserProfilePageEntity> likedPages;
   final List<UserProfileGroupEntity> joinedGroups;
   final List<UserProfileFollowerEntity> family;
+  // Scouting-specific fields
+  final int? age;
+  final int? weight;
+  final int? height;
+  final String? primaryPosition;
+  final String? preferredFoot;
 
   UserProfileEntity({
     this.userId,
@@ -75,6 +81,11 @@ class UserProfileEntity extends BaseEntity {
     this.likedPages = const [],
     this.joinedGroups = const [],
     this.family = const [],
+    this.age,
+    this.weight,
+    this.height,
+    this.primaryPosition,
+    this.preferredFoot,
   });
 
   @override
@@ -115,6 +126,11 @@ class UserProfileEntity extends BaseEntity {
         likedPages,
         joinedGroups,
         family,
+        age,
+        weight,
+        height,
+        primaryPosition,
+        preferredFoot,
       ];
 
   String get fullName {

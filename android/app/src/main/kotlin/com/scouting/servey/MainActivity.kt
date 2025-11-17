@@ -1,4 +1,4 @@
-package com.wowonder.combined
+package com.scouting.servey
 
 import android.content.Intent
 import android.net.Uri

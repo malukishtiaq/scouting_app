@@ -2,8 +2,6 @@ import 'package:injectable/injectable.dart';
 import '../common/local_storage.dart';
 import '../providers/session_data.dart';
 import '../../di/service_locator.dart';
-import '../../feature/account/domain/usecase/get_me_usecase.dart';
-import '../../feature/account/data/request/param/get_me_param.dart';
 import 'background_chat_service.dart';
 
 @singleton
@@ -95,10 +93,9 @@ class AuthService {
       //   await _socketService.disconnect();
       // }
 
-      // Clear session data
+      // Clear session data (including userProfile)
       final sessionData = getIt<SessionData>();
-      sessionData.token = null;
-      sessionData.userId = null;
+      sessionData.clear(); // This clears token, userId, and userProfile
 
       // Clear stored data
       await LocalStorage.deleteToken();
@@ -106,6 +103,8 @@ class AuthService {
 
       // Clear smart lock credentials
       // await SmartLockService.clearStoredCredentials();
+      
+      print('✅ Session cleared successfully');
     } catch (e) {
       // Log error but don't throw - logout should always succeed
       print('Error clearing session: $e');

@@ -13,11 +13,15 @@ import '../../../posts/domain/entity/posts_response_entity.dart';
 class HighlightPostView extends StatefulWidget {
   final PostEntity post;
   final bool isActive;
+  final ValueNotifier<bool> playbackNotifier;
+  final ValueNotifier<bool> routePlaybackNotifier;
 
   const HighlightPostView({
     super.key,
     required this.post,
     required this.isActive,
+    required this.playbackNotifier,
+    required this.routePlaybackNotifier,
   });
 
   @override
@@ -30,10 +34,17 @@ class _HighlightPostViewState extends State<HighlightPostView> {
   bool _isInitialized = false;
   bool _hasError = false;
 
+  bool get _shouldPlay =>
+      widget.isActive &&
+      widget.playbackNotifier.value &&
+      widget.routePlaybackNotifier.value;
+
   @override
   void initState() {
     super.initState();
     _isVideo = widget.post.mediaType.toLowerCase() == 'video';
+    widget.playbackNotifier.addListener(_handlePlaybackNotifierChange);
+    widget.routePlaybackNotifier.addListener(_handlePlaybackNotifierChange);
     if (_isVideo) {
       _initializeController();
     }
@@ -42,6 +53,15 @@ class _HighlightPostViewState extends State<HighlightPostView> {
   @override
   void didUpdateWidget(HighlightPostView oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (oldWidget.playbackNotifier != widget.playbackNotifier) {
+      oldWidget.playbackNotifier.removeListener(_handlePlaybackNotifierChange);
+      widget.playbackNotifier.addListener(_handlePlaybackNotifierChange);
+    }
+    if (oldWidget.routePlaybackNotifier != widget.routePlaybackNotifier) {
+      oldWidget.routePlaybackNotifier
+          .removeListener(_handlePlaybackNotifierChange);
+      widget.routePlaybackNotifier.addListener(_handlePlaybackNotifierChange);
+    }
     if (oldWidget.post.id != widget.post.id) {
       _disposeController();
       _isVideo = widget.post.mediaType.toLowerCase() == 'video';
@@ -53,17 +73,14 @@ class _HighlightPostViewState extends State<HighlightPostView> {
     } else if (oldWidget.isActive != widget.isActive &&
         _controller != null &&
         _controller!.value.isInitialized) {
-      if (widget.isActive) {
-        _controller!.play();
-      } else {
-        _controller!.pause();
-      }
-      setState(() {});
+      _handlePlaybackNotifierChange();
     }
   }
 
   @override
   void dispose() {
+    widget.playbackNotifier.removeListener(_handlePlaybackNotifierChange);
+    widget.routePlaybackNotifier.removeListener(_handlePlaybackNotifierChange);
     _disposeController();
     super.dispose();
   }
@@ -90,7 +107,7 @@ class _HighlightPostViewState extends State<HighlightPostView> {
             _isInitialized = true;
             _hasError = false;
           });
-          if (widget.isActive) {
+          if (_shouldPlay) {
             _controller!.play();
           }
         }).catchError((_) {
@@ -108,6 +125,18 @@ class _HighlightPostViewState extends State<HighlightPostView> {
     }
   }
 
+  void _handlePlaybackNotifierChange() {
+    if (_controller == null || !_controller!.value.isInitialized) {
+      return;
+    }
+    if (!_shouldPlay) {
+      _controller!.pause();
+    } else if (!_controller!.value.isPlaying) {
+      _controller!.play();
+    }
+    setState(() {});
+  }
+
   void _disposeController() {
     try {
       _controller?.pause();
@@ -120,6 +149,10 @@ class _HighlightPostViewState extends State<HighlightPostView> {
 
   void _togglePlayback() {
     if (!_isVideo || _controller == null || !_controller!.value.isInitialized) {
+      return;
+    }
+
+    if (!widget.playbackNotifier.value || !widget.routePlaybackNotifier.value) {
       return;
     }
 
@@ -158,8 +191,7 @@ class _HighlightPostViewState extends State<HighlightPostView> {
                     : 1,
                 duration: const Duration(milliseconds: 200),
                 child: Container(
-                  padding:
-                      const EdgeInsets.all(AppDimensions.spacing12),
+                  padding: const EdgeInsets.all(AppDimensions.spacing12),
                   decoration: AppDecorations.circularOverlay,
                   child: const Icon(
                     Icons.play_arrow,
@@ -355,7 +387,8 @@ class _HighlightPostViewState extends State<HighlightPostView> {
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(AppDimensions.radiusSmall),
+                  borderRadius:
+                      BorderRadius.circular(AppDimensions.radiusSmall),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.3),

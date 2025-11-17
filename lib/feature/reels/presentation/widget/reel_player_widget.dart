@@ -10,11 +10,13 @@ import 'reel_controls_widget.dart';
 class ReelPlayerWidget extends StatefulWidget {
   final PostDataEntity reel;
   final bool isActive;
+  final ValueNotifier<bool> playbackNotifier;
 
   const ReelPlayerWidget({
     super.key,
     required this.reel,
     required this.isActive,
+    required this.playbackNotifier,
   });
 
   @override
@@ -34,6 +36,7 @@ class _ReelPlayerWidgetState extends State<ReelPlayerWidget> {
 
   // User interaction tracking
   bool _userPaused = false; // Track if user manually paused
+  late VoidCallback _playbackListener;
 
   @override
   void initState() {
@@ -41,6 +44,9 @@ class _ReelPlayerWidgetState extends State<ReelPlayerWidget> {
     _setupVideoUrl();
     // Always initialize video for better performance
     _initializeVideo();
+    _playbackListener = _handlePlaybackChange;
+    widget.playbackNotifier.addListener(_playbackListener);
+    _handlePlaybackChange();
   }
 
   @override
@@ -73,6 +79,13 @@ class _ReelPlayerWidgetState extends State<ReelPlayerWidget> {
       } else if (!widget.isActive && _isInitialized) {
         _pauseVideo();
       }
+    }
+
+    if (oldWidget.playbackNotifier != widget.playbackNotifier) {
+      oldWidget.playbackNotifier.removeListener(_playbackListener);
+      _playbackListener = _handlePlaybackChange;
+      widget.playbackNotifier.addListener(_playbackListener);
+      _handlePlaybackChange();
     }
   }
 
@@ -108,6 +121,7 @@ class _ReelPlayerWidgetState extends State<ReelPlayerWidget> {
   @override
   void dispose() {
     _isDisposed = true;
+    widget.playbackNotifier.removeListener(_playbackListener);
     _disposeController();
     super.dispose();
   }
@@ -178,6 +192,25 @@ class _ReelPlayerWidgetState extends State<ReelPlayerWidget> {
       setState(() {
         _isPlaying = false;
       });
+    }
+  }
+
+  void _handlePlaybackChange() {
+    if (!mounted || _isDisposed) {
+      return;
+    }
+    if (!widget.playbackNotifier.value) {
+      _pauseVideo();
+      if (_isPlaying) {
+        setState(() {
+          _isPlaying = false;
+        });
+      }
+      return;
+    }
+
+    if (widget.isActive && _isInitialized && !_userPaused) {
+      _playVideo();
     }
   }
 

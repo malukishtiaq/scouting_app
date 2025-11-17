@@ -21,6 +21,8 @@ import '../../feature/settings/presentation/screen/features/movies_screen.dart';
 import '../../feature/settings/presentation/screen/features/games_screen.dart';
 import '../../feature/settings/presentation/screen/features/live_videos_screen.dart';
 import '../../feature/settings/presentation/screen/features/advertising_screen.dart';
+import '../../feature/settings/presentation/screen/qr_code_screen.dart';
+import '../../feature/player_profile/presentation/screen/player_profile_screen.dart';
 
 import '../constants/enums/route_type.dart';
 import '../ui/screens/base_screen.dart';
@@ -159,6 +161,32 @@ class NavigationRoute {
       case AdvertisingScreen.routeName:
         return FadeRoute(
           page: AdvertisingScreen(param: AdvertisingScreenParam()),
+          settings: settings,
+        );
+
+      case QrCodeScreen.routeName:
+        final args = settings.arguments as QrCodeScreenParam?;
+        return FadeRoute(
+          page: QrCodeScreen(
+            param: args ?? QrCodeScreenParam(),
+          ),
+          settings: settings,
+        );
+
+      case PlayerProfileScreen.routeName:
+        final args = settings.arguments as Map<String, dynamic>?;
+        final playerId = args?['playerId'] as String?;
+        final playerData = args?['playerData'];
+        
+        if (playerId == null) {
+          return _errorRoute();
+        }
+        
+        return FadeRoute(
+          page: PlayerProfileScreen(
+            playerId: playerId,
+            playerData: playerData,
+          ),
           settings: settings,
         );
 

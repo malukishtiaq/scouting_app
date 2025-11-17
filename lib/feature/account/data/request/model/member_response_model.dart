@@ -79,8 +79,8 @@ class MemberDataModel extends BaseModel<MemberDataEntity> {
   final String? registrationDate;
   final String avatar;
   final int? age;
-  final double? weight;
-  final double? height;
+  final int? weight;  // Changed from double? to int?
+  final int? height;  // Changed from double? to int?
   final String? primaryPosition;
   final String? preferredFoot;
   final bool profileComplete;
@@ -122,8 +122,8 @@ class MemberDataModel extends BaseModel<MemberDataEntity> {
                 json['image'] ?? 
                 '',
         age: json['age'] != null ? int.tryParse(json['age'].toString()) : null,
-        weight: json['weight']?.toDouble(),
-        height: json['height']?.toDouble(),
+        weight: json['weight'] != null ? int.tryParse(json['weight'].toString()) : null,
+        height: json['height'] != null ? int.tryParse(json['height'].toString()) : null,
         primaryPosition: json['primary_position'] ?? json['position'],
         preferredFoot: json['preferred_foot'] ?? json['foot'],
         profileComplete: json['profile_complete'] ?? 

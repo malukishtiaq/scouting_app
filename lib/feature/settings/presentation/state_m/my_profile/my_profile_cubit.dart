@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../../core/services/auth_service.dart';
+import '../../../../../core/providers/session_data.dart';
+import '../../../../../di/service_locator.dart';
 import '../../../../account/domain/usecase/get_me_usecase.dart';
 import '../../../../account/data/request/param/get_me_param.dart';
 import '../../../../profile/domain/usecases/update_avatar_usecase.dart';
@@ -53,17 +55,25 @@ class MyProfileCubit extends Cubit<MyProfileState> {
 
     emit(const MyProfileState.loading());
 
-    // ⚠️ WORKAROUND: Temporarily disabled /api/me call due to backend bug
-    // The backend's Helper::isUserProfileCompleted() crashes when playerProfile is null
-    // Using mock profile data until backend is fixed
-    print('⚠️ MyProfileCubit: Skipping /api/me call due to backend bug');
-    print('ℹ️ Using mock profile data until backend is fixed');
+    // Use user profile from SessionData (stored during login)
+    final sessionData = getIt<SessionData>();
+    if (sessionData.userProfile != null) {
+      print('✅ MyProfileCubit: Using stored user profile from SessionData');
+      emit(MyProfileState.loaded(
+        profile: sessionData.userProfile!,
+        following: [],
+        hasReachedMax: false,
+      ));
+      _isLoading = false;
+      return;
+    }
 
-    // Create a mock profile from auth service data
+    // Fallback: Create a basic profile from auth service data
+    print('⚠️ MyProfileCubit: No stored profile, creating from auth data');
     final mockProfile = UserProfileEntity(
       userId: _authService.currentUserId?.toString() ?? '0',
       username: _authService.currentUsername ?? 'User',
-      email: 'user@example.com', // TODO: Get from login response
+      email: 'user@example.com',
       firstName: _authService.currentUsername ?? 'User',
       lastName: '',
       avatar: 'https://scouting.terveys.io/images/default-avatar.png',

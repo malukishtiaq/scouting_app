@@ -5,8 +5,8 @@ import '../../../../../core/params/base_params.dart';
 class UpdateProfileParam extends BaseParams {
   final String? name;
   final int? age;
-  final double? weight;
-  final double? height;
+  final int? weight;  // Changed from double to int
+  final int? height;  // Changed from double to int
   final String? primaryPosition;
   final String? preferredFoot;
   final String? avatarPath; // Path to avatar file for upload

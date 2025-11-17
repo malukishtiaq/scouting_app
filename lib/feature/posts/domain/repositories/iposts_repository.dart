@@ -8,6 +8,10 @@ abstract class IPostsRepository {
   /// Get paginated list of posts
   Future<Result<AppErrors, PostsResponseEntity>> getPosts(GetPostsParam param);
 
+  /// Get paginated list of posts for the authenticated user
+  Future<Result<AppErrors, PostsResponseEntity>> getMyPosts(
+      GetPostsParam param);
+
   /// Get a single post by ID
   Future<Result<AppErrors, PostEntity>> getPostById(GetPostByIdParam param);
 }

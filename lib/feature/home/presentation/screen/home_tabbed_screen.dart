@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/navigation/app_route_observer.dart';
 import '../../../../core/ui/screens/base_screen.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -8,9 +9,9 @@ import '../../../../core/theme/app_decorations.dart';
 import '../../../../localization/app_localization.dart';
 import '../../../../feature/posts/presentation/cubit/posts_cubit.dart';
 import '../../../../feature/posts/presentation/cubit/posts_state.dart';
-import '../../../../feature/posts/presentation/screen/posts_screen.dart';
-import '../../../../feature/settings/presentation/screen/my_profile_screen.dart';
+import '../../../../feature/explore/presentation/screen/explore_screen.dart';
 import '../../../../feature/settings/presentation/screen/features/games_screen.dart';
+import '../../../settings/presentation/screen/my_profile_screen.dart';
 import '../widgets/highlight_post_view.dart';
 
 class HomeTabbedScreenParam {}
@@ -25,20 +26,27 @@ class HomeTabbedScreen extends BaseScreen<HomeTabbedScreenParam> {
 }
 
 class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
-  int _currentIndex =
-      4; // Start with Highlights tab selected (matching the image)
+  int _currentIndex = 0; // Start with Profile tab selected by default
   late final List<Widget> _pages;
+  final ValueNotifier<bool> _highlightPlaybackNotifier =
+      ValueNotifier<bool>(true);
 
   @override
   void initState() {
     super.initState();
     _pages = [
-      MyProfileScreen(param: const MyProfileScreenParam()),
-      const PostsScreen(),
+      const MyProfileScreen(param: MyProfileScreenParam()),
+      const ExploreScreen(),
       const SizedBox.shrink(),
-      GamesScreen(param: const GamesScreenParam()),
-      const HighlightsTabView(),
+      const GamesScreen(param: GamesScreenParam()),
+      HighlightsTabView(playbackNotifier: _highlightPlaybackNotifier),
     ];
+  }
+
+  @override
+  void dispose() {
+    _highlightPlaybackNotifier.dispose();
+    super.dispose();
   }
 
   Widget _buildBottomNavigation() {
@@ -46,12 +54,8 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
       decoration: AppDecorations.bottomNavigation(),
       child: SafeArea(
         top: false,
-        child: Container(
-          height: AppDimensions.bottomNavHeight,
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppDimensions.spacing8,
-            vertical: AppDimensions.spacing4,
-          ),
+        child: SizedBox(
+          height: 60, // Fixed height to prevent overflow
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -75,32 +79,17 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
       return Expanded(
         child: GestureDetector(
           onTap: () => _onTabSelected(index, isCenter: true),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: AppDimensions.spacing40,
-                height: AppDimensions.spacing40,
-                decoration: AppDecorations.primaryCircle,
-                child: Icon(
-                  icon,
-                  color: AppColors.textOnPrimary,
-                  size: AppDimensions.iconMedium,
-                ),
+          child: Center(
+            child: Container(
+              width: AppDimensions.spacing40,
+              height: AppDimensions.spacing40,
+              decoration: AppDecorations.primaryCircle,
+              child: Icon(
+                icon,
+                color: AppColors.textOnPrimary,
+                size: AppDimensions.iconMedium,
               ),
-              const SizedBox(height: 2),
-              Text(
-                label,
-                style: AppTextStyles.caption.copyWith(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 9,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
+            ),
           ),
         ),
       );
@@ -109,32 +98,14 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
     return Expanded(
       child: GestureDetector(
         onTap: () => _onTabSelected(index),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              color: isActive || isSelected
-                  ? AppColors.primary
-                  : AppColors.textTertiary,
-              size: AppDimensions.iconLarge,
-            ),
-            const SizedBox(height: 2),
-            Text(
-              label,
-              style: AppTextStyles.caption.copyWith(
-                color: isActive || isSelected
-                    ? AppColors.primary
-                    : AppColors.textTertiary,
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                fontSize: 9,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-            ),
-          ],
+        child: Center(
+          child: Icon(
+            icon,
+            color: isActive || isSelected
+                ? AppColors.primary
+                : AppColors.textTertiary,
+            size: AppDimensions.iconLarge,
+          ),
         ),
       ),
     );
@@ -150,6 +121,7 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
       return;
     }
 
+    _highlightPlaybackNotifier.value = index == 4;
     setState(() => _currentIndex = index);
   }
 
@@ -252,20 +224,82 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
 }
 
 class HighlightsTabView extends StatefulWidget {
-  const HighlightsTabView({super.key});
+  final ValueNotifier<bool> playbackNotifier;
+
+  const HighlightsTabView({
+    super.key,
+    required this.playbackNotifier,
+  });
 
   @override
   State<HighlightsTabView> createState() => _HighlightsTabViewState();
 }
 
-class _HighlightsTabViewState extends State<HighlightsTabView> {
+class _HighlightsTabViewState extends State<HighlightsTabView>
+    with WidgetsBindingObserver, RouteAware {
   final PageController _pageController = PageController();
   int _activeIndex = 0;
+  final ValueNotifier<bool> _routePlaybackNotifier = ValueNotifier<bool>(true);
+
+  @override
+  void initState() {
+    super.initState();
+    widget.playbackNotifier.addListener(_handlePlaybackChange);
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void didUpdateWidget(covariant HighlightsTabView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.playbackNotifier != widget.playbackNotifier) {
+      oldWidget.playbackNotifier.removeListener(_handlePlaybackChange);
+      widget.playbackNotifier.addListener(_handlePlaybackChange);
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final route = ModalRoute.of(context);
+    if (route is PageRoute) {
+      appRouteObserver.subscribe(this, route);
+    }
+  }
 
   @override
   void dispose() {
+    widget.playbackNotifier.removeListener(_handlePlaybackChange);
+    appRouteObserver.unsubscribe(this);
+    WidgetsBinding.instance.removeObserver(this);
     _pageController.dispose();
+    _routePlaybackNotifier.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.detached) {
+      _routePlaybackNotifier.value = false;
+    } else if (state == AppLifecycleState.resumed) {
+      _routePlaybackNotifier.value = true;
+    }
+  }
+
+  @override
+  void didPushNext() {
+    _routePlaybackNotifier.value = false;
+  }
+
+  @override
+  void didPopNext() {
+    _routePlaybackNotifier.value = true;
+  }
+
+  void _handlePlaybackChange() {
+    setState(() {});
   }
 
   @override
@@ -320,7 +354,7 @@ class _HighlightsTabViewState extends State<HighlightsTabView> {
           );
         }
 
-        final postsLoaded = state as PostsLoaded;
+        final PostsLoaded postsLoaded = state;
         final posts = postsLoaded.posts;
 
         return Stack(
@@ -342,16 +376,17 @@ class _HighlightsTabViewState extends State<HighlightsTabView> {
                 return HighlightPostView(
                   post: posts[index],
                   isActive: _activeIndex == index,
+                  playbackNotifier: widget.playbackNotifier,
+                  routePlaybackNotifier: _routePlaybackNotifier,
                 );
               },
             ),
             if (postsLoaded.isLoadingMore)
-              Positioned(
-                bottom:
-                    AppDimensions.bottomNavHeight + AppDimensions.spacing16,
+              const Positioned(
+                bottom: AppDimensions.bottomNavHeight + AppDimensions.spacing16,
                 left: 0,
                 right: 0,
-                child: const Center(
+                child: Center(
                   child: SizedBox(
                     width: AppDimensions.iconLarge,
                     height: AppDimensions.iconLarge,

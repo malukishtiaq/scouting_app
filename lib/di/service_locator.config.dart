@@ -50,12 +50,15 @@ import '../feature/comments/domain/usecase/get_post_comments_usecase.dart'
     as _i109;
 import '../feature/comments/domain/usecase/get_user_comments_usecase.dart'
     as _i597;
+import '../feature/explore/presentation/cubit/explore_cubit.dart' as _i215;
 import '../feature/likes/data/datasource/ilikes_remote.dart' as _i591;
 import '../feature/likes/domain/repository/ilikes_repository.dart' as _i1020;
 import '../feature/likes/domain/repository/likes_repository.dart' as _i548;
 import '../feature/likes/domain/usecase/get_post_likes_usecase.dart' as _i805;
 import '../feature/likes/domain/usecase/get_user_likes_usecase.dart' as _i779;
 import '../feature/likes/domain/usecase/toggle_like_usecase.dart' as _i686;
+import '../feature/player_profile/presentation/cubit/player_profile_cubit.dart'
+    as _i1068;
 import '../feature/player_stats/data/datasources/iplayer_remote_datasource.dart'
     as _i495;
 import '../feature/player_stats/domain/repositories/iplayer_repository.dart'
@@ -66,6 +69,7 @@ import '../feature/posts/data/datasources/posts_remote_datasource.dart'
     as _i524;
 import '../feature/posts/domain/repositories/iposts_repository.dart' as _i53;
 import '../feature/posts/domain/repositories/posts_repository.dart' as _i663;
+import '../feature/posts/domain/usecase/get_my_posts_usecase.dart' as _i1058;
 import '../feature/posts/domain/usecase/get_post_by_id_usecase.dart' as _i316;
 import '../feature/posts/domain/usecase/get_posts_usecase.dart' as _i805;
 import '../feature/posts/presentation/cubit/posts_cubit.dart' as _i319;
@@ -102,6 +106,8 @@ import '../feature/scouting_posts/domain/usecase/get_posts_usecase.dart'
     as _i622;
 import '../feature/settings/presentation/state_m/my_profile/my_profile_cubit.dart'
     as _i525;
+import '../feature/settings/presentation/state_m/my_profile/my_profile_posts_cubit.dart'
+    as _i231;
 import '../feature/splash/presentation/state_m/splash_cubit.dart' as _i12;
 import 'modules/logger_module.dart' as _i205;
 
@@ -119,6 +125,7 @@ extension GetItInjectableX on _i174.GetIt {
     final loggerModule = _$LoggerModule();
     gh.factory<_i699.NoopBackgroundApi>(() => _i699.NoopBackgroundApi());
     gh.factory<_i591.DbProvider>(() => _i591.DbProvider());
+    gh.factory<_i1068.PlayerProfileCubit>(() => _i1068.PlayerProfileCubit());
     gh.singleton<_i821.GenericBackgroundService>(
         () => _i821.GenericBackgroundService());
     gh.singleton<_i81.IsolateBackgroundService>(
@@ -161,6 +168,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i788.BackgroundTasksRegistrar(gh<_i699.NoopBackgroundApi>()));
     gh.factory<_i53.IPostsRepository>(
         () => _i663.PostsRepository(gh<_i177.IPostsRemoteSource>()));
+    gh.lazySingleton<_i1058.GetMyPostsUsecase>(
+        () => _i1058.GetMyPostsUsecase(gh<_i53.IPostsRepository>()));
     gh.singleton<_i714.GetUserProfileUseCase>(
         () => _i714.GetUserProfileUseCase(gh<_i17.IUserProfileRepository>()));
     gh.singleton<_i714.GetUserProfileByUsernameUseCase>(() =>
@@ -233,6 +242,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i850.GetReelsUsecase(gh<_i864.IReelsRepository>()));
     gh.singleton<_i1020.ILikesRepository>(
         () => _i548.LikesRepository(gh<_i591.ILikesRemoteSource>()));
+    gh.factory<_i231.MyProfilePostsCubit>(() => _i231.MyProfilePostsCubit(
+        getMyPostsUsecase: gh<_i1058.GetMyPostsUsecase>()));
     gh.factory<_i1042.UserProfileCubit>(() => _i1042.UserProfileCubit(
           getUserProfileUseCase: gh<_i714.GetUserProfileUseCase>(),
           getUserProfileByUsernameUseCase:
@@ -265,6 +276,8 @@ extension GetItInjectableX on _i174.GetIt {
           updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
           authService: gh<_i377.AuthService>(),
         ));
+    gh.factory<_i215.ExploreCubit>(
+        () => _i215.ExploreCubit(gh<_i813.ListMembersUsecase>()));
     gh.singleton<_i622.GetPostsUsecase>(
         () => _i622.GetPostsUsecase(gh<_i524.IScoutingPostsRepository>()));
     gh.singleton<_i338.GetPostByIdUsecase>(

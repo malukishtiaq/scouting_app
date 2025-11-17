@@ -7,6 +7,9 @@ import '../../../../core/navigation/nav.dart';
 import '../../../../localization/app_localization.dart';
 import '../../../account/presentation/screen/login/login_screen.dart';
 import '../../../account/presentation/screen/register/register_screen.dart';
+import '../../../home/presentation/screen/home_tabbed_screen.dart';
+import '../../../../di/service_locator.dart';
+import '../../../../core/services/auth_service.dart';
 
 class SplashScreenParam {}
 
@@ -23,18 +26,51 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Auto-navigate after 2 seconds
-    Future.delayed(const Duration(seconds: 2), () {
+    // Check for existing session and navigate accordingly
+    _checkAuthAndNavigate();
+  }
+
+  Future<void> _checkAuthAndNavigate() async {
+    // Show splash for at least 1 second for better UX
+    await Future.delayed(const Duration(seconds: 1));
+
+    if (!mounted) return;
+
+    try {
+      final authService = getIt<AuthService>();
+      final isLoggedIn = await authService.tryAutoLogin();
+
+      if (!mounted) return;
+
+      if (isLoggedIn) {
+        // User has valid session, navigate to home
+        print('✅ Auto-login successful, navigating to home');
+        _navigateToHome();
+      } else {
+        // No valid session, navigate to login
+        print('ℹ️ No valid session, navigating to login');
+        _navigateToLogin();
+      }
+    } catch (e) {
+      print('❌ Error checking auth status: $e');
+      // On error, navigate to login
       if (mounted) {
         _navigateToLogin();
       }
-    });
+    }
   }
 
   void _navigateToLogin() {
     Nav.off(
       LoginScreen.routeName,
       arguments: const LoginScreenParam(),
+    );
+  }
+
+  void _navigateToHome() {
+    Nav.off(
+      HomeTabbedScreen.routeName,
+      arguments: HomeTabbedScreenParam(),
     );
   }
 

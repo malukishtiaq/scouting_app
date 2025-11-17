@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:scouting_app/core/common/local_storage.dart';
 import '../../../di/service_locator.dart';
 import '../../navigation/navigation_service.dart';
+import '../../services/auth_service.dart';
 import '../../ui/widgets/restart_widget.dart';
 import '../../services/account_service.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -55,6 +56,10 @@ class Utils {
   }
 
   static Future<void> logout() async {
+    // Clear session data using AuthService (existing SessionData logic)
+    final authService = getIt<AuthService>();
+    await authService.clearSession();
+
     // Clear skip login flag
     await LocalStorage.persistSkipLogin(false);
 

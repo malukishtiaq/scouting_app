@@ -35,8 +35,8 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
     super.initState();
     _setupFocusListeners();
     // Hardcoded login credentials for testing
-    _emailController.text = 'gbailey2@example.net2';
-    _passwordController.text = '+-0pBNvYgxwmi/#iw';
+    _emailController.text = 'admin@scouting.app';
+    _passwordController.text = '12345678';
   }
 
   @override

@@ -7,6 +7,7 @@ import '../../../../../core/providers/session_data.dart';
 import '../../../../../core/common/local_storage.dart';
 import '../../../../../core/services/auth_service.dart';
 import '../../../../../di/service_locator.dart';
+import '../../../../profile/domain/entities/user_profile_entity.dart';
 import '../../../data/request/param/scouting_login_param.dart';
 import '../../../data/request/param/scouting_register_param.dart';
 import '../../../domain/entity/auth_response_entity.dart';
@@ -151,22 +152,72 @@ class AccountCubit extends Cubit<AccountState> {
   void _setupSessionData(AuthResponseEntity data) async {
     try {
       final token = data.data.token;
-      final userEmail = data.data.user.email;
+      final user = data.data.user;
+      
+      // Parse userId from string to int (it's stored as String? in MemberDataEntity)
+      int userId = 0;
+      if (user.userId != null && user.userId!.isNotEmpty) {
+        userId = int.tryParse(user.userId!) ?? 0;
+      }
 
       if (token.isNotEmpty) {
         // Use AuthService for consistent session management
-        // Note: userId will be fetched by AuthService when it calls /me endpoint
         final authService = getIt<AuthService>();
         await authService.setupSession(
           accessToken: token,
-          userId: LocalStorage.memberID > 0 ? LocalStorage.memberID : 0,
+          userId: userId,
         );
 
-        // Store user email and token
-        getIt<SessionData>().token = token;
+        // Store user profile data in SessionData (workaround for /api/me bug)
+        final sessionData = getIt<SessionData>();
+        sessionData.token = token;
+        sessionData.userId = userId;
+        
+        // Convert login response user to UserProfileEntity
+        sessionData.userProfile = UserProfileEntity(
+          userId: userId.toString(),
+          username: user.name.isNotEmpty ? user.name : user.email.split('@').first,
+          email: user.email,
+          firstName: user.name.isNotEmpty ? user.name : user.email.split('@').first,
+          lastName: '',
+          avatar: user.avatar,
+          cover: '',
+          about: '',
+          gender: '',
+          birthday: '',
+          countryId: '',
+          website: '',
+          facebook: '',
+          google: '',
+          twitter: '',
+          instagram: '',
+          youtube: '',
+          vk: '',
+          lastSeenUnixTime: 0,
+          lastSeenStatus: '',
+          isFollowing: false,
+          canFollow: false,
+          isFollowingMe: false,
+          isBlocked: false,
+          isReported: false,
+          points: 0,
+          proType: user.primaryPosition, // Map primary_position to proType
+          verified: false,
+          details: null,
+          // Scouting-specific fields from login response
+          age: user.age,
+          weight: user.weight,
+          height: user.height,
+          primaryPosition: user.primaryPosition,
+          preferredFoot: user.preferredFoot,
+        );
+        
+        // Persist to storage
         LocalStorage.persistToken(token);
+        LocalStorage.persistMemberId(userId);
         
         print('✅ Session data setup completed successfully');
+        print('✅ User profile stored: ${user.email}');
       }
     } catch (e) {
       print('Error setting up session: $e');

@@ -8,6 +8,9 @@ abstract class IPostsRemoteSource {
   /// Get paginated list of posts
   Future<Either<AppErrors, PostsResponseModel>> getPosts(GetPostsParam param);
 
+  /// Get paginated list of posts for the authenticated user
+  Future<Either<AppErrors, PostsResponseModel>> getMyPosts(GetPostsParam param);
+
   /// Get a single post by ID
   Future<Either<AppErrors, PostModel>> getPostById(GetPostByIdParam param);
 }
