@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/navigation/app_route_observer.dart';
 import '../../../../core/ui/screens/base_screen.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/theme/app_dimensions.dart';
 import '../../../../core/theme/app_decorations.dart';
 import '../../../../localization/app_localization.dart';
-import '../../../../feature/posts/presentation/cubit/posts_cubit.dart';
-import '../../../../feature/posts/presentation/cubit/posts_state.dart';
 import '../../../../feature/explore/presentation/screen/explore_screen.dart';
-import '../../../../feature/settings/presentation/screen/features/games_screen.dart';
+import '../../../../feature/games/presentation/screen/games_screen.dart' as GamesFeature;
+import '../../../../feature/games/presentation/state_m/games/games_cubit.dart';
+import '../../../../feature/activity/presentation/screen/activity_screen.dart';
+import '../../../../feature/activity/presentation/state_m/activity/activity_cubit.dart';
+import '../../../../di/service_locator.dart';
 import '../../../settings/presentation/screen/my_profile_screen.dart';
-import '../widgets/highlight_post_view.dart';
 
 class HomeTabbedScreenParam {}
 
@@ -28,8 +28,6 @@ class HomeTabbedScreen extends BaseScreen<HomeTabbedScreenParam> {
 class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
   int _currentIndex = 0; // Start with Profile tab selected by default
   late final List<Widget> _pages;
-  final ValueNotifier<bool> _highlightPlaybackNotifier =
-      ValueNotifier<bool>(true);
 
   @override
   void initState() {
@@ -38,15 +36,19 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
       const MyProfileScreen(param: MyProfileScreenParam()),
       const ExploreScreen(),
       const SizedBox.shrink(),
-      const GamesScreen(param: GamesScreenParam()),
-      HighlightsTabView(playbackNotifier: _highlightPlaybackNotifier),
+      BlocProvider(
+        create: (context) => getIt<GamesCubit>()..loadGames(),
+        child: const GamesFeature.GamesScreen(
+          param: GamesFeature.GamesScreenParam(),
+        ),
+      ),
+      BlocProvider(
+        create: (context) => getIt<ActivityCubit>()..loadActivities(),
+        child: const ActivityScreen(
+          param: ActivityScreenParam(),
+        ),
+      ),
     ];
-  }
-
-  @override
-  void dispose() {
-    _highlightPlaybackNotifier.dispose();
-    super.dispose();
   }
 
   Widget _buildBottomNavigation() {
@@ -63,7 +65,7 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
               _buildNavItem(Icons.explore, 'explore'.tr, 1, false),
               _buildNavItem(Icons.add, 'create_game'.tr, 2, true),
               _buildNavItem(Icons.shield, 'games'.tr, 3, false),
-              _buildNavItem(Icons.movie, 'highlights'.tr, 4, false, true),
+              _buildNavItem(Icons.settings, 'activity'.tr, 4, false),
             ],
           ),
         ),
@@ -121,7 +123,6 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
       return;
     }
 
-    _highlightPlaybackNotifier.value = index == 4;
     setState(() => _currentIndex = index);
   }
 
@@ -219,187 +220,6 @@ class _HomeTabbedScreenState extends State<HomeTabbedScreen> {
         children: _pages,
       ),
       bottomNavigationBar: _buildBottomNavigation(),
-    );
-  }
-}
-
-class HighlightsTabView extends StatefulWidget {
-  final ValueNotifier<bool> playbackNotifier;
-
-  const HighlightsTabView({
-    super.key,
-    required this.playbackNotifier,
-  });
-
-  @override
-  State<HighlightsTabView> createState() => _HighlightsTabViewState();
-}
-
-class _HighlightsTabViewState extends State<HighlightsTabView>
-    with WidgetsBindingObserver, RouteAware {
-  final PageController _pageController = PageController();
-  int _activeIndex = 0;
-  final ValueNotifier<bool> _routePlaybackNotifier = ValueNotifier<bool>(true);
-
-  @override
-  void initState() {
-    super.initState();
-    widget.playbackNotifier.addListener(_handlePlaybackChange);
-    WidgetsBinding.instance.addObserver(this);
-  }
-
-  @override
-  void didUpdateWidget(covariant HighlightsTabView oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.playbackNotifier != widget.playbackNotifier) {
-      oldWidget.playbackNotifier.removeListener(_handlePlaybackChange);
-      widget.playbackNotifier.addListener(_handlePlaybackChange);
-    }
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final route = ModalRoute.of(context);
-    if (route is PageRoute) {
-      appRouteObserver.subscribe(this, route);
-    }
-  }
-
-  @override
-  void dispose() {
-    widget.playbackNotifier.removeListener(_handlePlaybackChange);
-    appRouteObserver.unsubscribe(this);
-    WidgetsBinding.instance.removeObserver(this);
-    _pageController.dispose();
-    _routePlaybackNotifier.dispose();
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    if (state == AppLifecycleState.paused ||
-        state == AppLifecycleState.inactive ||
-        state == AppLifecycleState.detached) {
-      _routePlaybackNotifier.value = false;
-    } else if (state == AppLifecycleState.resumed) {
-      _routePlaybackNotifier.value = true;
-    }
-  }
-
-  @override
-  void didPushNext() {
-    _routePlaybackNotifier.value = false;
-  }
-
-  @override
-  void didPopNext() {
-    _routePlaybackNotifier.value = true;
-  }
-
-  void _handlePlaybackChange() {
-    setState(() {});
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<PostsCubit, PostsState>(
-      builder: (context, state) {
-        if (state is PostsInitial || state is PostsLoading) {
-          return const Center(
-            child: CircularProgressIndicator(
-              color: AppColors.primary,
-            ),
-          );
-        }
-
-        if (state is PostsError) {
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.error_outline,
-                  color: AppColors.error,
-                  size: AppDimensions.iconXXLarge,
-                ),
-                const SizedBox(height: AppDimensions.spacing16),
-                Text(
-                  'failed_to_fetch_data'.tr,
-                  style: AppTextStyles.h3,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: AppDimensions.spacing8),
-                Text(
-                  state.error.message ?? 'posts_load_failed_description'.tr,
-                  style: AppTextStyles.bodyMedium.copyWith(
-                    color: AppColors.textSecondary,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          );
-        }
-
-        if (state is! PostsLoaded || state.posts.isEmpty) {
-          return Center(
-            child: Text(
-              'no_data'.tr,
-              style: AppTextStyles.bodyMedium.copyWith(
-                color: AppColors.textPrimary,
-              ),
-            ),
-          );
-        }
-
-        final PostsLoaded postsLoaded = state;
-        final posts = postsLoaded.posts;
-
-        return Stack(
-          children: [
-            PageView.builder(
-              controller: _pageController,
-              scrollDirection: Axis.vertical,
-              onPageChanged: (index) {
-                setState(() => _activeIndex = index);
-                final currentState = context.read<PostsCubit>().state;
-                if (currentState is PostsLoaded &&
-                    currentState.meta.hasNextPage &&
-                    index >= currentState.posts.length - 2) {
-                  context.read<PostsCubit>().loadMorePosts();
-                }
-              },
-              itemCount: posts.length,
-              itemBuilder: (context, index) {
-                return HighlightPostView(
-                  post: posts[index],
-                  isActive: _activeIndex == index,
-                  playbackNotifier: widget.playbackNotifier,
-                  routePlaybackNotifier: _routePlaybackNotifier,
-                );
-              },
-            ),
-            if (postsLoaded.isLoadingMore)
-              const Positioned(
-                bottom: AppDimensions.bottomNavHeight + AppDimensions.spacing16,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: SizedBox(
-                    width: AppDimensions.iconLarge,
-                    height: AppDimensions.iconLarge,
-                    child: CircularProgressIndicator(
-                      color: AppColors.primary,
-                      strokeWidth: 2,
-                    ),
-                  ),
-                ),
-              ),
-          ],
-        );
-      },
     );
   }
 }

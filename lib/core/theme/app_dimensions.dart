@@ -64,6 +64,11 @@ class AppDimensions {
   static const double avatarXXLarge = 64.0;
   static const double avatarXXXLarge = 80.0;
 
+  // ===== GAME CARD DIMENSIONS =====
+  static const double gameFieldImageWidth = 100.0;
+  static const double gameFieldImageHeight = 160.0;
+  static const double gameFieldImageLargeHeight = 250.0;
+
   // ===== SPLASH SCREEN =====
   static const double splashLogoSize = 140.0;
   static const double splashIconSize = 70.0;

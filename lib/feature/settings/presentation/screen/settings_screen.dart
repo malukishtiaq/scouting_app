@@ -20,6 +20,7 @@ import 'features/advertising_screen.dart';
 import '../../../../core/providers/session_data.dart';
 import '../../../../di/service_locator.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../../../../core/common/utils/utils.dart';
 
 /// Main settings screen matching Xamarin design
 class SettingsScreen extends StatefulWidget {

@@ -23,6 +23,9 @@ import '../../feature/settings/presentation/screen/features/live_videos_screen.d
 import '../../feature/settings/presentation/screen/features/advertising_screen.dart';
 import '../../feature/settings/presentation/screen/qr_code_screen.dart';
 import '../../feature/player_profile/presentation/screen/player_profile_screen.dart';
+import '../../feature/games/presentation/screen/games_screen.dart' as GamesFeature;
+import '../../feature/games/presentation/screen/game_details_screen.dart';
+import '../../feature/activity/presentation/screen/activity_screen.dart';
 
 import '../constants/enums/route_type.dart';
 import '../ui/screens/base_screen.dart';
@@ -186,6 +189,32 @@ class NavigationRoute {
           page: PlayerProfileScreen(
             playerId: playerId,
             playerData: playerData,
+          ),
+          settings: settings,
+        );
+
+      case GamesFeature.GamesScreen.routeName:
+        return FadeRoute(
+          page: const GamesFeature.GamesScreen(
+            param: GamesFeature.GamesScreenParam(),
+          ),
+          settings: settings,
+        );
+
+      case GameDetailsScreen.routeName:
+        final args = settings.arguments as GameDetailsScreenParam?;
+        if (args == null) {
+          return _errorRoute();
+        }
+        return FadeRoute(
+          page: GameDetailsScreen(param: args),
+          settings: settings,
+        );
+
+      case ActivityScreen.routeName:
+        return FadeRoute(
+          page: const ActivityScreen(
+            param: ActivityScreenParam(),
           ),
           settings: settings,
         );

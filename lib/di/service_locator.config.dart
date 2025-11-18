@@ -39,6 +39,18 @@ import '../feature/account/domain/usecase/member_register_usecase.dart'
     as _i314;
 import '../feature/account/domain/usecase/show_member_usecase.dart' as _i741;
 import '../feature/account/domain/usecase/update_profile_usecase.dart' as _i672;
+import '../feature/activity/data/datasource/activity_remote.dart' as _i137;
+import '../feature/activity/data/datasource/iactivity_remote.dart' as _i399;
+import '../feature/activity/domain/repository/activity_repository.dart'
+    as _i566;
+import '../feature/activity/domain/repository/iactivity_repository.dart'
+    as _i934;
+import '../feature/activity/domain/usecase/list_activities_usecase.dart'
+    as _i469;
+import '../feature/activity/domain/usecase/respond_connection_usecase.dart'
+    as _i174;
+import '../feature/activity/presentation/state_m/activity/activity_cubit.dart'
+    as _i858;
 import '../feature/comments/data/datasource/icomments_remote.dart' as _i753;
 import '../feature/comments/domain/repository/comments_repository.dart'
     as _i1000;
@@ -51,6 +63,15 @@ import '../feature/comments/domain/usecase/get_post_comments_usecase.dart'
 import '../feature/comments/domain/usecase/get_user_comments_usecase.dart'
     as _i597;
 import '../feature/explore/presentation/cubit/explore_cubit.dart' as _i215;
+import '../feature/games/data/datasource/games_remote.dart' as _i641;
+import '../feature/games/data/datasource/igames_remote.dart' as _i1057;
+import '../feature/games/domain/repository/games_repository.dart' as _i18;
+import '../feature/games/domain/repository/igames_repository.dart' as _i456;
+import '../feature/games/domain/usecase/create_game_usecase.dart' as _i453;
+import '../feature/games/domain/usecase/get_game_details_usecase.dart' as _i57;
+import '../feature/games/domain/usecase/join_game_usecase.dart' as _i984;
+import '../feature/games/domain/usecase/list_games_usecase.dart' as _i829;
+import '../feature/games/presentation/state_m/games/games_cubit.dart' as _i818;
 import '../feature/likes/data/datasource/ilikes_remote.dart' as _i591;
 import '../feature/likes/domain/repository/ilikes_repository.dart' as _i1020;
 import '../feature/likes/domain/repository/likes_repository.dart' as _i548;
@@ -125,6 +146,8 @@ extension GetItInjectableX on _i174.GetIt {
     final loggerModule = _$LoggerModule();
     gh.factory<_i699.NoopBackgroundApi>(() => _i699.NoopBackgroundApi());
     gh.factory<_i591.DbProvider>(() => _i591.DbProvider());
+    gh.factory<_i858.ActivityCubit>(() => _i858.ActivityCubit());
+    gh.factory<_i818.GamesCubit>(() => _i818.GamesCubit());
     gh.factory<_i1068.PlayerProfileCubit>(() => _i1068.PlayerProfileCubit());
     gh.singleton<_i821.GenericBackgroundService>(
         () => _i821.GenericBackgroundService());
@@ -148,6 +171,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i737.IReelsRemoteSource>(() => _i914.ReelsRemoteSource());
     gh.factory<_i495.IPlayerRemoteDatasource>(
         () => _i495.PlayerRemoteDatasource());
+    gh.factory<_i1057.IGamesRemoteSource>(() => _i641.GamesRemoteSource());
     gh.factory<_i753.ICommentsRemoteSource>(() => _i753.CommentsRemoteSource());
     gh.factory<_i494.IAccountRemoteSource>(() => _i494.AccountRemoteSource());
     gh.factory<_i12.SplashCubit>(
@@ -160,6 +184,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i591.ILikesRemoteSource>(() => _i591.LikesRemoteSource());
     gh.singleton<_i798.GenericCacheService>(
         () => _i798.GenericCacheService(gh<_i591.DbProvider>()));
+    gh.factory<_i399.IActivityRemoteSource>(() => _i137.ActivityRemoteSource());
     gh.factory<_i864.IReelsRepository>(
         () => _i989.ReelsRepository(gh<_i737.IReelsRemoteSource>()));
     gh.factory<_i17.IUserProfileRepository>(() =>
@@ -230,6 +255,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i741.ShowMemberUsecase(gh<_i462.IAccountRepository>()));
     gh.singleton<_i672.UpdateProfileUsecase>(
         () => _i672.UpdateProfileUsecase(gh<_i462.IAccountRepository>()));
+    gh.factory<_i456.IGamesRepository>(
+        () => _i18.GamesRepository(gh<_i1057.IGamesRemoteSource>()));
     gh.singleton<_i524.IScoutingPostsRepository>(() =>
         _i142.ScoutingPostsRepository(gh<_i462.IScoutingPostsRemoteSource>()));
     gh.factory<_i805.GetPostsUsecase>(
@@ -240,6 +267,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i966.GetMoreReelsUsecase(gh<_i864.IReelsRepository>()));
     gh.singleton<_i850.GetReelsUsecase>(
         () => _i850.GetReelsUsecase(gh<_i864.IReelsRepository>()));
+    gh.factory<_i934.IActivityRepository>(
+        () => _i566.ActivityRepository(gh<_i399.IActivityRemoteSource>()));
     gh.singleton<_i1020.ILikesRepository>(
         () => _i548.LikesRepository(gh<_i591.ILikesRemoteSource>()));
     gh.factory<_i231.MyProfilePostsCubit>(() => _i231.MyProfilePostsCubit(
@@ -276,12 +305,24 @@ extension GetItInjectableX on _i174.GetIt {
           updateCoverUseCase: gh<_i13.UpdateCoverUseCase>(),
           authService: gh<_i377.AuthService>(),
         ));
+    gh.singleton<_i453.CreateGameUsecase>(
+        () => _i453.CreateGameUsecase(gh<_i456.IGamesRepository>()));
+    gh.singleton<_i57.GetGameDetailsUsecase>(
+        () => _i57.GetGameDetailsUsecase(gh<_i456.IGamesRepository>()));
+    gh.singleton<_i984.JoinGameUsecase>(
+        () => _i984.JoinGameUsecase(gh<_i456.IGamesRepository>()));
+    gh.singleton<_i829.ListGamesUsecase>(
+        () => _i829.ListGamesUsecase(gh<_i456.IGamesRepository>()));
     gh.factory<_i215.ExploreCubit>(
         () => _i215.ExploreCubit(gh<_i813.ListMembersUsecase>()));
     gh.singleton<_i622.GetPostsUsecase>(
         () => _i622.GetPostsUsecase(gh<_i524.IScoutingPostsRepository>()));
     gh.singleton<_i338.GetPostByIdUsecase>(
         () => _i338.GetPostByIdUsecase(gh<_i524.IScoutingPostsRepository>()));
+    gh.singleton<_i469.ListActivitiesUsecase>(
+        () => _i469.ListActivitiesUsecase(gh<_i934.IActivityRepository>()));
+    gh.singleton<_i174.RespondConnectionUsecase>(
+        () => _i174.RespondConnectionUsecase(gh<_i934.IActivityRepository>()));
     gh.factory<_i319.PostsCubit>(() => _i319.PostsCubit(
           getPostsUsecase: gh<_i805.GetPostsUsecase>(),
           getPostByIdUsecase: gh<_i316.GetPostByIdUsecase>(),

@@ -9,11 +9,11 @@ class AppDecorations {
   static BoxDecoration get card => BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowLight,
             blurRadius: AppDimensions.shadowBlur,
-            offset: const Offset(0, AppDimensions.shadowOffset),
+            offset: Offset(0, AppDimensions.shadowOffset),
           ),
         ],
       );
@@ -21,11 +21,11 @@ class AppDecorations {
   static BoxDecoration get cardElevated => BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowMedium,
             blurRadius: AppDimensions.shadowBlurLarge,
-            offset: const Offset(0, AppDimensions.shadowOffsetLarge),
+            offset: Offset(0, AppDimensions.shadowOffsetLarge),
           ),
         ],
       );
@@ -34,11 +34,11 @@ class AppDecorations {
   static BoxDecoration get primaryButton => BoxDecoration(
         color: AppColors.primary,
         borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowColored,
             blurRadius: AppDimensions.shadowBlur,
-            offset: const Offset(0, AppDimensions.shadowOffset),
+            offset: Offset(0, AppDimensions.shadowOffset),
           ),
         ],
       );
@@ -84,11 +84,11 @@ class AppDecorations {
   static BoxDecoration get avatarWithShadow => BoxDecoration(
         color: AppColors.primaryContainer,
         borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowLight,
             blurRadius: AppDimensions.shadowBlur,
-            offset: const Offset(0, AppDimensions.shadowOffset),
+            offset: Offset(0, AppDimensions.shadowOffset),
           ),
         ],
       );
@@ -97,11 +97,11 @@ class AppDecorations {
   static BoxDecoration get splashLogo => BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowColored,
             blurRadius: AppDimensions.shadowBlurXLarge,
-            offset: const Offset(0, AppDimensions.shadowOffsetLarge),
+            offset: Offset(0, AppDimensions.shadowOffsetLarge),
           ),
         ],
       );
@@ -148,7 +148,8 @@ class AppDecorations {
         shape: BoxShape.circle,
       );
 
-  static BoxDecoration bottomNavigation({double opacity = 0.8}) => BoxDecoration(
+  static BoxDecoration bottomNavigation({double opacity = 0.8}) =>
+      BoxDecoration(
         color: AppColors.backgroundDark.withOpacity(opacity),
         border: const Border(
           top: BorderSide(
@@ -173,6 +174,17 @@ class AppDecorations {
         color: AppColors.borderMedium,
         borderRadius:
             BorderRadius.circular(AppDimensions.dividerThicknessThick / 2),
+      );
+
+  // ===== GAME SPECIFIC =====
+  static BoxDecoration get gameFieldImage => BoxDecoration(
+        borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
+        color: AppColors.surfaceVariant,
+      );
+
+  static BoxDecoration get hostBadge => BoxDecoration(
+        color: AppColors.primary,
+        borderRadius: BorderRadius.circular(AppDimensions.radiusSmall),
       );
 
   // ===== STATUS INDICATORS =====
@@ -215,11 +227,11 @@ class AppDecorations {
   static BoxDecoration get containerElevated => BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppColors.shadowLight,
             blurRadius: AppDimensions.shadowBlur,
-            offset: const Offset(0, AppDimensions.shadowOffset),
+            offset: Offset(0, AppDimensions.shadowOffset),
           ),
         ],
       );

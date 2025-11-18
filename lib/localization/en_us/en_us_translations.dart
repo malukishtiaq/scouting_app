@@ -855,4 +855,30 @@ final Map<String, String> enUs = {
   "explore_no_players": "No players found",
   "explore_no_players_desc": "Try adjusting your search or check back later",
   "go_to_explore": "Go to Explore",
+
+  // Games Feature
+  "games": "Games",
+  "hosted_by": "Hosted by",
+  "reliability": "Reliability",
+  "players": "Players",
+  "view_details": "View Details",
+  "no_games_found": "No Games Found",
+  "create_game_coming_soon": "Create game feature coming soon",
+  "game_details": "Game Details",
+  "description": "Description",
+  "registered_players": "Registered Players",
+  "join_game": "Join Game",
+  "game_joined_successfully": "Game joined successfully!",
+  "host": "Host",
+  "games_error_load": "Failed to load games",
+  "games_error_details": "Failed to load game details",
+  "join_game_coming_soon": "Join game feature coming soon",
+
+  // Activity Feature
+  "activity": "Activity",
+  "accept": "Accept",
+  "decline": "Decline",
+  "no_activities_found": "No activities found",
+  "connection_responded": "Connection request responded",
+  "activity_error_load": "Failed to load activities",
 };
